@@ -1,0 +1,25 @@
+loading bcos resnet50 model
+Loading guiding points train dataset from datasets/COCO2014/processed
+Loading guiding points validation dataset from datasets/COCO2014/processed
+Train data size: 73872
+Annotated: 73872, Total: 73872
+Epoch: 0, Average Loss: 0.3867529332637787
+Validation Metrics: {'Accuracy': 0.9711124897003174, 'Precision': 0.8644557595252991, 'Recall': 0.25885939598083496, 'F-Score': 0.3984144628047943, 'True Positives': 6282.0, 'True Negatives': 631467.0, 'False Positives': 985.0, 'False Negatives': 17986.0, 'BB-Loc': 0.21846357430154872, 'BB-IoU': 0.0021018034446465762, 'Average-Loss': 0.09522875491790642}
+Current Pareto Front Size: 1
+Pareto Costs: (0.3984,0.2185,0.0021,1)
+Epoch: 1, Average Loss: 0.24226418137550354
+Validation Metrics: {'Accuracy': 0.9721068143844604, 'Precision': 0.8736498355865479, 'Recall': 0.28663259744644165, 'F-Score': 0.43164753913879395, 'True Positives': 6956.0, 'True Negatives': 631446.0, 'False Positives': 1006.0, 'False Negatives': 17312.0, 'BB-Loc': 0.22244749215007412, 'BB-IoU': 0.0017280423084436703, 'Average-Loss': 0.09915185297053919}
+Current Pareto Front Size: 1
+Pareto Costs: (0.4316,0.2224,0.0017,2)
+Epoch: 2, Average Loss: 0.222713440656662
+Validation Metrics: {'Accuracy': 0.9712252020835876, 'Precision': 0.7809394001960754, 'Recall': 0.3076067268848419, 'F-Score': 0.4413633942604065, 'True Positives': 7465.0, 'True Negatives': 630358.0, 'False Positives': 2094.0, 'False Negatives': 16803.0, 'BB-Loc': 0.22058938400255007, 'BB-IoU': 0.0016852296875890726, 'Average-Loss': 0.09619879679029876}
+Current Pareto Front Size: 1
+Pareto Costs: (0.4414,0.2206,0.0017,3)
+Epoch: 3, Average Loss: 0.20523175597190857
+Validation Metrics: {'Accuracy': 0.9739234447479248, 'Precision': 0.8543506264686584, 'Recall': 0.3548294007778168, 'F-Score': 0.501412034034729, 'True Positives': 8611.0, 'True Negatives': 630984.0, 'False Positives': 1468.0, 'False Negatives': 15657.0, 'BB-Loc': 0.23580636064075913, 'BB-IoU': 0.0017581446359736437, 'Average-Loss': 0.08253319705791662}
+Current Pareto Front Size: 1
+Pareto Costs: (0.5014,0.2358,0.0018,4)
+Epoch: 4, Average Loss: 0.19287820160388947
+Validation Metrics: {'Accuracy': 0.9738548994064331, 'Precision': 0.8196145296096802, 'Recall': 0.3750205934047699, 'F-Score': 0.5145878195762634, 'True Positives': 9101.0, 'True Negatives': 630449.0, 'False Positives': 2003.0, 'False Negatives': 15167.0, 'BB-Loc': 0.24142519000054377, 'BB-IoU': 0.0018084666205066765, 'Average-Loss': 0.08379702405991138}
+Current Pareto Front Size: 1
+Pareto Costs: (0.5146,0.2414,0.0018,5)

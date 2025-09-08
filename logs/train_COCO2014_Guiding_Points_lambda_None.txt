@@ -1,0 +1,21 @@
+loading bcos resnet50 model
+Loading guiding points train dataset from datasets/COCO2014/processed
+Loading guiding points validation dataset from datasets/COCO2014/processed
+Train data size: 73872
+Annotated: 73872, Total: 73872
+Epoch: 0, Average Loss: 2.6970529556274414
+Validation Metrics: {'Accuracy': 0.9629659652709961, 'Precision': 0.494507759809494, 'Recall': 0.09831877052783966, 'F-Score': 0.1640257090330124, 'True Positives': 2386.0, 'True Negatives': 630013.0, 'False Positives': 2439.0, 'False Negatives': 21882.0, 'BB-Loc': 0.1892852948463678, 'BB-IoU': 0.00220844394144299, 'Average-Loss': 0.1671404295447451}
+Current Pareto Front Size: 1
+Pareto Costs: (0.1640,0.1893,0.0022,1)
+Epoch: 1, Average Loss: 1.6841858625411987
+Validation Metrics: {'Accuracy': 0.9605783224105835, 'Precision': 0.40767741203308105, 'Recall': 0.1474781632423401, 'F-Score': 0.21660059690475464, 'True Positives': 3579.0, 'True Negatives': 627252.0, 'False Positives': 5200.0, 'False Negatives': 20689.0, 'BB-Loc': 0.191425002835803, 'BB-IoU': 0.001615724874504709, 'Average-Loss': 0.18990950945132629}
+Current Pareto Front Size: 1
+Pareto Costs: (0.2166,0.1914,0.0016,2)
+Epoch: 2, Average Loss: 1.5675166845321655
+Validation Metrics: {'Accuracy': 0.9638186693191528, 'Precision': 0.5825464129447937, 'Recall': 0.07371847331523895, 'F-Score': 0.13087530434131622, 'True Positives': 1789.0, 'True Negatives': 631170.0, 'False Positives': 1282.0, 'False Negatives': 22479.0, 'BB-Loc': 0.19670955659518294, 'BB-IoU': 0.001565994413618532, 'Average-Loss': 0.15434037063455505}
+Current Pareto Front Size: 2
+Pareto Costs: (0.2166,0.1914,0.0016,2)(0.1309,0.1967,0.0016,3)
+Epoch: 3, Average Loss: 1.5801314115524292
+Validation Metrics: {'Accuracy': 0.9245371222496033, 'Precision': 0.11730524897575378, 'Recall': 0.15971650183200836, 'F-Score': 0.1352643519639969, 'True Positives': 3876.0, 'True Negatives': 603286.0, 'False Positives': 29166.0, 'False Negatives': 20392.0, 'BB-Loc': 0.20450322670811133, 'BB-IoU': 0.0020521083582853406, 'Average-Loss': 0.5597050374398526}
+Current Pareto Front Size: 2
+Pareto Costs: (0.2166,0.1914,0.0016,2)(0.1353,0.2045,0.0021,4)

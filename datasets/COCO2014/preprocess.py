@@ -62,7 +62,7 @@ def main(args):
     elif split == "test":
         idata = COCODataset(root=os.path.join(args.data_root, "val2014"),
                             annotation=os.path.join(args.data_root, "annotations/instances_val2014.json"), transform_fn=transform)
-    save_data = torch.zeros((len(idata),)+idata[0][0].shape)
+    save_data = torch.zeros((len(idata),)+idata[0][0].shape, dtype=torch.float16)
     save_mask = torch.zeros(
         (len(idata), idata[0][0].shape[1], idata[0][0].shape[2]))
     save_labels = torch.zeros((len(idata), 91))

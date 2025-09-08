@@ -163,5 +163,8 @@ checkpoints/
 processed/
 *.pt
 *.tar 
-*.pth
+*.jpg
+*.png
+datasets/*
+datasets/*.*
 VOCdevkit/

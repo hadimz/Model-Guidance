@@ -3,9 +3,8 @@ import torchmetrics
 import statistics
 import torchmetrics.classification
 
-
 class EnergyPointingGameBase(torchmetrics.Metric):
-
+    full_state_update=True
     def __init__(self, include_undefined=True):
         super().__init__()
 
@@ -28,7 +27,6 @@ class EnergyPointingGameBase(torchmetrics.Metric):
 
 
 class BoundingBoxEnergyMultiple(EnergyPointingGameBase):
-
     def __init__(self, include_undefined=True, min_box_size=None, max_box_size=None):
         super().__init__(include_undefined=include_undefined)
         self.min_box_size = min_box_size
@@ -102,6 +100,8 @@ class BoundingBoxIoUMultiple(EnergyPointingGameBase):
 Source: https://github.com/stevenstalder/NN-Explainer 
 """
 class MultiLabelMetrics(torchmetrics.Metric):
+    full_state_update=True
+    
     def __init__(self, num_classes, threshold):
         super().__init__()
 

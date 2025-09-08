@@ -1,0 +1,608 @@
+loading bcos resnet50 model
+Loading train dataset from datasets/VOC2007/processed
+Loading validation dataset from datasets/VOC2007/processed
+Train data size: 2501
+Annotated: 2501, Total: 2501
+Epoch: 0, Average Loss: 0.430075466632843
+Validation Metrics: {'Accuracy': 0.9362947940826416, 'Precision': 0.6476311087608337, 'Recall': 0.3929671347141266, 'F-Score': 0.4891373813152313, 'True Positives': 1531.0, 'True Negatives': 45471.0, 'False Positives': 833.0, 'False Negatives': 2365.0, 'Average-Loss': 0.22016771780067232}
+Epoch: 1, Average Loss: 0.1501488834619522
+Validation Metrics: {'Accuracy': 0.959920346736908, 'Precision': 0.8659673929214478, 'Recall': 0.572125256061554, 'F-Score': 0.6890262961387634, 'True Positives': 2229.0, 'True Negatives': 45959.0, 'False Positives': 345.0, 'False Negatives': 1667.0, 'Average-Loss': 0.10904799989495144}
+Epoch: 2, Average Loss: 0.0929739847779274
+Validation Metrics: {'Accuracy': 0.9653984308242798, 'Precision': 0.8638355135917664, 'Recall': 0.6578541994094849, 'F-Score': 0.746903657913208, 'True Positives': 2563.0, 'True Negatives': 45900.0, 'False Positives': 404.0, 'False Negatives': 1333.0, 'Average-Loss': 0.09602218567137699}
+Epoch: 3, Average Loss: 0.07773714512586594
+Validation Metrics: {'Accuracy': 0.9680876731872559, 'Precision': 0.8872383236885071, 'Recall': 0.6745380163192749, 'F-Score': 0.7664042115211487, 'True Positives': 2628.0, 'True Negatives': 45970.0, 'False Positives': 334.0, 'False Negatives': 1268.0, 'Average-Loss': 0.08859966627630105}
+Epoch: 4, Average Loss: 0.06762001663446426
+Validation Metrics: {'Accuracy': 0.9685457944869995, 'Precision': 0.8728677034378052, 'Recall': 0.6960985660552979, 'F-Score': 0.7745252251625061, 'True Positives': 2712.0, 'True Negatives': 45909.0, 'False Positives': 395.0, 'False Negatives': 1184.0, 'Average-Loss': 0.08591252665120767}
+Epoch: 5, Average Loss: 0.05906624719500542
+Validation Metrics: {'Accuracy': 0.9698804616928101, 'Precision': 0.8933993577957153, 'Recall': 0.6948152184486389, 'F-Score': 0.7816921472549438, 'True Positives': 2707.0, 'True Negatives': 45981.0, 'False Positives': 323.0, 'False Negatives': 1189.0, 'Average-Loss': 0.0841575045034705}
+Epoch: 6, Average Loss: 0.04992390796542168
+Validation Metrics: {'Accuracy': 0.9709362387657166, 'Precision': 0.8764287829399109, 'Recall': 0.7281827330589294, 'F-Score': 0.7954577207565308, 'True Positives': 2837.0, 'True Negatives': 45904.0, 'False Positives': 400.0, 'False Negatives': 1059.0, 'Average-Loss': 0.08204571241401581}
+Epoch: 7, Average Loss: 0.043931469321250916
+Validation Metrics: {'Accuracy': 0.9709561467170715, 'Precision': 0.8665063381195068, 'Recall': 0.7397330403327942, 'F-Score': 0.7981168627738953, 'True Positives': 2882.0, 'True Negatives': 45860.0, 'False Positives': 444.0, 'False Negatives': 1014.0, 'Average-Loss': 0.0822160150900305}
+Epoch: 8, Average Loss: 0.03861798346042633
+Validation Metrics: {'Accuracy': 0.9701593518257141, 'Precision': 0.8867741823196411, 'Recall': 0.7055954933166504, 'F-Score': 0.7858776450157166, 'True Positives': 2749.0, 'True Negatives': 45953.0, 'False Positives': 351.0, 'False Negatives': 1147.0, 'Average-Loss': 0.08435637941398469}
+Epoch: 9, Average Loss: 0.033437736332416534
+Validation Metrics: {'Accuracy': 0.9707370400428772, 'Precision': 0.844842255115509, 'Recall': 0.7630903720855713, 'F-Score': 0.8018880486488342, 'True Positives': 2973.0, 'True Negatives': 45758.0, 'False Positives': 546.0, 'False Negatives': 923.0, 'Average-Loss': 0.08377866099080242}
+Epoch: 10, Average Loss: 0.02863275445997715
+Validation Metrics: {'Accuracy': 0.9702788591384888, 'Precision': 0.8669108748435974, 'Recall': 0.7289527654647827, 'F-Score': 0.7919687628746033, 'True Positives': 2840.0, 'True Negatives': 45868.0, 'False Positives': 436.0, 'False Negatives': 1056.0, 'Average-Loss': 0.0854383430632937}
+Epoch: 11, Average Loss: 0.02708594873547554
+Validation Metrics: {'Accuracy': 0.971354603767395, 'Precision': 0.8726500868797302, 'Recall': 0.7387063503265381, 'F-Score': 0.8001111745834351, 'True Positives': 2878.0, 'True Negatives': 45884.0, 'False Positives': 420.0, 'False Negatives': 1018.0, 'Average-Loss': 0.08534869919735122}
+Epoch: 12, Average Loss: 0.02146666683256626
+Validation Metrics: {'Accuracy': 0.9709163308143616, 'Precision': 0.8738489747047424, 'Recall': 0.7307494878768921, 'F-Score': 0.795918345451355, 'True Positives': 2847.0, 'True Negatives': 45893.0, 'False Positives': 411.0, 'False Negatives': 1049.0, 'Average-Loss': 0.0864770653713272}
+Epoch: 13, Average Loss: 0.019545666873455048
+Validation Metrics: {'Accuracy': 0.9713147282600403, 'Precision': 0.8678849339485168, 'Recall': 0.7435831427574158, 'F-Score': 0.8009399771690369, 'True Positives': 2897.0, 'True Negatives': 45863.0, 'False Positives': 441.0, 'False Negatives': 999.0, 'Average-Loss': 0.08714254310881474}
+Epoch: 14, Average Loss: 0.017396889626979828
+Validation Metrics: {'Accuracy': 0.9702191352844238, 'Precision': 0.863457441329956, 'Recall': 0.732032835483551, 'F-Score': 0.7923322916030884, 'True Positives': 2852.0, 'True Negatives': 45853.0, 'False Positives': 451.0, 'False Negatives': 1044.0, 'Average-Loss': 0.09017783845088397}
+Epoch: 15, Average Loss: 0.015173590742051601
+Validation Metrics: {'Accuracy': 0.9700199365615845, 'Precision': 0.8444252610206604, 'Recall': 0.752310037612915, 'F-Score': 0.7957106232643127, 'True Positives': 2931.0, 'True Negatives': 45764.0, 'False Positives': 540.0, 'False Negatives': 965.0, 'Average-Loss': 0.09154720838326381}
+Epoch: 16, Average Loss: 0.013571229763329029
+Validation Metrics: {'Accuracy': 0.9706773161888123, 'Precision': 0.855425238609314, 'Recall': 0.7487166523933411, 'F-Score': 0.7985217571258545, 'True Positives': 2917.0, 'True Negatives': 45811.0, 'False Positives': 493.0, 'False Negatives': 979.0, 'Average-Loss': 0.09188267073308329}
+Epoch: 17, Average Loss: 0.01106457132846117
+Validation Metrics: {'Accuracy': 0.9701992273330688, 'Precision': 0.8674219250679016, 'Recall': 0.7271560430526733, 'F-Score': 0.7911198139190674, 'True Positives': 2833.0, 'True Negatives': 45871.0, 'False Positives': 433.0, 'False Negatives': 1063.0, 'Average-Loss': 0.09421570310554657}
+Epoch: 18, Average Loss: 0.00996022392064333
+Validation Metrics: {'Accuracy': 0.9700597524642944, 'Precision': 0.8775638937950134, 'Recall': 0.7138090133666992, 'F-Score': 0.7872611284255981, 'True Positives': 2781.0, 'True Negatives': 45916.0, 'False Positives': 388.0, 'False Negatives': 1115.0, 'Average-Loss': 0.09458768928193476}
+Epoch: 19, Average Loss: 0.008779841475188732
+Validation Metrics: {'Accuracy': 0.9699800610542297, 'Precision': 0.844534158706665, 'Recall': 0.7515400648117065, 'F-Score': 0.7953280210494995, 'True Positives': 2928.0, 'True Negatives': 45765.0, 'False Positives': 539.0, 'False Negatives': 968.0, 'Average-Loss': 0.09843759726718128}
+Epoch: 20, Average Loss: 0.008069505915045738
+Validation Metrics: {'Accuracy': 0.9702988266944885, 'Precision': 0.8610026836395264, 'Recall': 0.7361396551132202, 'F-Score': 0.7936903238296509, 'True Positives': 2868.0, 'True Negatives': 45841.0, 'False Positives': 463.0, 'False Negatives': 1028.0, 'Average-Loss': 0.09611640109483939}
+Epoch: 21, Average Loss: 0.008291702717542648
+Validation Metrics: {'Accuracy': 0.9707370400428772, 'Precision': 0.8534809350967407, 'Recall': 0.7520533800125122, 'F-Score': 0.7995634078979492, 'True Positives': 2930.0, 'True Negatives': 45801.0, 'False Positives': 503.0, 'False Negatives': 966.0, 'Average-Loss': 0.09791879235985744}
+Epoch: 22, Average Loss: 0.006626267917454243
+Validation Metrics: {'Accuracy': 0.9702788591384888, 'Precision': 0.8547815680503845, 'Recall': 0.7433264851570129, 'F-Score': 0.7951675057411194, 'True Positives': 2896.0, 'True Negatives': 45812.0, 'False Positives': 492.0, 'False Negatives': 1000.0, 'Average-Loss': 0.09784225524659176}
+Epoch: 23, Average Loss: 0.006386656779795885
+Validation Metrics: {'Accuracy': 0.9704581499099731, 'Precision': 0.8624211549758911, 'Recall': 0.7369096279144287, 'F-Score': 0.7947404980659485, 'True Positives': 2871.0, 'True Negatives': 45846.0, 'False Positives': 458.0, 'False Negatives': 1025.0, 'Average-Loss': 0.09860324935609126}
+Epoch: 24, Average Loss: 0.006303395144641399
+Validation Metrics: {'Accuracy': 0.9703585505485535, 'Precision': 0.8564239144325256, 'Recall': 0.7425564527511597, 'F-Score': 0.7954357862472534, 'True Positives': 2893.0, 'True Negatives': 45819.0, 'False Positives': 485.0, 'False Negatives': 1003.0, 'Average-Loss': 0.09943875012644733}
+Epoch: 25, Average Loss: 0.005105943884700537
+Validation Metrics: {'Accuracy': 0.9706175327301025, 'Precision': 0.8671519756317139, 'Recall': 0.7338295578956604, 'F-Score': 0.7949395179748535, 'True Positives': 2859.0, 'True Negatives': 45866.0, 'False Positives': 438.0, 'False Negatives': 1037.0, 'Average-Loss': 0.09984296213583167}
+Epoch: 26, Average Loss: 0.004499949049204588
+Validation Metrics: {'Accuracy': 0.9706773161888123, 'Precision': 0.872235894203186, 'Recall': 0.7289527654647827, 'F-Score': 0.7941834330558777, 'True Positives': 2840.0, 'True Negatives': 45888.0, 'False Positives': 416.0, 'False Negatives': 1056.0, 'Average-Loss': 0.10096010610876806}
+Epoch: 27, Average Loss: 0.004020320251584053
+Validation Metrics: {'Accuracy': 0.9705179333686829, 'Precision': 0.8676202297210693, 'Recall': 0.7317761778831482, 'F-Score': 0.7939292788505554, 'True Positives': 2851.0, 'True Negatives': 45869.0, 'False Positives': 435.0, 'False Negatives': 1045.0, 'Average-Loss': 0.1013540807473232}
+Epoch: 28, Average Loss: 0.004192220512777567
+Validation Metrics: {'Accuracy': 0.9702988266944885, 'Precision': 0.8607860803604126, 'Recall': 0.736396312713623, 'F-Score': 0.7937474250793457, 'True Positives': 2869.0, 'True Negatives': 45840.0, 'False Positives': 464.0, 'False Negatives': 1027.0, 'Average-Loss': 0.10263260921159113}
+Epoch: 29, Average Loss: 0.0042829024605453014
+Validation Metrics: {'Accuracy': 0.9704980254173279, 'Precision': 0.8616352081298828, 'Recall': 0.7384496927261353, 'F-Score': 0.7953006029129028, 'True Positives': 2877.0, 'True Negatives': 45842.0, 'False Positives': 462.0, 'False Negatives': 1019.0, 'Average-Loss': 0.10300570180216634}
+Epoch: 30, Average Loss: 0.004119359888136387
+Validation Metrics: {'Accuracy': 0.9704183340072632, 'Precision': 0.862993061542511, 'Recall': 0.7356262803077698, 'F-Score': 0.7942358255386353, 'True Positives': 2866.0, 'True Negatives': 45849.0, 'False Positives': 455.0, 'False Negatives': 1030.0, 'Average-Loss': 0.10319634547746515}
+Epoch: 31, Average Loss: 0.003858756273984909
+Validation Metrics: {'Accuracy': 0.9701593518257141, 'Precision': 0.8574836254119873, 'Recall': 0.7381930351257324, 'F-Score': 0.7933793067932129, 'True Positives': 2876.0, 'True Negatives': 45826.0, 'False Positives': 478.0, 'False Negatives': 1020.0, 'Average-Loss': 0.10600809652016932}
+Epoch: 32, Average Loss: 0.003533195937052369
+Validation Metrics: {'Accuracy': 0.9701792597770691, 'Precision': 0.8554074168205261, 'Recall': 0.7410164475440979, 'F-Score': 0.7941135764122009, 'True Positives': 2887.0, 'True Negatives': 45816.0, 'False Positives': 488.0, 'False Negatives': 1009.0, 'Average-Loss': 0.10706547588941111}
+Epoch: 33, Average Loss: 0.004676211159676313
+Validation Metrics: {'Accuracy': 0.9698605537414551, 'Precision': 0.8618281483650208, 'Recall': 0.728439450263977, 'F-Score': 0.7895395755767822, 'True Positives': 2838.0, 'True Negatives': 45849.0, 'False Positives': 455.0, 'False Negatives': 1058.0, 'Average-Loss': 0.10821362985557768}
+Epoch: 34, Average Loss: 0.00409428495913744
+Validation Metrics: {'Accuracy': 0.9703386425971985, 'Precision': 0.8555391430854797, 'Recall': 0.7433264851570129, 'F-Score': 0.7954951524734497, 'True Positives': 2896.0, 'True Negatives': 45815.0, 'False Positives': 489.0, 'False Negatives': 1000.0, 'Average-Loss': 0.10886506464376867}
+Epoch: 35, Average Loss: 0.0028188463766127825
+Validation Metrics: {'Accuracy': 0.9703386425971985, 'Precision': 0.8568040132522583, 'Recall': 0.7417864203453064, 'F-Score': 0.7951574921607971, 'True Positives': 2890.0, 'True Negatives': 45821.0, 'False Positives': 483.0, 'False Negatives': 1006.0, 'Average-Loss': 0.10787811887216758}
+Epoch: 36, Average Loss: 0.003486615838482976
+Validation Metrics: {'Accuracy': 0.9705577492713928, 'Precision': 0.8637183904647827, 'Recall': 0.7369096279144287, 'F-Score': 0.7952908873558044, 'True Positives': 2871.0, 'True Negatives': 45851.0, 'False Positives': 453.0, 'False Negatives': 1025.0, 'Average-Loss': 0.10911232997696713}
+Epoch: 37, Average Loss: 0.005178502760827541
+Validation Metrics: {'Accuracy': 0.9703585505485535, 'Precision': 0.8568464517593384, 'Recall': 0.742043137550354, 'F-Score': 0.7953232526779175, 'True Positives': 2891.0, 'True Negatives': 45821.0, 'False Positives': 483.0, 'False Negatives': 1005.0, 'Average-Loss': 0.11161259503003611}
+Epoch: 38, Average Loss: 0.007089843507856131
+Validation Metrics: {'Accuracy': 0.9704980254173279, 'Precision': 0.8521434664726257, 'Recall': 0.75, 'F-Score': 0.7978156805038452, 'True Positives': 2922.0, 'True Negatives': 45797.0, 'False Positives': 507.0, 'False Negatives': 974.0, 'Average-Loss': 0.10984339011142928}
+Epoch: 39, Average Loss: 0.0033112068194895983
+Validation Metrics: {'Accuracy': 0.9708167314529419, 'Precision': 0.8592965006828308, 'Recall': 0.7461498975753784, 'F-Score': 0.7987360954284668, 'True Positives': 2907.0, 'True Negatives': 45828.0, 'False Positives': 476.0, 'False Negatives': 989.0, 'Average-Loss': 0.10945759199530004}
+Epoch: 40, Average Loss: 0.0031684981659054756
+Validation Metrics: {'Accuracy': 0.9706374406814575, 'Precision': 0.8574380278587341, 'Recall': 0.745636522769928, 'F-Score': 0.7976386547088623, 'True Positives': 2905.0, 'True Negatives': 45821.0, 'False Positives': 483.0, 'False Negatives': 991.0, 'Average-Loss': 0.11035675413580055}
+Epoch: 41, Average Loss: 0.003460382577031851
+Validation Metrics: {'Accuracy': 0.969900369644165, 'Precision': 0.8595116138458252, 'Recall': 0.7317761778831482, 'F-Score': 0.7905171513557434, 'True Positives': 2851.0, 'True Negatives': 45838.0, 'False Positives': 466.0, 'False Negatives': 1045.0, 'Average-Loss': 0.11007097099881723}
+Epoch: 42, Average Loss: 0.00268685189075768
+Validation Metrics: {'Accuracy': 0.9703984260559082, 'Precision': 0.8542034029960632, 'Recall': 0.7458932399749756, 'F-Score': 0.7963825464248657, 'True Positives': 2906.0, 'True Negatives': 45808.0, 'False Positives': 496.0, 'False Negatives': 990.0, 'Average-Loss': 0.11204869243728212}
+Epoch: 43, Average Loss: 0.0026981281116604805
+Validation Metrics: {'Accuracy': 0.9706175327301025, 'Precision': 0.8709776401519775, 'Recall': 0.7294661402702332, 'F-Score': 0.7939656376838684, 'True Positives': 2842.0, 'True Negatives': 45883.0, 'False Positives': 421.0, 'False Negatives': 1054.0, 'Average-Loss': 0.11001561381427416}
+Epoch: 44, Average Loss: 0.002523271134123206
+Validation Metrics: {'Accuracy': 0.9706972241401672, 'Precision': 0.8609705567359924, 'Recall': 0.7422997951507568, 'F-Score': 0.7972432971000671, 'True Positives': 2892.0, 'True Negatives': 45837.0, 'False Positives': 467.0, 'False Negatives': 1004.0, 'Average-Loss': 0.11164231015391558}
+Epoch: 45, Average Loss: 0.0022958635818213224
+Validation Metrics: {'Accuracy': 0.9709761142730713, 'Precision': 0.8758089542388916, 'Recall': 0.7294661402702332, 'F-Score': 0.7959669232368469, 'True Positives': 2842.0, 'True Negatives': 45901.0, 'False Positives': 403.0, 'False Negatives': 1054.0, 'Average-Loss': 0.11157305592084786}
+Epoch: 46, Average Loss: 0.00228017452172935
+Validation Metrics: {'Accuracy': 0.9704382419586182, 'Precision': 0.8634719848632812, 'Recall': 0.7353696227073669, 'F-Score': 0.7942888736724854, 'True Positives': 2865.0, 'True Negatives': 45851.0, 'False Positives': 453.0, 'False Negatives': 1031.0, 'Average-Loss': 0.11308338423649153}
+Epoch: 47, Average Loss: 0.0023302272893488407
+Validation Metrics: {'Accuracy': 0.9708964228630066, 'Precision': 0.8717557191848755, 'Recall': 0.7328028678894043, 'F-Score': 0.7962627410888672, 'True Positives': 2855.0, 'True Negatives': 45884.0, 'False Positives': 420.0, 'False Negatives': 1041.0, 'Average-Loss': 0.11322597792424054}
+Epoch: 48, Average Loss: 0.0025901671033352613
+Validation Metrics: {'Accuracy': 0.9703187346458435, 'Precision': 0.8546580076217651, 'Recall': 0.7440965175628662, 'F-Score': 0.7955543398857117, 'True Positives': 2899.0, 'True Negatives': 45811.0, 'False Positives': 493.0, 'False Negatives': 997.0, 'Average-Loss': 0.11654281312250996}
+Epoch: 49, Average Loss: 0.0018611125415191054
+Validation Metrics: {'Accuracy': 0.9706175327301025, 'Precision': 0.872805655002594, 'Recall': 0.727412760257721, 'F-Score': 0.7935041189193726, 'True Positives': 2834.0, 'True Negatives': 45891.0, 'False Positives': 413.0, 'False Negatives': 1062.0, 'Average-Loss': 0.1141363987409736}
+Epoch: 50, Average Loss: 0.0021109269000589848
+Validation Metrics: {'Accuracy': 0.9708167314529419, 'Precision': 0.8662247657775879, 'Recall': 0.7379363179206848, 'F-Score': 0.7969508171081543, 'True Positives': 2875.0, 'True Negatives': 45860.0, 'False Positives': 444.0, 'False Negatives': 1021.0, 'Average-Loss': 0.11587681257392306}
+Epoch: 51, Average Loss: 0.0033290714491158724
+Validation Metrics: {'Accuracy': 0.9705777168273926, 'Precision': 0.868188738822937, 'Recall': 0.732032835483551, 'F-Score': 0.7943183183670044, 'True Positives': 2852.0, 'True Negatives': 45871.0, 'False Positives': 433.0, 'False Negatives': 1044.0, 'Average-Loss': 0.11651783977371763}
+Epoch: 52, Average Loss: 0.005503742024302483
+Validation Metrics: {'Accuracy': 0.9704980254173279, 'Precision': 0.8523489832878113, 'Recall': 0.7497433423995972, 'F-Score': 0.7977604866027832, 'True Positives': 2921.0, 'True Negatives': 45798.0, 'False Positives': 506.0, 'False Negatives': 975.0, 'Average-Loss': 0.11895275343936754}
+Epoch: 53, Average Loss: 0.0037475801073014736
+Validation Metrics: {'Accuracy': 0.9696215391159058, 'Precision': 0.8479600548744202, 'Recall': 0.7415297627449036, 'F-Score': 0.7911816835403442, 'True Positives': 2889.0, 'True Negatives': 45786.0, 'False Positives': 518.0, 'False Negatives': 1007.0, 'Average-Loss': 0.12040518346535732}
+Epoch: 54, Average Loss: 0.0024609030224382877
+Validation Metrics: {'Accuracy': 0.9703784584999084, 'Precision': 0.8626919388771057, 'Recall': 0.7353696227073669, 'F-Score': 0.7939587235450745, 'True Positives': 2865.0, 'True Negatives': 45848.0, 'False Positives': 456.0, 'False Negatives': 1031.0, 'Average-Loss': 0.11702094211046439}
+Epoch: 55, Average Loss: 0.002092069247737527
+Validation Metrics: {'Accuracy': 0.9707171320915222, 'Precision': 0.8633912801742554, 'Recall': 0.7397330403327942, 'F-Score': 0.7967929244041443, 'True Positives': 2882.0, 'True Negatives': 45848.0, 'False Positives': 456.0, 'False Negatives': 1014.0, 'Average-Loss': 0.11865186957249128}
+Epoch: 56, Average Loss: 0.0021684581879526377
+Validation Metrics: {'Accuracy': 0.9707370400428772, 'Precision': 0.8551360964775085, 'Recall': 0.75, 'F-Score': 0.7991248369216919, 'True Positives': 2922.0, 'True Negatives': 45809.0, 'False Positives': 495.0, 'False Negatives': 974.0, 'Average-Loss': 0.11962862660685383}
+Epoch: 57, Average Loss: 0.0027382243424654007
+Validation Metrics: {'Accuracy': 0.9705179333686829, 'Precision': 0.8640747666358948, 'Recall': 0.7358829379081726, 'F-Score': 0.7948433756828308, 'True Positives': 2867.0, 'True Negatives': 45853.0, 'False Positives': 451.0, 'False Negatives': 1029.0, 'Average-Loss': 0.1187554469621514}
+Epoch: 58, Average Loss: 0.007025252562016249
+Validation Metrics: {'Accuracy': 0.9706773161888123, 'Precision': 0.8630916476249695, 'Recall': 0.7394763827323914, 'F-Score': 0.796516478061676, 'True Positives': 2881.0, 'True Negatives': 45847.0, 'False Positives': 457.0, 'False Negatives': 1015.0, 'Average-Loss': 0.12066936112969995}
+Epoch: 59, Average Loss: 0.004920377396047115
+Validation Metrics: {'Accuracy': 0.9691234827041626, 'Precision': 0.8480712175369263, 'Recall': 0.7335729002952576, 'F-Score': 0.7866776585578918, 'True Positives': 2858.0, 'True Negatives': 45792.0, 'False Positives': 512.0, 'False Negatives': 1038.0, 'Average-Loss': 0.1261520446534176}
+Epoch: 60, Average Loss: 0.003659953363239765
+Validation Metrics: {'Accuracy': 0.9708765149116516, 'Precision': 0.8581518530845642, 'Recall': 0.7484599351882935, 'F-Score': 0.7995612621307373, 'True Positives': 2916.0, 'True Negatives': 45822.0, 'False Positives': 482.0, 'False Negatives': 980.0, 'Average-Loss': 0.12143368664015812}
+Epoch: 61, Average Loss: 0.00344645231962204
+Validation Metrics: {'Accuracy': 0.9708167314529419, 'Precision': 0.8666666746139526, 'Recall': 0.7374230027198792, 'F-Score': 0.7968381643295288, 'True Positives': 2873.0, 'True Negatives': 45862.0, 'False Positives': 442.0, 'False Negatives': 1023.0, 'Average-Loss': 0.11971619138679657}
+Epoch: 62, Average Loss: 0.005825633183121681
+Validation Metrics: {'Accuracy': 0.9705777168273926, 'Precision': 0.8622341752052307, 'Recall': 0.7389630675315857, 'F-Score': 0.7958534955978394, 'True Positives': 2879.0, 'True Negatives': 45844.0, 'False Positives': 460.0, 'False Negatives': 1017.0, 'Average-Loss': 0.12341624712089143}
+Epoch: 63, Average Loss: 0.00170455826446414
+Validation Metrics: {'Accuracy': 0.9704581499099731, 'Precision': 0.8589705228805542, 'Recall': 0.7410164475440979, 'F-Score': 0.7956455945968628, 'True Positives': 2887.0, 'True Negatives': 45830.0, 'False Positives': 474.0, 'False Negatives': 1009.0, 'Average-Loss': 0.12141396571915464}
+Epoch: 64, Average Loss: 0.0014544004807248712
+Validation Metrics: {'Accuracy': 0.9706972241401672, 'Precision': 0.8741129040718079, 'Recall': 0.7271560430526733, 'F-Score': 0.7938910126686096, 'True Positives': 2833.0, 'True Negatives': 45896.0, 'False Positives': 408.0, 'False Negatives': 1063.0, 'Average-Loss': 0.12179085172979955}
+Epoch: 65, Average Loss: 0.0020960206165909767
+Validation Metrics: {'Accuracy': 0.9706573486328125, 'Precision': 0.8740351796150208, 'Recall': 0.7266427278518677, 'F-Score': 0.7935529351234436, 'True Positives': 2831.0, 'True Negatives': 45896.0, 'False Positives': 408.0, 'False Negatives': 1065.0, 'Average-Loss': 0.12225543626276146}
+Epoch: 66, Average Loss: 0.0034855324774980545
+Validation Metrics: {'Accuracy': 0.9702788591384888, 'Precision': 0.868034303188324, 'Recall': 0.7276694178581238, 'F-Score': 0.7916783094406128, 'True Positives': 2835.0, 'True Negatives': 45873.0, 'False Positives': 431.0, 'False Negatives': 1061.0, 'Average-Loss': 0.12254474533506599}
+Epoch: 67, Average Loss: 0.00214141933247447
+Validation Metrics: {'Accuracy': 0.9705577492713928, 'Precision': 0.864595890045166, 'Recall': 0.7358829379081726, 'F-Score': 0.7950637936592102, 'True Positives': 2867.0, 'True Negatives': 45855.0, 'False Positives': 449.0, 'False Negatives': 1029.0, 'Average-Loss': 0.12305385392025647}
+Epoch: 68, Average Loss: 0.0026663048192858696
+Validation Metrics: {'Accuracy': 0.9703585505485535, 'Precision': 0.8564239144325256, 'Recall': 0.7425564527511597, 'F-Score': 0.7954357862472534, 'True Positives': 2893.0, 'True Negatives': 45819.0, 'False Positives': 485.0, 'False Negatives': 1003.0, 'Average-Loss': 0.12471754826397535}
+Epoch: 69, Average Loss: 0.0015128356171771884
+Validation Metrics: {'Accuracy': 0.9702788591384888, 'Precision': 0.8535293936729431, 'Recall': 0.7448665499687195, 'F-Score': 0.7955043911933899, 'True Positives': 2902.0, 'True Negatives': 45806.0, 'False Positives': 498.0, 'False Negatives': 994.0, 'Average-Loss': 0.12252226445779382}
+Epoch: 70, Average Loss: 0.0015634226147085428
+Validation Metrics: {'Accuracy': 0.9707171320915222, 'Precision': 0.8702686429023743, 'Recall': 0.7317761778831482, 'F-Score': 0.795036256313324, 'True Positives': 2851.0, 'True Negatives': 45879.0, 'False Positives': 425.0, 'False Negatives': 1045.0, 'Average-Loss': 0.12224142978865787}
+Epoch: 71, Average Loss: 0.001328987185843289
+Validation Metrics: {'Accuracy': 0.9704980254173279, 'Precision': 0.8622862100601196, 'Recall': 0.737679660320282, 'F-Score': 0.795130729675293, 'True Positives': 2874.0, 'True Negatives': 45845.0, 'False Positives': 459.0, 'False Negatives': 1022.0, 'Average-Loss': 0.1224591745323394}
+Epoch: 72, Average Loss: 0.0011398425558581948
+Validation Metrics: {'Accuracy': 0.971055805683136, 'Precision': 0.8718417286872864, 'Recall': 0.7351129651069641, 'F-Score': 0.7976604700088501, 'True Positives': 2864.0, 'True Negatives': 45883.0, 'False Positives': 421.0, 'False Negatives': 1032.0, 'Average-Loss': 0.1225622169525025}
+Epoch: 73, Average Loss: 0.0010877709137275815
+Validation Metrics: {'Accuracy': 0.9707968235015869, 'Precision': 0.8713325262069702, 'Recall': 0.7317761778831482, 'F-Score': 0.7954798936843872, 'True Positives': 2851.0, 'True Negatives': 45883.0, 'False Positives': 421.0, 'False Negatives': 1045.0, 'Average-Loss': 0.12318360834007719}
+Epoch: 74, Average Loss: 0.0013101641088724136
+Validation Metrics: {'Accuracy': 0.9710159301757812, 'Precision': 0.8749616146087646, 'Recall': 0.7310061454772949, 'F-Score': 0.7965319752693176, 'True Positives': 2848.0, 'True Negatives': 45897.0, 'False Positives': 407.0, 'False Negatives': 1048.0, 'Average-Loss': 0.12346665583758715}
+Epoch: 75, Average Loss: 0.002935312921181321
+Validation Metrics: {'Accuracy': 0.9704581499099731, 'Precision': 0.8670520186424255, 'Recall': 0.7315195202827454, 'F-Score': 0.7935402989387512, 'True Positives': 2850.0, 'True Negatives': 45867.0, 'False Positives': 437.0, 'False Negatives': 1046.0, 'Average-Loss': 0.12603046067682394}
+Epoch: 76, Average Loss: 0.0022488771937787533
+Validation Metrics: {'Accuracy': 0.9706573486328125, 'Precision': 0.8685731887817383, 'Recall': 0.7328028678894043, 'F-Score': 0.79493248462677, 'True Positives': 2855.0, 'True Negatives': 45872.0, 'False Positives': 432.0, 'False Negatives': 1041.0, 'Average-Loss': 0.12528934554749752}
+Epoch: 77, Average Loss: 0.003134653205052018
+Validation Metrics: {'Accuracy': 0.9708167314529419, 'Precision': 0.867776095867157, 'Recall': 0.7361396551132202, 'F-Score': 0.7965560555458069, 'True Positives': 2868.0, 'True Negatives': 45867.0, 'False Positives': 437.0, 'False Negatives': 1028.0, 'Average-Loss': 0.12530512714765937}
+Epoch: 78, Average Loss: 0.0038456679321825504
+Validation Metrics: {'Accuracy': 0.9702788591384888, 'Precision': 0.8609609603881836, 'Recall': 0.7358829379081726, 'F-Score': 0.793523371219635, 'True Positives': 2867.0, 'True Negatives': 45841.0, 'False Positives': 463.0, 'False Negatives': 1029.0, 'Average-Loss': 0.12651347734063745}
+Epoch: 79, Average Loss: 0.004105147439986467
+Validation Metrics: {'Accuracy': 0.969302773475647, 'Precision': 0.8448023200035095, 'Recall': 0.7405030727386475, 'F-Score': 0.7892217040061951, 'True Positives': 2885.0, 'True Negatives': 45774.0, 'False Positives': 530.0, 'False Negatives': 1011.0, 'Average-Loss': 0.13115077531670194}
+Epoch: 80, Average Loss: 0.0026638335548341274
+Validation Metrics: {'Accuracy': 0.9704382419586182, 'Precision': 0.854914665222168, 'Recall': 0.745636522769928, 'F-Score': 0.7965450882911682, 'True Positives': 2905.0, 'True Negatives': 45811.0, 'False Positives': 493.0, 'False Negatives': 991.0, 'Average-Loss': 0.13070507277530502}
+Epoch: 81, Average Loss: 0.0012160203186795115
+Validation Metrics: {'Accuracy': 0.9706773161888123, 'Precision': 0.864182710647583, 'Recall': 0.7381930351257324, 'F-Score': 0.7962347865104675, 'True Positives': 2876.0, 'True Negatives': 45852.0, 'False Positives': 452.0, 'False Negatives': 1020.0, 'Average-Loss': 0.12735300254061876}
+Epoch: 82, Average Loss: 0.001262506702914834
+Validation Metrics: {'Accuracy': 0.9709960222244263, 'Precision': 0.8648325204849243, 'Recall': 0.7422997951507568, 'F-Score': 0.798895001411438, 'True Positives': 2892.0, 'True Negatives': 45852.0, 'False Positives': 452.0, 'False Negatives': 1004.0, 'Average-Loss': 0.12674278472049302}
+Epoch: 83, Average Loss: 0.001502815866842866
+Validation Metrics: {'Accuracy': 0.9711554050445557, 'Precision': 0.8677884340286255, 'Recall': 0.7412731051445007, 'F-Score': 0.7995570302009583, 'True Positives': 2888.0, 'True Negatives': 45864.0, 'False Positives': 440.0, 'False Negatives': 1008.0, 'Average-Loss': 0.12684194861180279}
+Epoch: 84, Average Loss: 0.0011081366101279855
+Validation Metrics: {'Accuracy': 0.9709362387657166, 'Precision': 0.8748077750205994, 'Recall': 0.7299794554710388, 'F-Score': 0.7958583831787109, 'True Positives': 2844.0, 'True Negatives': 45897.0, 'False Positives': 407.0, 'False Negatives': 1052.0, 'Average-Loss': 0.1262385638111616}
+Epoch: 85, Average Loss: 0.0009169923723675311
+Validation Metrics: {'Accuracy': 0.9707370400428772, 'Precision': 0.8645238876342773, 'Recall': 0.7387063503265381, 'F-Score': 0.7966781854629517, 'True Positives': 2878.0, 'True Negatives': 45853.0, 'False Positives': 451.0, 'False Negatives': 1018.0, 'Average-Loss': 0.1285116127287724}
+Epoch: 86, Average Loss: 0.0008565122843720019
+Validation Metrics: {'Accuracy': 0.9706773161888123, 'Precision': 0.8657211661338806, 'Recall': 0.736396312713623, 'F-Score': 0.7958391308784485, 'True Positives': 2869.0, 'True Negatives': 45859.0, 'False Positives': 445.0, 'False Negatives': 1027.0, 'Average-Loss': 0.1292944190036728}
+Epoch: 87, Average Loss: 0.0009183746296912432
+Validation Metrics: {'Accuracy': 0.9708167314529419, 'Precision': 0.8780715465545654, 'Recall': 0.7245893478393555, 'F-Score': 0.79398113489151, 'True Positives': 2823.0, 'True Negatives': 45912.0, 'False Positives': 392.0, 'False Negatives': 1073.0, 'Average-Loss': 0.12799447960112675}
+Epoch: 88, Average Loss: 0.0008978571859188378
+Validation Metrics: {'Accuracy': 0.9705976247787476, 'Precision': 0.8691275119781494, 'Recall': 0.7312628626823425, 'F-Score': 0.7942570447921753, 'True Positives': 2849.0, 'True Negatives': 45875.0, 'False Positives': 429.0, 'False Negatives': 1047.0, 'Average-Loss': 0.1295082244265127}
+Epoch: 89, Average Loss: 0.0009742566617205739
+Validation Metrics: {'Accuracy': 0.9706175327301025, 'Precision': 0.870750367641449, 'Recall': 0.729722797870636, 'F-Score': 0.7940231561660767, 'True Positives': 2843.0, 'True Negatives': 45882.0, 'False Positives': 422.0, 'False Negatives': 1053.0, 'Average-Loss': 0.12977275468438745}
+Epoch: 90, Average Loss: 0.001731022377498448
+Validation Metrics: {'Accuracy': 0.9706972241401672, 'Precision': 0.873191773891449, 'Recall': 0.7281827330589294, 'F-Score': 0.7941217422485352, 'True Positives': 2837.0, 'True Negatives': 45892.0, 'False Positives': 412.0, 'False Negatives': 1059.0, 'Average-Loss': 0.12864159815814866}
+Epoch: 91, Average Loss: 0.00207137200050056
+Validation Metrics: {'Accuracy': 0.9695219397544861, 'Precision': 0.8595744967460632, 'Recall': 0.7258726954460144, 'F-Score': 0.787086009979248, 'True Positives': 2828.0, 'True Negatives': 45842.0, 'False Positives': 462.0, 'False Negatives': 1068.0, 'Average-Loss': 0.13063771525227216}
+Epoch: 92, Average Loss: 0.0016529399435967207
+Validation Metrics: {'Accuracy': 0.9705577492713928, 'Precision': 0.8637183904647827, 'Recall': 0.7369096279144287, 'F-Score': 0.7952908873558044, 'True Positives': 2871.0, 'True Negatives': 45851.0, 'False Positives': 453.0, 'False Negatives': 1025.0, 'Average-Loss': 0.12970782884088644}
+Epoch: 93, Average Loss: 0.0021051012445241213
+Validation Metrics: {'Accuracy': 0.9700000286102295, 'Precision': 0.8527154922485352, 'Recall': 0.7415297627449036, 'F-Score': 0.7932454943656921, 'True Positives': 2889.0, 'True Negatives': 45805.0, 'False Positives': 499.0, 'False Negatives': 1007.0, 'Average-Loss': 0.13330219162412849}
+Epoch: 94, Average Loss: 0.0019905453082174063
+Validation Metrics: {'Accuracy': 0.9700000286102295, 'Precision': 0.8603739738464355, 'Recall': 0.7322895526885986, 'F-Score': 0.7911813855171204, 'True Positives': 2853.0, 'True Negatives': 45841.0, 'False Positives': 463.0, 'False Negatives': 1043.0, 'Average-Loss': 0.1332434544050361}
+Epoch: 95, Average Loss: 0.0021911596413701773
+Validation Metrics: {'Accuracy': 0.9697808623313904, 'Precision': 0.8537020683288574, 'Recall': 0.7369096279144287, 'F-Score': 0.7910180687904358, 'True Positives': 2871.0, 'True Negatives': 45812.0, 'False Positives': 492.0, 'False Negatives': 1025.0, 'Average-Loss': 0.13410322333712027}
+Epoch: 96, Average Loss: 0.0016252518398687243
+Validation Metrics: {'Accuracy': 0.9698207378387451, 'Precision': 0.8496329188346863, 'Recall': 0.7425564527511597, 'F-Score': 0.7924941778182983, 'True Positives': 2893.0, 'True Negatives': 45792.0, 'False Positives': 512.0, 'False Negatives': 1003.0, 'Average-Loss': 0.1361067813706113}
+Epoch: 97, Average Loss: 0.0022488078102469444
+Validation Metrics: {'Accuracy': 0.969561755657196, 'Precision': 0.8498817682266235, 'Recall': 0.7381930351257324, 'F-Score': 0.7901098728179932, 'True Positives': 2876.0, 'True Negatives': 45796.0, 'False Positives': 508.0, 'False Negatives': 1020.0, 'Average-Loss': 0.13367228109048182}
+Epoch: 98, Average Loss: 0.0010116839548572898
+Validation Metrics: {'Accuracy': 0.9697410464286804, 'Precision': 0.851523220539093, 'Recall': 0.7389630675315857, 'F-Score': 0.7912601232528687, 'True Positives': 2879.0, 'True Negatives': 45802.0, 'False Positives': 502.0, 'False Negatives': 1017.0, 'Average-Loss': 0.13427809757065487}
+Epoch: 99, Average Loss: 0.0008663461776450276
+Validation Metrics: {'Accuracy': 0.9707171320915222, 'Precision': 0.8627392053604126, 'Recall': 0.7405030727386475, 'F-Score': 0.7969613075256348, 'True Positives': 2885.0, 'True Negatives': 45845.0, 'False Positives': 459.0, 'False Negatives': 1011.0, 'Average-Loss': 0.13283094428924924}
+Epoch: 100, Average Loss: 0.0007882494246587157
+Validation Metrics: {'Accuracy': 0.9705577492713928, 'Precision': 0.8661417365074158, 'Recall': 0.7340862154960632, 'F-Score': 0.7946651577949524, 'True Positives': 2860.0, 'True Negatives': 45862.0, 'False Positives': 442.0, 'False Negatives': 1036.0, 'Average-Loss': 0.13343426829790214}
+Epoch: 101, Average Loss: 0.0008936090162023902
+Validation Metrics: {'Accuracy': 0.9706773161888123, 'Precision': 0.8674954771995544, 'Recall': 0.7343429327011108, 'F-Score': 0.7953850626945496, 'True Positives': 2861.0, 'True Negatives': 45867.0, 'False Positives': 437.0, 'False Negatives': 1035.0, 'Average-Loss': 0.13371487195748258}
+Epoch: 102, Average Loss: 0.0011620132718235254
+Validation Metrics: {'Accuracy': 0.9701992273330688, 'Precision': 0.8616636395454407, 'Recall': 0.7338295578956604, 'F-Score': 0.7926254272460938, 'True Positives': 2859.0, 'True Negatives': 45845.0, 'False Positives': 459.0, 'False Negatives': 1037.0, 'Average-Loss': 0.13469329469232444}
+Epoch: 103, Average Loss: 0.0017725329380482435
+Validation Metrics: {'Accuracy': 0.9699601531028748, 'Precision': 0.8466898798942566, 'Recall': 0.7484599351882935, 'F-Score': 0.7945504188537598, 'True Positives': 2916.0, 'True Negatives': 45776.0, 'False Positives': 528.0, 'False Negatives': 980.0, 'Average-Loss': 0.13859045021087524}
+Epoch: 104, Average Loss: 0.0013529909774661064
+Validation Metrics: {'Accuracy': 0.9700996279716492, 'Precision': 0.8550251722335815, 'Recall': 0.7402464151382446, 'F-Score': 0.7935066819190979, 'True Positives': 2884.0, 'True Negatives': 45815.0, 'False Positives': 489.0, 'False Negatives': 1012.0, 'Average-Loss': 0.13551443639504482}
+Epoch: 105, Average Loss: 0.0007810093811713159
+Validation Metrics: {'Accuracy': 0.9702589511871338, 'Precision': 0.8604860305786133, 'Recall': 0.7361396551132202, 'F-Score': 0.7934707403182983, 'True Positives': 2868.0, 'True Negatives': 45839.0, 'False Positives': 465.0, 'False Negatives': 1028.0, 'Average-Loss': 0.13589634382392307}
+Epoch: 106, Average Loss: 0.0008895777282305062
+Validation Metrics: {'Accuracy': 0.9701792597770691, 'Precision': 0.8609690070152283, 'Recall': 0.7343429327011108, 'F-Score': 0.7926305532455444, 'True Positives': 2861.0, 'True Negatives': 45842.0, 'False Positives': 462.0, 'False Negatives': 1035.0, 'Average-Loss': 0.13647285856573704}
+Epoch: 107, Average Loss: 0.0010396364377811551
+Validation Metrics: {'Accuracy': 0.969601571559906, 'Precision': 0.8497638702392578, 'Recall': 0.7389630675315857, 'F-Score': 0.790499746799469, 'True Positives': 2879.0, 'True Negatives': 45795.0, 'False Positives': 509.0, 'False Negatives': 1017.0, 'Average-Loss': 0.13993236040214144}
+Epoch: 108, Average Loss: 0.000692293921019882
+Validation Metrics: {'Accuracy': 0.9700796604156494, 'Precision': 0.8598917722702026, 'Recall': 0.7340862154960632, 'F-Score': 0.7920243740081787, 'True Positives': 2860.0, 'True Negatives': 45838.0, 'False Positives': 466.0, 'False Negatives': 1036.0, 'Average-Loss': 0.1367679064017368}
+Epoch: 109, Average Loss: 0.0006548121455125511
+Validation Metrics: {'Accuracy': 0.9701992273330688, 'Precision': 0.8601440787315369, 'Recall': 0.7356262803077698, 'F-Score': 0.7930271029472351, 'True Positives': 2866.0, 'True Negatives': 45838.0, 'False Positives': 466.0, 'False Negatives': 1030.0, 'Average-Loss': 0.13695244656141062}
+Epoch: 110, Average Loss: 0.0005855390918441117
+Validation Metrics: {'Accuracy': 0.9705577492713928, 'Precision': 0.8761667609214783, 'Recall': 0.7227926254272461, 'F-Score': 0.7921237945556641, 'True Positives': 2816.0, 'True Negatives': 45906.0, 'False Positives': 398.0, 'False Negatives': 1080.0, 'Average-Loss': 0.13581090676357072}
+Epoch: 111, Average Loss: 0.000573994591832161
+Validation Metrics: {'Accuracy': 0.9702191352844238, 'Precision': 0.8706390857696533, 'Recall': 0.7238193154335022, 'F-Score': 0.7904695272445679, 'True Positives': 2820.0, 'True Negatives': 45885.0, 'False Positives': 419.0, 'False Negatives': 1076.0, 'Average-Loss': 0.13728450455988545}
+Epoch: 112, Average Loss: 0.0007807968067936599
+Validation Metrics: {'Accuracy': 0.9705976247787476, 'Precision': 0.8732264041900635, 'Recall': 0.7266427278518677, 'F-Score': 0.7932193875312805, 'True Positives': 2831.0, 'True Negatives': 45893.0, 'False Positives': 411.0, 'False Negatives': 1065.0, 'Average-Loss': 0.13761843495159984}
+Epoch: 113, Average Loss: 0.0012930800439789891
+Validation Metrics: {'Accuracy': 0.9702988266944885, 'Precision': 0.8680747151374817, 'Recall': 0.7279260754585266, 'F-Score': 0.7918469905853271, 'True Positives': 2836.0, 'True Negatives': 45873.0, 'False Positives': 431.0, 'False Negatives': 1060.0, 'Average-Loss': 0.13819411076397534}
+Epoch: 114, Average Loss: 0.001852763700298965
+Validation Metrics: {'Accuracy': 0.9693625569343567, 'Precision': 0.8451405167579651, 'Recall': 0.7410164475440979, 'F-Score': 0.7896608114242554, 'True Positives': 2887.0, 'True Negatives': 45775.0, 'False Positives': 529.0, 'False Negatives': 1009.0, 'Average-Loss': 0.14127630104581673}
+Epoch: 115, Average Loss: 0.0018918021814897656
+Validation Metrics: {'Accuracy': 0.9702788591384888, 'Precision': 0.8571004271507263, 'Recall': 0.7405030727386475, 'F-Score': 0.7945469617843628, 'True Positives': 2885.0, 'True Negatives': 45823.0, 'False Positives': 481.0, 'False Negatives': 1011.0, 'Average-Loss': 0.14119845082560384}
+Epoch: 116, Average Loss: 0.001106412848457694
+Validation Metrics: {'Accuracy': 0.9701394438743591, 'Precision': 0.8585103154182434, 'Recall': 0.7366529703140259, 'F-Score': 0.7929272055625916, 'True Positives': 2870.0, 'True Negatives': 45831.0, 'False Positives': 473.0, 'False Negatives': 1026.0, 'Average-Loss': 0.13895988312375498}
+Epoch: 117, Average Loss: 0.0006493948749266565
+Validation Metrics: {'Accuracy': 0.9705777168273926, 'Precision': 0.8615844249725342, 'Recall': 0.7397330403327942, 'F-Score': 0.7960226535797119, 'True Positives': 2882.0, 'True Negatives': 45841.0, 'False Positives': 463.0, 'False Negatives': 1014.0, 'Average-Loss': 0.14064632582949452}
+Epoch: 118, Average Loss: 0.00070550775853917
+Validation Metrics: {'Accuracy': 0.9702788591384888, 'Precision': 0.8651275634765625, 'Recall': 0.7310061454772949, 'F-Score': 0.7924318313598633, 'True Positives': 2848.0, 'True Negatives': 45860.0, 'False Positives': 444.0, 'False Negatives': 1048.0, 'Average-Loss': 0.14011229252910234}
+Epoch: 119, Average Loss: 0.0013842616463080049
+Validation Metrics: {'Accuracy': 0.9701195359230042, 'Precision': 0.8625907897949219, 'Recall': 0.7315195202827454, 'F-Score': 0.7916666865348816, 'True Positives': 2850.0, 'True Negatives': 45850.0, 'False Positives': 454.0, 'False Negatives': 1046.0, 'Average-Loss': 0.1405258117918949}
+Epoch: 120, Average Loss: 0.0039323121309280396
+Validation Metrics: {'Accuracy': 0.9696613550186157, 'Precision': 0.8375533223152161, 'Recall': 0.755646824836731, 'F-Score': 0.7944946885108948, 'True Positives': 2944.0, 'True Negatives': 45733.0, 'False Positives': 571.0, 'False Negatives': 952.0, 'Average-Loss': 0.14238906191639691}
+Epoch: 121, Average Loss: 0.004398783668875694
+Validation Metrics: {'Accuracy': 0.9697211384773254, 'Precision': 0.8407917618751526, 'Recall': 0.752310037612915, 'F-Score': 0.7940937280654907, 'True Positives': 2931.0, 'True Negatives': 45749.0, 'False Positives': 555.0, 'False Negatives': 965.0, 'Average-Loss': 0.14112034527904008}
+Epoch: 122, Average Loss: 0.001897209556773305
+Validation Metrics: {'Accuracy': 0.9694023728370667, 'Precision': 0.849526047706604, 'Recall': 0.7361396551132202, 'F-Score': 0.7887789011001587, 'True Positives': 2868.0, 'True Negatives': 45796.0, 'False Positives': 508.0, 'False Negatives': 1028.0, 'Average-Loss': 0.14057240277172559}
+Epoch: 123, Average Loss: 0.0013770491350442171
+Validation Metrics: {'Accuracy': 0.9703386425971985, 'Precision': 0.8481342196464539, 'Recall': 0.7525667548179626, 'F-Score': 0.7974976301193237, 'True Positives': 2932.0, 'True Negatives': 45779.0, 'False Positives': 525.0, 'False Negatives': 964.0, 'Average-Loss': 0.14015991697273406}
+Epoch: 124, Average Loss: 0.000961839861702174
+Validation Metrics: {'Accuracy': 0.9704980254173279, 'Precision': 0.8550426363945007, 'Recall': 0.7464065551757812, 'F-Score': 0.7970398664474487, 'True Positives': 2908.0, 'True Negatives': 45811.0, 'False Positives': 493.0, 'False Negatives': 988.0, 'Average-Loss': 0.13974221522114666}
+Epoch: 125, Average Loss: 0.0006815511151216924
+Validation Metrics: {'Accuracy': 0.9705179333686829, 'Precision': 0.8542522192001343, 'Recall': 0.747689962387085, 'F-Score': 0.7974267601966858, 'True Positives': 2913.0, 'True Negatives': 45807.0, 'False Positives': 497.0, 'False Negatives': 983.0, 'Average-Loss': 0.13958368187406622}
+Epoch: 126, Average Loss: 0.0005558055127039552
+Validation Metrics: {'Accuracy': 0.9708964228630066, 'Precision': 0.8626750111579895, 'Recall': 0.7433264851570129, 'F-Score': 0.7985661029815674, 'True Positives': 2896.0, 'True Negatives': 45843.0, 'False Positives': 461.0, 'False Negatives': 1000.0, 'Average-Loss': 0.14072669283802292}
+Epoch: 127, Average Loss: 0.0005651647225022316
+Validation Metrics: {'Accuracy': 0.9707968235015869, 'Precision': 0.8745375871658325, 'Recall': 0.7281827330589294, 'F-Score': 0.7946778535842896, 'True Positives': 2837.0, 'True Negatives': 45897.0, 'False Positives': 407.0, 'False Negatives': 1059.0, 'Average-Loss': 0.13947045071666458}
+Epoch: 128, Average Loss: 0.0005211748648434877
+Validation Metrics: {'Accuracy': 0.9706972241401672, 'Precision': 0.8666465282440186, 'Recall': 0.7356262803077698, 'F-Score': 0.7957795262336731, 'True Positives': 2866.0, 'True Negatives': 45863.0, 'False Positives': 441.0, 'False Negatives': 1030.0, 'Average-Loss': 0.1394656603079868}
+Epoch: 129, Average Loss: 0.0005584519822150469
+Validation Metrics: {'Accuracy': 0.9706972241401672, 'Precision': 0.8640047907829285, 'Recall': 0.7387063503265381, 'F-Score': 0.7964577078819275, 'True Positives': 2878.0, 'True Negatives': 45851.0, 'False Positives': 453.0, 'False Negatives': 1018.0, 'Average-Loss': 0.14118021322911478}
+Epoch: 130, Average Loss: 0.0005360723589546978
+Validation Metrics: {'Accuracy': 0.9705777168273926, 'Precision': 0.8635407090187073, 'Recall': 0.7374230027198792, 'F-Score': 0.7955143451690674, 'True Positives': 2873.0, 'True Negatives': 45850.0, 'False Positives': 454.0, 'False Negatives': 1023.0, 'Average-Loss': 0.14096127696246266}
+Epoch: 131, Average Loss: 0.00048599124420434237
+Validation Metrics: {'Accuracy': 0.9706374406814575, 'Precision': 0.8714724183082581, 'Recall': 0.7292094230651855, 'F-Score': 0.7940189838409424, 'True Positives': 2841.0, 'True Negatives': 45885.0, 'False Positives': 419.0, 'False Negatives': 1055.0, 'Average-Loss': 0.14265616975457546}
+Epoch: 132, Average Loss: 0.0017451340099796653
+Validation Metrics: {'Accuracy': 0.9706374406814575, 'Precision': 0.8623578548431396, 'Recall': 0.7397330403327942, 'F-Score': 0.7963525652885437, 'True Positives': 2882.0, 'True Negatives': 45844.0, 'False Positives': 460.0, 'False Negatives': 1014.0, 'Average-Loss': 0.14403370405098356}
+Epoch: 133, Average Loss: 0.002393446397036314
+Validation Metrics: {'Accuracy': 0.9696215391159058, 'Precision': 0.8516760468482971, 'Recall': 0.7369096279144287, 'F-Score': 0.7901472449302673, 'True Positives': 2871.0, 'True Negatives': 45804.0, 'False Positives': 500.0, 'False Negatives': 1025.0, 'Average-Loss': 0.14395427323907495}
+Epoch: 134, Average Loss: 0.00106723397038877
+Validation Metrics: {'Accuracy': 0.9703585505485535, 'Precision': 0.8611277937889099, 'Recall': 0.7369096279144287, 'F-Score': 0.7941908836364746, 'True Positives': 2871.0, 'True Negatives': 45841.0, 'False Positives': 463.0, 'False Negatives': 1025.0, 'Average-Loss': 0.14152147513461777}
+Epoch: 135, Average Loss: 0.0016220023389905691
+Validation Metrics: {'Accuracy': 0.9703984260559082, 'Precision': 0.8519275784492493, 'Recall': 0.7487166523933411, 'F-Score': 0.7969945073127747, 'True Positives': 2917.0, 'True Negatives': 45797.0, 'False Positives': 507.0, 'False Negatives': 979.0, 'Average-Loss': 0.14572970325728338}
+Epoch: 136, Average Loss: 0.0020551334600895643
+Validation Metrics: {'Accuracy': 0.9693824648857117, 'Precision': 0.8304847478866577, 'Recall': 0.7607802748680115, 'F-Score': 0.7941058278083801, 'True Positives': 2964.0, 'True Negatives': 45699.0, 'False Positives': 605.0, 'False Negatives': 932.0, 'Average-Loss': 0.1542934949654507}
+Epoch: 137, Average Loss: 0.0008304875227622688
+Validation Metrics: {'Accuracy': 0.9703984260559082, 'Precision': 0.8607784509658813, 'Recall': 0.7379363179206848, 'F-Score': 0.79463791847229, 'True Positives': 2875.0, 'True Negatives': 45839.0, 'False Positives': 465.0, 'False Negatives': 1021.0, 'Average-Loss': 0.14275118763228337}
+Epoch: 138, Average Loss: 0.001756014535203576
+Validation Metrics: {'Accuracy': 0.9708366394042969, 'Precision': 0.8591257929801941, 'Recall': 0.7466632723808289, 'F-Score': 0.7989563345909119, 'True Positives': 2909.0, 'True Negatives': 45827.0, 'False Positives': 477.0, 'False Negatives': 987.0, 'Average-Loss': 0.1436410972321651}
+Epoch: 139, Average Loss: 0.001195295830257237
+Validation Metrics: {'Accuracy': 0.9705378413200378, 'Precision': 0.8617180585861206, 'Recall': 0.7389630675315857, 'F-Score': 0.7956335544586182, 'True Positives': 2879.0, 'True Negatives': 45842.0, 'False Positives': 462.0, 'False Negatives': 1017.0, 'Average-Loss': 0.14381352762777017}
+Epoch: 140, Average Loss: 0.0006436861003749073
+Validation Metrics: {'Accuracy': 0.9700597524642944, 'Precision': 0.85057133436203, 'Recall': 0.7451232075691223, 'F-Score': 0.7943631410598755, 'True Positives': 2903.0, 'True Negatives': 45794.0, 'False Positives': 510.0, 'False Negatives': 993.0, 'Average-Loss': 0.14686710919991908}
+Epoch: 141, Average Loss: 0.0017654933035373688
+Validation Metrics: {'Accuracy': 0.9704581499099731, 'Precision': 0.8518518805503845, 'Recall': 0.7497433423995972, 'F-Score': 0.7975426912307739, 'True Positives': 2921.0, 'True Negatives': 45796.0, 'False Positives': 508.0, 'False Negatives': 975.0, 'Average-Loss': 0.14580977846426793}
+Epoch: 142, Average Loss: 0.004355547949671745
+Validation Metrics: {'Accuracy': 0.9698007702827454, 'Precision': 0.8489736318588257, 'Recall': 0.7430698275566101, 'F-Score': 0.792499303817749, 'True Positives': 2895.0, 'True Negatives': 45789.0, 'False Positives': 515.0, 'False Negatives': 1001.0, 'Average-Loss': 0.14592073600130728}
+Epoch: 143, Average Loss: 0.003090884303674102
+Validation Metrics: {'Accuracy': 0.9691234827041626, 'Precision': 0.8315432667732239, 'Recall': 0.7551334500312805, 'F-Score': 0.7914985418319702, 'True Positives': 2942.0, 'True Negatives': 45708.0, 'False Positives': 596.0, 'False Negatives': 954.0, 'Average-Loss': 0.15019855879217506}
+Epoch: 144, Average Loss: 0.0008926690206862986
+Validation Metrics: {'Accuracy': 0.9702788591384888, 'Precision': 0.8496218919754028, 'Recall': 0.7497433423995972, 'F-Score': 0.7965639233589172, 'True Positives': 2921.0, 'True Negatives': 45787.0, 'False Positives': 517.0, 'False Negatives': 975.0, 'Average-Loss': 0.14345977904787102}
+Epoch: 145, Average Loss: 0.000664723280351609
+Validation Metrics: {'Accuracy': 0.9700000286102295, 'Precision': 0.8488032817840576, 'Recall': 0.7464065551757812, 'F-Score': 0.7943184971809387, 'True Positives': 2908.0, 'True Negatives': 45786.0, 'False Positives': 518.0, 'False Negatives': 988.0, 'Average-Loss': 0.1439463945973917}
+Epoch: 146, Average Loss: 0.0006562299095094204
+Validation Metrics: {'Accuracy': 0.9703187346458435, 'Precision': 0.8567615747451782, 'Recall': 0.7415297627449036, 'F-Score': 0.7949917316436768, 'True Positives': 2889.0, 'True Negatives': 45821.0, 'False Positives': 483.0, 'False Negatives': 1007.0, 'Average-Loss': 0.14365882417595244}
+Epoch: 147, Average Loss: 0.0005420308443717659
+Validation Metrics: {'Accuracy': 0.9702390432357788, 'Precision': 0.860444188117981, 'Recall': 0.7358829379081726, 'F-Score': 0.7933038473129272, 'True Positives': 2867.0, 'True Negatives': 45839.0, 'False Positives': 465.0, 'False Negatives': 1029.0, 'Average-Loss': 0.1433258056640625}
+Epoch: 148, Average Loss: 0.0009262775420211256
+Validation Metrics: {'Accuracy': 0.9703187346458435, 'Precision': 0.8614783883094788, 'Recall': 0.7358829379081726, 'F-Score': 0.7937430739402771, 'True Positives': 2867.0, 'True Negatives': 45843.0, 'False Positives': 461.0, 'False Negatives': 1029.0, 'Average-Loss': 0.14476375503844}
+Epoch: 149, Average Loss: 0.002502068178728223
+Validation Metrics: {'Accuracy': 0.9695219397544861, 'Precision': 0.8378069400787354, 'Recall': 0.7530800700187683, 'F-Score': 0.7931873202323914, 'True Positives': 2934.0, 'True Negatives': 45736.0, 'False Positives': 568.0, 'False Negatives': 962.0, 'Average-Loss': 0.1481335522169136}
+Epoch: 150, Average Loss: 0.002080942038446665
+Validation Metrics: {'Accuracy': 0.9695418477058411, 'Precision': 0.8399885296821594, 'Recall': 0.7505133748054504, 'F-Score': 0.7927341461181641, 'True Positives': 2924.0, 'True Negatives': 45747.0, 'False Positives': 557.0, 'False Negatives': 972.0, 'Average-Loss': 0.14685837947039965}
+Epoch: 151, Average Loss: 0.0007959019858390093
+Validation Metrics: {'Accuracy': 0.9702988266944885, 'Precision': 0.8500728011131287, 'Recall': 0.7494866251945496, 'F-Score': 0.7966170907020569, 'True Positives': 2920.0, 'True Negatives': 45789.0, 'False Positives': 515.0, 'False Negatives': 976.0, 'Average-Loss': 0.1440444642329121}
+Epoch: 152, Average Loss: 0.0008423253311775625
+Validation Metrics: {'Accuracy': 0.9705777168273926, 'Precision': 0.8668486475944519, 'Recall': 0.7335729002952576, 'F-Score': 0.7946614623069763, 'True Positives': 2858.0, 'True Negatives': 45865.0, 'False Positives': 439.0, 'False Negatives': 1038.0, 'Average-Loss': 0.143010368195188}
+Epoch: 153, Average Loss: 0.0011916442308574915
+Validation Metrics: {'Accuracy': 0.9699601531028748, 'Precision': 0.8446882367134094, 'Recall': 0.7510266900062561, 'F-Score': 0.7951086759567261, 'True Positives': 2926.0, 'True Negatives': 45766.0, 'False Positives': 538.0, 'False Negatives': 970.0, 'Average-Loss': 0.1479689396710035}
+Epoch: 154, Average Loss: 0.0006091614486649632
+Validation Metrics: {'Accuracy': 0.9708167314529419, 'Precision': 0.8664456009864807, 'Recall': 0.737679660320282, 'F-Score': 0.7968944907188416, 'True Positives': 2874.0, 'True Negatives': 45861.0, 'False Positives': 443.0, 'False Negatives': 1022.0, 'Average-Loss': 0.14449738886251867}
+Epoch: 155, Average Loss: 0.0009557647863402963
+Validation Metrics: {'Accuracy': 0.9703784584999084, 'Precision': 0.8607367277145386, 'Recall': 0.737679660320282, 'F-Score': 0.7944713234901428, 'True Positives': 2874.0, 'True Negatives': 45839.0, 'False Positives': 465.0, 'False Negatives': 1022.0, 'Average-Loss': 0.14455080070343626}
+Epoch: 156, Average Loss: 0.0005213440745137632
+Validation Metrics: {'Accuracy': 0.9703784584999084, 'Precision': 0.8560449481010437, 'Recall': 0.7433264851570129, 'F-Score': 0.7957137227058411, 'True Positives': 2896.0, 'True Negatives': 45817.0, 'False Positives': 487.0, 'False Negatives': 1000.0, 'Average-Loss': 0.14594389774884836}
+Epoch: 157, Average Loss: 0.0005640206509269774
+Validation Metrics: {'Accuracy': 0.9702191352844238, 'Precision': 0.8621417880058289, 'Recall': 0.7335729002952576, 'F-Score': 0.7926778793334961, 'True Positives': 2858.0, 'True Negatives': 45847.0, 'False Positives': 457.0, 'False Negatives': 1038.0, 'Average-Loss': 0.14674367714688122}
+Epoch: 158, Average Loss: 0.0004897626931779087
+Validation Metrics: {'Accuracy': 0.9704980254173279, 'Precision': 0.8594819903373718, 'Recall': 0.7410164475440979, 'F-Score': 0.7958649396896362, 'True Positives': 2887.0, 'True Negatives': 45832.0, 'False Positives': 472.0, 'False Negatives': 1009.0, 'Average-Loss': 0.14765575150569596}
+Epoch: 159, Average Loss: 0.0006187815451994538
+Validation Metrics: {'Accuracy': 0.9707171320915222, 'Precision': 0.8666868209838867, 'Recall': 0.7358829379081726, 'F-Score': 0.7959467172622681, 'True Positives': 2867.0, 'True Negatives': 45863.0, 'False Positives': 441.0, 'False Negatives': 1029.0, 'Average-Loss': 0.1466245734834101}
+Epoch: 160, Average Loss: 0.0009756843210197985
+Validation Metrics: {'Accuracy': 0.9705378413200378, 'Precision': 0.8555457592010498, 'Recall': 0.7464065551757812, 'F-Score': 0.7972583770751953, 'True Positives': 2908.0, 'True Negatives': 45813.0, 'False Positives': 491.0, 'False Negatives': 988.0, 'Average-Loss': 0.15012369953778634}
+Epoch: 161, Average Loss: 0.0012588676763698459
+Validation Metrics: {'Accuracy': 0.9704780578613281, 'Precision': 0.8615937829017639, 'Recall': 0.7381930351257324, 'F-Score': 0.7951340675354004, 'True Positives': 2876.0, 'True Negatives': 45842.0, 'False Positives': 462.0, 'False Negatives': 1020.0, 'Average-Loss': 0.14948673324281}
+Epoch: 162, Average Loss: 0.0018264979589730501
+Validation Metrics: {'Accuracy': 0.9699203372001648, 'Precision': 0.8443995118141174, 'Recall': 0.7507700324058533, 'F-Score': 0.7948369383811951, 'True Positives': 2925.0, 'True Negatives': 45765.0, 'False Positives': 539.0, 'False Negatives': 971.0, 'Average-Loss': 0.14962904728741286}
+Epoch: 163, Average Loss: 0.004721543751657009
+Validation Metrics: {'Accuracy': 0.9703585505485535, 'Precision': 0.8555818200111389, 'Recall': 0.7435831427574158, 'F-Score': 0.7956605553627014, 'True Positives': 2897.0, 'True Negatives': 45815.0, 'False Positives': 489.0, 'False Negatives': 999.0, 'Average-Loss': 0.14998651633699578}
+Epoch: 164, Average Loss: 0.004535611718893051
+Validation Metrics: {'Accuracy': 0.9696414470672607, 'Precision': 0.8316555023193359, 'Recall': 0.7633470296859741, 'F-Score': 0.7960385680198669, 'True Positives': 2974.0, 'True Negatives': 45702.0, 'False Positives': 602.0, 'False Negatives': 922.0, 'Average-Loss': 0.15186766362285234}
+Epoch: 165, Average Loss: 0.001384496921673417
+Validation Metrics: {'Accuracy': 0.9703386425971985, 'Precision': 0.8555391430854797, 'Recall': 0.7433264851570129, 'F-Score': 0.7954951524734497, 'True Positives': 2896.0, 'True Negatives': 45815.0, 'False Positives': 489.0, 'False Negatives': 1000.0, 'Average-Loss': 0.14691732338225225}
+Epoch: 166, Average Loss: 0.0009268871508538723
+Validation Metrics: {'Accuracy': 0.9696812629699707, 'Precision': 0.8511834144592285, 'Recall': 0.7384496927261353, 'F-Score': 0.7908191084861755, 'True Positives': 2877.0, 'True Negatives': 45801.0, 'False Positives': 503.0, 'False Negatives': 1019.0, 'Average-Loss': 0.14923449512496886}
+Epoch: 167, Average Loss: 0.0010407001245766878
+Validation Metrics: {'Accuracy': 0.9704980254173279, 'Precision': 0.8651345372200012, 'Recall': 0.7343429327011108, 'F-Score': 0.7943912148475647, 'True Positives': 2861.0, 'True Negatives': 45858.0, 'False Positives': 446.0, 'False Negatives': 1035.0, 'Average-Loss': 0.148141746976936}
+Epoch: 168, Average Loss: 0.0007223498541861773
+Validation Metrics: {'Accuracy': 0.9709362387657166, 'Precision': 0.8629729151725769, 'Recall': 0.7435831427574158, 'F-Score': 0.7988418340682983, 'True Positives': 2897.0, 'True Negatives': 45844.0, 'False Positives': 460.0, 'False Negatives': 999.0, 'Average-Loss': 0.14775620418715762}
+Epoch: 169, Average Loss: 0.0008537644171155989
+Validation Metrics: {'Accuracy': 0.9704183340072632, 'Precision': 0.8612526059150696, 'Recall': 0.737679660320282, 'F-Score': 0.7946910262107849, 'True Positives': 2874.0, 'True Negatives': 45841.0, 'False Positives': 463.0, 'False Negatives': 1022.0, 'Average-Loss': 0.14934141607398532}
+Epoch: 170, Average Loss: 0.001248154672794044
+Validation Metrics: {'Accuracy': 0.9704980254173279, 'Precision': 0.8633764386177063, 'Recall': 0.736396312713623, 'F-Score': 0.7948469519615173, 'True Positives': 2869.0, 'True Negatives': 45850.0, 'False Positives': 454.0, 'False Negatives': 1027.0, 'Average-Loss': 0.15048356379170816}
+Epoch: 171, Average Loss: 0.0008327930700033903
+Validation Metrics: {'Accuracy': 0.9704581499099731, 'Precision': 0.8572697639465332, 'Recall': 0.7430698275566101, 'F-Score': 0.7960951328277588, 'True Positives': 2895.0, 'True Negatives': 45822.0, 'False Positives': 482.0, 'False Negatives': 1001.0, 'Average-Loss': 0.15132322273406373}
+Epoch: 172, Average Loss: 0.0004853666468989104
+Validation Metrics: {'Accuracy': 0.9701992273330688, 'Precision': 0.8588516712188721, 'Recall': 0.7371663451194763, 'F-Score': 0.7933701872825623, 'True Positives': 2872.0, 'True Negatives': 45832.0, 'False Positives': 472.0, 'False Negatives': 1024.0, 'Average-Loss': 0.15012981521180901}
+Epoch: 173, Average Loss: 0.00041060923831537366
+Validation Metrics: {'Accuracy': 0.9706573486328125, 'Precision': 0.8685731887817383, 'Recall': 0.7328028678894043, 'F-Score': 0.79493248462677, 'True Positives': 2855.0, 'True Negatives': 45872.0, 'False Positives': 432.0, 'False Negatives': 1041.0, 'Average-Loss': 0.14977301487409736}
+Epoch: 174, Average Loss: 0.0007368609658442438
+Validation Metrics: {'Accuracy': 0.9708366394042969, 'Precision': 0.8597633242607117, 'Recall': 0.7458932399749756, 'F-Score': 0.7987905144691467, 'True Positives': 2906.0, 'True Negatives': 45830.0, 'False Positives': 474.0, 'False Negatives': 990.0, 'Average-Loss': 0.1498618076522037}
+Epoch: 175, Average Loss: 0.001055248430930078
+Validation Metrics: {'Accuracy': 0.9702390432357788, 'Precision': 0.8646023273468018, 'Recall': 0.7310061454772949, 'F-Score': 0.7922114133834839, 'True Positives': 2848.0, 'True Negatives': 45858.0, 'False Positives': 446.0, 'False Negatives': 1048.0, 'Average-Loss': 0.15132615290789966}
+Epoch: 176, Average Loss: 0.005949381273239851
+Validation Metrics: {'Accuracy': 0.9690438508987427, 'Precision': 0.8419976830482483, 'Recall': 0.7399897575378418, 'F-Score': 0.7877049446105957, 'True Positives': 2883.0, 'True Negatives': 45763.0, 'False Positives': 541.0, 'False Negatives': 1013.0, 'Average-Loss': 0.15164392478912475}
+Epoch: 177, Average Loss: 0.006271877326071262
+Validation Metrics: {'Accuracy': 0.9691035747528076, 'Precision': 0.833001971244812, 'Recall': 0.7528234124183655, 'F-Score': 0.7908858060836792, 'True Positives': 2933.0, 'True Negatives': 45716.0, 'False Positives': 588.0, 'False Negatives': 963.0, 'Average-Loss': 0.15572027077237924}
+Epoch: 178, Average Loss: 0.001193568343296647
+Validation Metrics: {'Accuracy': 0.9693426489830017, 'Precision': 0.8324400782585144, 'Recall': 0.7574435472488403, 'F-Score': 0.7931729555130005, 'True Positives': 2951.0, 'True Negatives': 45710.0, 'False Positives': 594.0, 'False Negatives': 945.0, 'Average-Loss': 0.15695400769967008}
+Epoch: 179, Average Loss: 0.0010419083992019296
+Validation Metrics: {'Accuracy': 0.9697211384773254, 'Precision': 0.8504424691200256, 'Recall': 0.7399897575378418, 'F-Score': 0.7913807034492493, 'True Positives': 2883.0, 'True Negatives': 45797.0, 'False Positives': 507.0, 'False Negatives': 1013.0, 'Average-Loss': 0.15049156401736802}
+Epoch: 180, Average Loss: 0.0010507412953302264
+Validation Metrics: {'Accuracy': 0.9698406457901001, 'Precision': 0.8474329113960266, 'Recall': 0.745636522769928, 'F-Score': 0.7932823300361633, 'True Positives': 2905.0, 'True Negatives': 45781.0, 'False Positives': 523.0, 'False Negatives': 991.0, 'Average-Loss': 0.15235291743183516}
+Epoch: 181, Average Loss: 0.0015565010253340006
+Validation Metrics: {'Accuracy': 0.9701792597770691, 'Precision': 0.8577393293380737, 'Recall': 0.7381930351257324, 'F-Score': 0.7934887409210205, 'True Positives': 2876.0, 'True Negatives': 45827.0, 'False Positives': 477.0, 'False Negatives': 1020.0, 'Average-Loss': 0.15133097979177043}
+Epoch: 182, Average Loss: 0.002988561987876892
+Validation Metrics: {'Accuracy': 0.9696613550186157, 'Precision': 0.8442123532295227, 'Recall': 0.7469199299812317, 'F-Score': 0.7925915718078613, 'True Positives': 2910.0, 'True Negatives': 45767.0, 'False Positives': 537.0, 'False Negatives': 986.0, 'Average-Loss': 0.1537398988032246}
+Epoch: 183, Average Loss: 0.0031355894170701504
+Validation Metrics: {'Accuracy': 0.9688445925712585, 'Precision': 0.8373842835426331, 'Recall': 0.7428131699562073, 'F-Score': 0.7872687578201294, 'True Positives': 2894.0, 'True Negatives': 45742.0, 'False Positives': 562.0, 'False Negatives': 1002.0, 'Average-Loss': 0.1595849755275772}
+Epoch: 184, Average Loss: 0.0007098609348759055
+Validation Metrics: {'Accuracy': 0.9698605537414551, 'Precision': 0.8446630239486694, 'Recall': 0.7494866251945496, 'F-Score': 0.7942336201667786, 'True Positives': 2920.0, 'True Negatives': 45767.0, 'False Positives': 537.0, 'False Negatives': 976.0, 'Average-Loss': 0.15132818336030876}
+Epoch: 185, Average Loss: 0.0003891823289450258
+Validation Metrics: {'Accuracy': 0.9702788591384888, 'Precision': 0.8571004271507263, 'Recall': 0.7405030727386475, 'F-Score': 0.7945469617843628, 'True Positives': 2885.0, 'True Negatives': 45823.0, 'False Positives': 481.0, 'False Negatives': 1011.0, 'Average-Loss': 0.15164704949732322}
+Epoch: 186, Average Loss: 0.00043341965647414327
+Validation Metrics: {'Accuracy': 0.9702191352844238, 'Precision': 0.8557037115097046, 'Recall': 0.7412731051445007, 'F-Score': 0.7943886518478394, 'True Positives': 2888.0, 'True Negatives': 45817.0, 'False Positives': 487.0, 'False Negatives': 1008.0, 'Average-Loss': 0.15010805167999874}
+Epoch: 187, Average Loss: 0.0007905637030489743
+Validation Metrics: {'Accuracy': 0.9703386425971985, 'Precision': 0.8628278374671936, 'Recall': 0.7345995903015137, 'F-Score': 0.7935671806335449, 'True Positives': 2862.0, 'True Negatives': 45849.0, 'False Positives': 455.0, 'False Negatives': 1034.0, 'Average-Loss': 0.15145301362907743}
+Epoch: 188, Average Loss: 0.0011220212327316403
+Validation Metrics: {'Accuracy': 0.9697609543800354, 'Precision': 0.8559880256652832, 'Recall': 0.7338295578956604, 'F-Score': 0.7902156114578247, 'True Positives': 2859.0, 'True Negatives': 45823.0, 'False Positives': 481.0, 'False Negatives': 1037.0, 'Average-Loss': 0.15401634429080552}
+Epoch: 189, Average Loss: 0.0019417922012507915
+Validation Metrics: {'Accuracy': 0.9698406457901001, 'Precision': 0.8472303152084351, 'Recall': 0.7458932399749756, 'F-Score': 0.7933387756347656, 'True Positives': 2906.0, 'True Negatives': 45780.0, 'False Positives': 524.0, 'False Negatives': 990.0, 'Average-Loss': 0.15307439674894174}
+Epoch: 190, Average Loss: 0.0009309832821600139
+Validation Metrics: {'Accuracy': 0.9702589511871338, 'Precision': 0.855578601360321, 'Recall': 0.742043137550354, 'F-Score': 0.7947766184806824, 'True Positives': 2891.0, 'True Negatives': 45816.0, 'False Positives': 488.0, 'False Negatives': 1005.0, 'Average-Loss': 0.1527711419945219}
+Epoch: 191, Average Loss: 0.000882960855960846
+Validation Metrics: {'Accuracy': 0.9702788591384888, 'Precision': 0.8575252890586853, 'Recall': 0.7399897575378418, 'F-Score': 0.7944337129592896, 'True Positives': 2883.0, 'True Negatives': 45825.0, 'False Positives': 479.0, 'False Negatives': 1013.0, 'Average-Loss': 0.1525355000894858}
+Epoch: 192, Average Loss: 0.002522180788218975
+Validation Metrics: {'Accuracy': 0.969601571559906, 'Precision': 0.8468969464302063, 'Recall': 0.7425564527511597, 'F-Score': 0.791301965713501, 'True Positives': 2893.0, 'True Negatives': 45781.0, 'False Positives': 523.0, 'False Negatives': 1003.0, 'Average-Loss': 0.15476003700043575}
+Epoch: 193, Average Loss: 0.001775470795109868
+Validation Metrics: {'Accuracy': 0.9699203372001648, 'Precision': 0.8488304018974304, 'Recall': 0.7451232075691223, 'F-Score': 0.7936030626296997, 'True Positives': 2903.0, 'True Negatives': 45787.0, 'False Positives': 517.0, 'False Negatives': 993.0, 'Average-Loss': 0.1530250701296377}
+Epoch: 194, Average Loss: 0.0023509047459810972
+Validation Metrics: {'Accuracy': 0.9700796604156494, 'Precision': 0.8596754670143127, 'Recall': 0.7343429327011108, 'F-Score': 0.7920819520950317, 'True Positives': 2861.0, 'True Negatives': 45837.0, 'False Positives': 467.0, 'False Negatives': 1035.0, 'Average-Loss': 0.15476096103865786}
+Epoch: 195, Average Loss: 0.0015988168306648731
+Validation Metrics: {'Accuracy': 0.9698207378387451, 'Precision': 0.8465793132781982, 'Recall': 0.7464065551757812, 'F-Score': 0.7933433651924133, 'True Positives': 2908.0, 'True Negatives': 45777.0, 'False Positives': 527.0, 'False Negatives': 988.0, 'Average-Loss': 0.1547793810111118}
+Epoch: 196, Average Loss: 0.002460277173668146
+Validation Metrics: {'Accuracy': 0.969581663608551, 'Precision': 0.8532657027244568, 'Recall': 0.7343429327011108, 'F-Score': 0.7893502712249756, 'True Positives': 2861.0, 'True Negatives': 45812.0, 'False Positives': 492.0, 'False Negatives': 1035.0, 'Average-Loss': 0.15492753108659113}
+Epoch: 197, Average Loss: 0.0037414366379380226
+Validation Metrics: {'Accuracy': 0.9683864712715149, 'Precision': 0.8316575884819031, 'Recall': 0.7430698275566101, 'F-Score': 0.7848718762397766, 'True Positives': 2895.0, 'True Negatives': 45718.0, 'False Positives': 586.0, 'False Negatives': 1001.0, 'Average-Loss': 0.1613369519967007}
+Epoch: 198, Average Loss: 0.001648845849558711
+Validation Metrics: {'Accuracy': 0.9701992273330688, 'Precision': 0.8514938354492188, 'Recall': 0.7461498975753784, 'F-Score': 0.7953488230705261, 'True Positives': 2907.0, 'True Negatives': 45797.0, 'False Positives': 507.0, 'False Negatives': 989.0, 'Average-Loss': 0.15271492156374503}
+Epoch: 199, Average Loss: 0.0006059964653104544
+Validation Metrics: {'Accuracy': 0.9704780578613281, 'Precision': 0.8550000190734863, 'Recall': 0.7461498975753784, 'F-Score': 0.796875, 'True Positives': 2907.0, 'True Negatives': 45811.0, 'False Positives': 493.0, 'False Negatives': 989.0, 'Average-Loss': 0.1536677630299116}
+Epoch: 200, Average Loss: 0.0005904590361751616
+Validation Metrics: {'Accuracy': 0.9704183340072632, 'Precision': 0.8571851849555969, 'Recall': 0.7425564527511597, 'F-Score': 0.7957639694213867, 'True Positives': 2893.0, 'True Negatives': 45822.0, 'False Positives': 482.0, 'False Negatives': 1003.0, 'Average-Loss': 0.15254769496233814}
+Epoch: 201, Average Loss: 0.00038486134144477546
+Validation Metrics: {'Accuracy': 0.9706573486328125, 'Precision': 0.8596022725105286, 'Recall': 0.7433264851570129, 'F-Score': 0.797247052192688, 'True Positives': 2896.0, 'True Negatives': 45831.0, 'False Positives': 473.0, 'False Negatives': 1000.0, 'Average-Loss': 0.15219994047248506}
+Epoch: 202, Average Loss: 0.00031292589846998453
+Validation Metrics: {'Accuracy': 0.9707370400428772, 'Precision': 0.8647429943084717, 'Recall': 0.7384496927261353, 'F-Score': 0.7966219186782837, 'True Positives': 2877.0, 'True Negatives': 45854.0, 'False Positives': 450.0, 'False Negatives': 1019.0, 'Average-Loss': 0.1534549181204868}
+Epoch: 203, Average Loss: 0.0003425928298383951
+Validation Metrics: {'Accuracy': 0.9707569479942322, 'Precision': 0.8632555603981018, 'Recall': 0.7405030727386475, 'F-Score': 0.7971815466880798, 'True Positives': 2885.0, 'True Negatives': 45847.0, 'False Positives': 457.0, 'False Negatives': 1011.0, 'Average-Loss': 0.15491313554376246}
+Epoch: 204, Average Loss: 0.0002978795673698187
+Validation Metrics: {'Accuracy': 0.9708565473556519, 'Precision': 0.8606581687927246, 'Recall': 0.7451232075691223, 'F-Score': 0.7987343668937683, 'True Positives': 2903.0, 'True Negatives': 45834.0, 'False Positives': 470.0, 'False Negatives': 993.0, 'Average-Loss': 0.15449436385318102}
+Epoch: 205, Average Loss: 0.0005296489107422531
+Validation Metrics: {'Accuracy': 0.9709163308143616, 'Precision': 0.8684210777282715, 'Recall': 0.7369096279144287, 'F-Score': 0.7972785234451294, 'True Positives': 2871.0, 'True Negatives': 45869.0, 'False Positives': 435.0, 'False Negatives': 1025.0, 'Average-Loss': 0.15331368617327565}
+Epoch: 206, Average Loss: 0.0007828304660506546
+Validation Metrics: {'Accuracy': 0.9703585505485535, 'Precision': 0.8688725233078003, 'Recall': 0.7279260754585266, 'F-Score': 0.792178750038147, 'True Positives': 2836.0, 'True Negatives': 45876.0, 'False Positives': 428.0, 'False Negatives': 1060.0, 'Average-Loss': 0.1552476130633715}
+Epoch: 207, Average Loss: 0.0006251907907426357
+Validation Metrics: {'Accuracy': 0.9700796604156494, 'Precision': 0.8618500828742981, 'Recall': 0.7317761778831482, 'F-Score': 0.7915047407150269, 'True Positives': 2851.0, 'True Negatives': 45847.0, 'False Positives': 457.0, 'False Negatives': 1045.0, 'Average-Loss': 0.1582439042657495}
+Epoch: 208, Average Loss: 0.0003213208692613989
+Validation Metrics: {'Accuracy': 0.9703585505485535, 'Precision': 0.863966166973114, 'Recall': 0.7335729002952576, 'F-Score': 0.7934480905532837, 'True Positives': 2858.0, 'True Negatives': 45854.0, 'False Positives': 450.0, 'False Negatives': 1038.0, 'Average-Loss': 0.1581267702626992}
+Epoch: 209, Average Loss: 0.00033202231861650944
+Validation Metrics: {'Accuracy': 0.9705777168273926, 'Precision': 0.8688624501228333, 'Recall': 0.7312628626823425, 'F-Score': 0.7941463589668274, 'True Positives': 2849.0, 'True Negatives': 45874.0, 'False Positives': 430.0, 'False Negatives': 1047.0, 'Average-Loss': 0.1567985990607881}
+Epoch: 210, Average Loss: 0.0007073396700434387
+Validation Metrics: {'Accuracy': 0.9700996279716492, 'Precision': 0.8621106743812561, 'Recall': 0.7317761778831482, 'F-Score': 0.7916145920753479, 'True Positives': 2851.0, 'True Negatives': 45848.0, 'False Positives': 456.0, 'False Negatives': 1045.0, 'Average-Loss': 0.15890701111569347}
+Epoch: 211, Average Loss: 0.000851187389343977
+Validation Metrics: {'Accuracy': 0.9696812629699707, 'Precision': 0.8528537750244141, 'Recall': 0.736396312713623, 'F-Score': 0.7903581261634827, 'True Positives': 2869.0, 'True Negatives': 45809.0, 'False Positives': 495.0, 'False Negatives': 1027.0, 'Average-Loss': 0.15880652195903885}
+Epoch: 212, Average Loss: 0.0011915020877495408
+Validation Metrics: {'Accuracy': 0.9695418477058411, 'Precision': 0.8529675006866455, 'Recall': 0.7340862154960632, 'F-Score': 0.7890743613243103, 'True Positives': 2860.0, 'True Negatives': 45811.0, 'False Positives': 493.0, 'False Negatives': 1036.0, 'Average-Loss': 0.15946919110666707}
+Epoch: 213, Average Loss: 0.0008034783531911671
+Validation Metrics: {'Accuracy': 0.9698207378387451, 'Precision': 0.8621843457221985, 'Recall': 0.727412760257721, 'F-Score': 0.789085328578949, 'True Positives': 2834.0, 'True Negatives': 45851.0, 'False Positives': 453.0, 'False Negatives': 1062.0, 'Average-Loss': 0.15790083075899528}
+Epoch: 214, Average Loss: 0.0005368837737478316
+Validation Metrics: {'Accuracy': 0.9694820642471313, 'Precision': 0.85580974817276, 'Recall': 0.729722797870636, 'F-Score': 0.7877528667449951, 'True Positives': 2843.0, 'True Negatives': 45825.0, 'False Positives': 479.0, 'False Negatives': 1053.0, 'Average-Loss': 0.15878530555512327}
+Epoch: 215, Average Loss: 0.0003939287562388927
+Validation Metrics: {'Accuracy': 0.9697609543800354, 'Precision': 0.8553496599197388, 'Recall': 0.7345995903015137, 'F-Score': 0.7903894186019897, 'True Positives': 2862.0, 'True Negatives': 45820.0, 'False Positives': 484.0, 'False Negatives': 1034.0, 'Average-Loss': 0.1600090482795381}
+Epoch: 216, Average Loss: 0.0003803247818723321
+Validation Metrics: {'Accuracy': 0.9703187346458435, 'Precision': 0.8643246293067932, 'Recall': 0.7325462102890015, 'F-Score': 0.7929980754852295, 'True Positives': 2854.0, 'True Negatives': 45856.0, 'False Positives': 448.0, 'False Negatives': 1042.0, 'Average-Loss': 0.15828585073767432}
+Epoch: 217, Average Loss: 0.0006811154307797551
+Validation Metrics: {'Accuracy': 0.969900369644165, 'Precision': 0.8562892079353333, 'Recall': 0.7356262803077698, 'F-Score': 0.791384756565094, 'True Positives': 2866.0, 'True Negatives': 45823.0, 'False Positives': 481.0, 'False Negatives': 1030.0, 'Average-Loss': 0.16167837196137325}
+Epoch: 218, Average Loss: 0.002328671747818589
+Validation Metrics: {'Accuracy': 0.9697410464286804, 'Precision': 0.853825569152832, 'Recall': 0.7361396551132202, 'F-Score': 0.7906271815299988, 'True Positives': 2868.0, 'True Negatives': 45813.0, 'False Positives': 491.0, 'False Negatives': 1028.0, 'Average-Loss': 0.1621200257563496}
+Epoch: 219, Average Loss: 0.0037174206227064133
+Validation Metrics: {'Accuracy': 0.9694422483444214, 'Precision': 0.835130512714386, 'Recall': 0.7553901672363281, 'F-Score': 0.7932614684104919, 'True Positives': 2943.0, 'True Negatives': 45723.0, 'False Positives': 581.0, 'False Negatives': 953.0, 'Average-Loss': 0.167094269406748}
+Epoch: 220, Average Loss: 0.0019207237055525184
+Validation Metrics: {'Accuracy': 0.9698804616928101, 'Precision': 0.8475218415260315, 'Recall': 0.7461498975753784, 'F-Score': 0.7936117649078369, 'True Positives': 2907.0, 'True Negatives': 45781.0, 'False Positives': 523.0, 'False Negatives': 989.0, 'Average-Loss': 0.16408772867514318}
+Epoch: 221, Average Loss: 0.001897502108477056
+Validation Metrics: {'Accuracy': 0.9704183340072632, 'Precision': 0.8449212908744812, 'Recall': 0.757956862449646, 'F-Score': 0.799079954624176, 'True Positives': 2953.0, 'True Negatives': 45762.0, 'False Positives': 542.0, 'False Negatives': 943.0, 'Average-Loss': 0.1620471118455864}
+Epoch: 222, Average Loss: 0.002808334305882454
+Validation Metrics: {'Accuracy': 0.9698804616928101, 'Precision': 0.8483343124389648, 'Recall': 0.7451232075691223, 'F-Score': 0.7933861613273621, 'True Positives': 2903.0, 'True Negatives': 45785.0, 'False Positives': 519.0, 'False Negatives': 993.0, 'Average-Loss': 0.1598265628890687}
+Epoch: 223, Average Loss: 0.0018258776981383562
+Validation Metrics: {'Accuracy': 0.9696812629699707, 'Precision': 0.8416810631752014, 'Recall': 0.7505133748054504, 'F-Score': 0.7934871315956116, 'True Positives': 2924.0, 'True Negatives': 45754.0, 'False Positives': 550.0, 'False Negatives': 972.0, 'Average-Loss': 0.1611884614860869}
+Epoch: 224, Average Loss: 0.0009621166973374784
+Validation Metrics: {'Accuracy': 0.9699402451515198, 'Precision': 0.8494875431060791, 'Recall': 0.7446098327636719, 'F-Score': 0.7935987114906311, 'True Positives': 2901.0, 'True Negatives': 45790.0, 'False Positives': 514.0, 'False Negatives': 995.0, 'Average-Loss': 0.1638821180123257}
+Epoch: 225, Average Loss: 0.0009770955657586455
+Validation Metrics: {'Accuracy': 0.9695418477058411, 'Precision': 0.8488063812255859, 'Recall': 0.7392197251319885, 'F-Score': 0.7902318835258484, 'True Positives': 2880.0, 'True Negatives': 45791.0, 'False Positives': 513.0, 'False Negatives': 1016.0, 'Average-Loss': 0.15963824146772285}
+Epoch: 226, Average Loss: 0.0018685723189264536
+Validation Metrics: {'Accuracy': 0.9701792597770691, 'Precision': 0.8622772693634033, 'Recall': 0.7328028678894043, 'F-Score': 0.7922852635383606, 'True Positives': 2855.0, 'True Negatives': 45848.0, 'False Positives': 456.0, 'False Negatives': 1041.0, 'Average-Loss': 0.15806530956253112}
+Epoch: 227, Average Loss: 0.002254652325063944
+Validation Metrics: {'Accuracy': 0.9694223403930664, 'Precision': 0.839516818523407, 'Recall': 0.7492299675941467, 'F-Score': 0.7918079495429993, 'True Positives': 2919.0, 'True Negatives': 45746.0, 'False Positives': 558.0, 'False Negatives': 977.0, 'Average-Loss': 0.1593171625023344}
+Epoch: 228, Average Loss: 0.0015628953697159886
+Validation Metrics: {'Accuracy': 0.9705378413200378, 'Precision': 0.8634586334228516, 'Recall': 0.7369096279144287, 'F-Score': 0.7951807379722595, 'True Positives': 2871.0, 'True Negatives': 45850.0, 'False Positives': 454.0, 'False Negatives': 1025.0, 'Average-Loss': 0.1554524455887388}
+Epoch: 229, Average Loss: 0.002263624221086502
+Validation Metrics: {'Accuracy': 0.9689242839813232, 'Precision': 0.8249861001968384, 'Recall': 0.7610369324684143, 'F-Score': 0.791722297668457, 'True Positives': 2965.0, 'True Negatives': 45675.0, 'False Positives': 629.0, 'False Negatives': 931.0, 'Average-Loss': 0.16447646912350597}
+Epoch: 230, Average Loss: 0.0006174042937345803
+Validation Metrics: {'Accuracy': 0.9697211384773254, 'Precision': 0.8479788899421692, 'Recall': 0.7430698275566101, 'F-Score': 0.7920656800270081, 'True Positives': 2895.0, 'True Negatives': 45785.0, 'False Positives': 519.0, 'False Negatives': 1001.0, 'Average-Loss': 0.15819192711575572}
+Epoch: 231, Average Loss: 0.0017204850446432829
+Validation Metrics: {'Accuracy': 0.9698207378387451, 'Precision': 0.860866904258728, 'Recall': 0.7289527654647827, 'F-Score': 0.7894371151924133, 'True Positives': 2840.0, 'True Negatives': 45845.0, 'False Positives': 459.0, 'False Negatives': 1056.0, 'Average-Loss': 0.1602661375980453}
+Epoch: 232, Average Loss: 0.0011477092048153281
+Validation Metrics: {'Accuracy': 0.969282865524292, 'Precision': 0.8455666303634644, 'Recall': 0.7392197251319885, 'F-Score': 0.7888249754905701, 'True Positives': 2880.0, 'True Negatives': 45778.0, 'False Positives': 526.0, 'False Negatives': 1016.0, 'Average-Loss': 0.1632264399433516}
+Epoch: 233, Average Loss: 0.0004911421565338969
+Validation Metrics: {'Accuracy': 0.9699203372001648, 'Precision': 0.8463995456695557, 'Recall': 0.7482032775878906, 'F-Score': 0.7942779064178467, 'True Positives': 2915.0, 'True Negatives': 45775.0, 'False Positives': 529.0, 'False Negatives': 981.0, 'Average-Loss': 0.1612844155604146}
+Epoch: 234, Average Loss: 0.00032842170912772417
+Validation Metrics: {'Accuracy': 0.9701195359230042, 'Precision': 0.8567599654197693, 'Recall': 0.7384496927261353, 'F-Score': 0.7932175397872925, 'True Positives': 2877.0, 'True Negatives': 45823.0, 'False Positives': 481.0, 'False Negatives': 1019.0, 'Average-Loss': 0.16049611368977215}
+Epoch: 235, Average Loss: 0.0003290558233857155
+Validation Metrics: {'Accuracy': 0.9703187346458435, 'Precision': 0.8632246255874634, 'Recall': 0.7338295578956604, 'F-Score': 0.7932852506637573, 'True Positives': 2859.0, 'True Negatives': 45851.0, 'False Positives': 453.0, 'False Negatives': 1037.0, 'Average-Loss': 0.1598109515064741}
+Epoch: 236, Average Loss: 0.00030147028155624866
+Validation Metrics: {'Accuracy': 0.9700199365615845, 'Precision': 0.8580413460731506, 'Recall': 0.7353696227073669, 'F-Score': 0.791983425617218, 'True Positives': 2865.0, 'True Negatives': 45830.0, 'False Positives': 474.0, 'False Negatives': 1031.0, 'Average-Loss': 0.1602806304080553}
+Epoch: 237, Average Loss: 0.000990711385384202
+Validation Metrics: {'Accuracy': 0.9701195359230042, 'Precision': 0.8630303144454956, 'Recall': 0.7310061454772949, 'F-Score': 0.791550874710083, 'True Positives': 2848.0, 'True Negatives': 45852.0, 'False Positives': 452.0, 'False Negatives': 1048.0, 'Average-Loss': 0.1582639534634898}
+Epoch: 238, Average Loss: 0.000562913715839386
+Validation Metrics: {'Accuracy': 0.9703585505485535, 'Precision': 0.8626505732536316, 'Recall': 0.7351129651069641, 'F-Score': 0.7937915921211243, 'True Positives': 2864.0, 'True Negatives': 45848.0, 'False Positives': 456.0, 'False Negatives': 1032.0, 'Average-Loss': 0.15803891368121264}
+Epoch: 239, Average Loss: 0.0019496182212606072
+Validation Metrics: {'Accuracy': 0.9702988266944885, 'Precision': 0.8651685118675232, 'Recall': 0.7312628626823425, 'F-Score': 0.7925997972488403, 'True Positives': 2849.0, 'True Negatives': 45860.0, 'False Positives': 444.0, 'False Negatives': 1047.0, 'Average-Loss': 0.15874879388695218}
+Epoch: 240, Average Loss: 0.0011911089532077312
+Validation Metrics: {'Accuracy': 0.9698804616928101, 'Precision': 0.8566726446151733, 'Recall': 0.7348562479019165, 'F-Score': 0.7911025285720825, 'True Positives': 2863.0, 'True Negatives': 45825.0, 'False Positives': 479.0, 'False Negatives': 1033.0, 'Average-Loss': 0.16204201747696714}
+Epoch: 241, Average Loss: 0.0006213971646502614
+Validation Metrics: {'Accuracy': 0.9697211384773254, 'Precision': 0.843949019908905, 'Recall': 0.7482032775878906, 'F-Score': 0.7931972742080688, 'True Positives': 2915.0, 'True Negatives': 45765.0, 'False Positives': 539.0, 'False Negatives': 981.0, 'Average-Loss': 0.16537064632096612}
+Epoch: 242, Average Loss: 0.0003905301564373076
+Validation Metrics: {'Accuracy': 0.9701992273330688, 'Precision': 0.8569303750991821, 'Recall': 0.7394763827323914, 'F-Score': 0.7938826084136963, 'True Positives': 2881.0, 'True Negatives': 45823.0, 'False Positives': 481.0, 'False Negatives': 1015.0, 'Average-Loss': 0.16103066980126368}
+Epoch: 243, Average Loss: 0.00026613319641910493
+Validation Metrics: {'Accuracy': 0.9705378413200378, 'Precision': 0.8645550608634949, 'Recall': 0.7356262803077698, 'F-Score': 0.79489666223526, 'True Positives': 2866.0, 'True Negatives': 45855.0, 'False Positives': 449.0, 'False Negatives': 1030.0, 'Average-Loss': 0.16142585420038597}
+Epoch: 244, Average Loss: 0.0002442792465444654
+Validation Metrics: {'Accuracy': 0.9702390432357788, 'Precision': 0.8619650602340698, 'Recall': 0.7340862154960632, 'F-Score': 0.7929027080535889, 'True Positives': 2860.0, 'True Negatives': 45846.0, 'False Positives': 458.0, 'False Negatives': 1036.0, 'Average-Loss': 0.16103672468329805}
+Epoch: 245, Average Loss: 0.001170690287835896
+Validation Metrics: {'Accuracy': 0.9706374406814575, 'Precision': 0.8656401038169861, 'Recall': 0.7358829379081726, 'F-Score': 0.7955049872398376, 'True Positives': 2867.0, 'True Negatives': 45859.0, 'False Positives': 445.0, 'False Negatives': 1029.0, 'Average-Loss': 0.1614829865109873}
+Epoch: 246, Average Loss: 0.00041683093877509236
+Validation Metrics: {'Accuracy': 0.9701195359230042, 'Precision': 0.8628104329109192, 'Recall': 0.7312628626823425, 'F-Score': 0.7916087508201599, 'True Positives': 2849.0, 'True Negatives': 45851.0, 'False Positives': 453.0, 'False Negatives': 1047.0, 'Average-Loss': 0.1627769926154756}
+Epoch: 247, Average Loss: 0.0017471079481765628
+Validation Metrics: {'Accuracy': 0.9700796604156494, 'Precision': 0.8699011206626892, 'Recall': 0.7225359082221985, 'F-Score': 0.7893998622894287, 'True Positives': 2815.0, 'True Negatives': 45883.0, 'False Positives': 421.0, 'False Negatives': 1081.0, 'Average-Loss': 0.1629393558578187}
+Epoch: 248, Average Loss: 0.0035587709862738848
+Validation Metrics: {'Accuracy': 0.9693625569343567, 'Precision': 0.8557634353637695, 'Recall': 0.7279260754585266, 'F-Score': 0.7866851687431335, 'True Positives': 2836.0, 'True Negatives': 45826.0, 'False Positives': 478.0, 'False Negatives': 1060.0, 'Average-Loss': 0.16655086198176045}
+Epoch: 249, Average Loss: 0.0006663261447101831
+Validation Metrics: {'Accuracy': 0.969322681427002, 'Precision': 0.8481087684631348, 'Recall': 0.7366529703140259, 'F-Score': 0.7884615659713745, 'True Positives': 2870.0, 'True Negatives': 45790.0, 'False Positives': 514.0, 'False Negatives': 1026.0, 'Average-Loss': 0.16588371854379358}
+Epoch: 250, Average Loss: 0.0003172899887431413
+Validation Metrics: {'Accuracy': 0.9698804616928101, 'Precision': 0.8467131853103638, 'Recall': 0.7471765875816345, 'F-Score': 0.7938369512557983, 'True Positives': 2911.0, 'True Negatives': 45777.0, 'False Positives': 527.0, 'False Negatives': 985.0, 'Average-Loss': 0.16455052592364916}
+Epoch: 251, Average Loss: 0.0015430264174938202
+Validation Metrics: {'Accuracy': 0.9702390432357788, 'Precision': 0.8626207709312439, 'Recall': 0.7333162426948547, 'F-Score': 0.7927302718162537, 'True Positives': 2857.0, 'True Negatives': 45849.0, 'False Positives': 455.0, 'False Negatives': 1039.0, 'Average-Loss': 0.1603879769009898}
+Epoch: 252, Average Loss: 0.001094732084311545
+Validation Metrics: {'Accuracy': 0.9694422483444214, 'Precision': 0.8492016792297363, 'Recall': 0.7371663451194763, 'F-Score': 0.7892277836799622, 'True Positives': 2872.0, 'True Negatives': 45794.0, 'False Positives': 510.0, 'False Negatives': 1024.0, 'Average-Loss': 0.16614032152639444}
+Epoch: 253, Average Loss: 0.00042630467214621603
+Validation Metrics: {'Accuracy': 0.9698804616928101, 'Precision': 0.851830005645752, 'Recall': 0.7407597303390503, 'F-Score': 0.7924217581748962, 'True Positives': 2886.0, 'True Negatives': 45802.0, 'False Positives': 502.0, 'False Negatives': 1010.0, 'Average-Loss': 0.1637180404359126}
+Epoch: 254, Average Loss: 0.002842494286596775
+Validation Metrics: {'Accuracy': 0.9699402451515198, 'Precision': 0.8482638001441956, 'Recall': 0.7461498975753784, 'F-Score': 0.7939369082450867, 'True Positives': 2907.0, 'True Negatives': 45784.0, 'False Positives': 520.0, 'False Negatives': 989.0, 'Average-Loss': 0.1642174830949639}
+Epoch: 255, Average Loss: 0.002423843601718545
+Validation Metrics: {'Accuracy': 0.9687051773071289, 'Precision': 0.8286683559417725, 'Recall': 0.752310037612915, 'F-Score': 0.7886452078819275, 'True Positives': 2931.0, 'True Negatives': 45698.0, 'False Positives': 606.0, 'False Negatives': 965.0, 'Average-Loss': 0.1695685884392119}
+Epoch: 256, Average Loss: 0.0007622092380188406
+Validation Metrics: {'Accuracy': 0.969262957572937, 'Precision': 0.827078104019165, 'Recall': 0.763603687286377, 'F-Score': 0.7940744757652283, 'True Positives': 2975.0, 'True Negatives': 45682.0, 'False Positives': 622.0, 'False Negatives': 921.0, 'Average-Loss': 0.16996709208089517}
+Epoch: 257, Average Loss: 0.00048335979226976633
+Validation Metrics: {'Accuracy': 0.9698007702827454, 'Precision': 0.8409742116928101, 'Recall': 0.7533367276191711, 'F-Score': 0.7947468161582947, 'True Positives': 2935.0, 'True Negatives': 45749.0, 'False Positives': 555.0, 'False Negatives': 961.0, 'Average-Loss': 0.16459253318756226}
+Epoch: 258, Average Loss: 0.00026764548965729773
+Validation Metrics: {'Accuracy': 0.9702988266944885, 'Precision': 0.8492593765258789, 'Recall': 0.7505133748054504, 'F-Score': 0.7968388199806213, 'True Positives': 2924.0, 'True Negatives': 45785.0, 'False Positives': 519.0, 'False Negatives': 972.0, 'Average-Loss': 0.16441350078202813}
+Epoch: 259, Average Loss: 0.0005062579293735325
+Validation Metrics: {'Accuracy': 0.9702390432357788, 'Precision': 0.8572278618812561, 'Recall': 0.7397330403327942, 'F-Score': 0.7941581606864929, 'True Positives': 2882.0, 'True Negatives': 45824.0, 'False Positives': 480.0, 'False Negatives': 1014.0, 'Average-Loss': 0.16256417202284612}
+Epoch: 260, Average Loss: 0.0030909948982298374
+Validation Metrics: {'Accuracy': 0.969322681427002, 'Precision': 0.8535414338111877, 'Recall': 0.7299794554710388, 'F-Score': 0.7869396805763245, 'True Positives': 2844.0, 'True Negatives': 45816.0, 'False Positives': 488.0, 'False Negatives': 1052.0, 'Average-Loss': 0.16585058691017182}
+Epoch: 261, Average Loss: 0.004136806353926659
+Validation Metrics: {'Accuracy': 0.9679681062698364, 'Precision': 0.8197317123413086, 'Recall': 0.7528234124183655, 'F-Score': 0.7848541736602783, 'True Positives': 2933.0, 'True Negatives': 45659.0, 'False Positives': 645.0, 'False Negatives': 963.0, 'Average-Loss': 0.1693510747050859}
+Epoch: 262, Average Loss: 0.0006246856064535677
+Validation Metrics: {'Accuracy': 0.9695219397544861, 'Precision': 0.8387743234634399, 'Recall': 0.7517967224121094, 'F-Score': 0.7929074168205261, 'True Positives': 2929.0, 'True Negatives': 45741.0, 'False Positives': 563.0, 'False Negatives': 967.0, 'Average-Loss': 0.16375097753517182}
+Epoch: 263, Average Loss: 0.0003629084094427526
+Validation Metrics: {'Accuracy': 0.9691234827041626, 'Precision': 0.8351428508758545, 'Recall': 0.7502566576004028, 'F-Score': 0.7904272675514221, 'True Positives': 2923.0, 'True Negatives': 45727.0, 'False Positives': 577.0, 'False Negatives': 973.0, 'Average-Loss': 0.16530412772737177}
+Epoch: 264, Average Loss: 0.00036323751555755734
+Validation Metrics: {'Accuracy': 0.969601571559906, 'Precision': 0.8497638702392578, 'Recall': 0.7389630675315857, 'F-Score': 0.790499746799469, 'True Positives': 2879.0, 'True Negatives': 45795.0, 'False Positives': 509.0, 'False Negatives': 1017.0, 'Average-Loss': 0.16260155909564866}
+Epoch: 265, Average Loss: 0.00043835066026076674
+Validation Metrics: {'Accuracy': 0.9698804616928101, 'Precision': 0.852037787437439, 'Recall': 0.7405030727386475, 'F-Score': 0.7923647165298462, 'True Positives': 2885.0, 'True Negatives': 45803.0, 'False Positives': 501.0, 'False Negatives': 1011.0, 'Average-Loss': 0.16004709190581423}
+Epoch: 266, Average Loss: 0.0003117588930763304
+Validation Metrics: {'Accuracy': 0.9698406457901001, 'Precision': 0.8534124493598938, 'Recall': 0.7381930351257324, 'F-Score': 0.7916322350502014, 'True Positives': 2876.0, 'True Negatives': 45810.0, 'False Positives': 494.0, 'False Negatives': 1020.0, 'Average-Loss': 0.1623146209108877}
+Epoch: 267, Average Loss: 0.00026167917530983686
+Validation Metrics: {'Accuracy': 0.9701593518257141, 'Precision': 0.8579104542732239, 'Recall': 0.737679660320282, 'F-Score': 0.7932652235031128, 'True Positives': 2874.0, 'True Negatives': 45828.0, 'False Positives': 476.0, 'False Negatives': 1022.0, 'Average-Loss': 0.162099380797124}
+Epoch: 268, Average Loss: 0.00023146513558458537
+Validation Metrics: {'Accuracy': 0.9701593518257141, 'Precision': 0.8585526347160339, 'Recall': 0.7369096279144287, 'F-Score': 0.7930939197540283, 'True Positives': 2871.0, 'True Negatives': 45831.0, 'False Positives': 473.0, 'False Negatives': 1025.0, 'Average-Loss': 0.16203683799956425}
+Epoch: 269, Average Loss: 0.0007290366338565946
+Validation Metrics: {'Accuracy': 0.969900369644165, 'Precision': 0.867488443851471, 'Recall': 0.7225359082221985, 'F-Score': 0.7884050011634827, 'True Positives': 2815.0, 'True Negatives': 45874.0, 'False Positives': 430.0, 'False Negatives': 1081.0, 'Average-Loss': 0.16182288667595243}
+Epoch: 270, Average Loss: 0.0025454910937696695
+Validation Metrics: {'Accuracy': 0.969601571559906, 'Precision': 0.8558558821678162, 'Recall': 0.7315195202827454, 'F-Score': 0.7888181805610657, 'True Positives': 2850.0, 'True Negatives': 45824.0, 'False Positives': 480.0, 'False Negatives': 1046.0, 'Average-Loss': 0.1693476946705366}
+Epoch: 271, Average Loss: 0.002050769282504916
+Validation Metrics: {'Accuracy': 0.9683665633201599, 'Precision': 0.810883641242981, 'Recall': 0.772587239742279, 'F-Score': 0.7912723422050476, 'True Positives': 3010.0, 'True Negatives': 45602.0, 'False Positives': 702.0, 'False Negatives': 886.0, 'Average-Loss': 0.17737697890080303}
+Epoch: 272, Average Loss: 0.00040593461017124355
+Validation Metrics: {'Accuracy': 0.9694023728370667, 'Precision': 0.8476723432540894, 'Recall': 0.7384496927261353, 'F-Score': 0.7893003821372986, 'True Positives': 2877.0, 'True Negatives': 45787.0, 'False Positives': 517.0, 'False Negatives': 1019.0, 'Average-Loss': 0.1673738031273344}
+Epoch: 273, Average Loss: 0.00026398731279186904
+Validation Metrics: {'Accuracy': 0.9701992273330688, 'Precision': 0.8597122430801392, 'Recall': 0.7361396551132202, 'F-Score': 0.7931416034698486, 'True Positives': 2868.0, 'True Negatives': 45836.0, 'False Positives': 468.0, 'False Negatives': 1028.0, 'Average-Loss': 0.164541929936504}
+Epoch: 274, Average Loss: 0.00031057893647812307
+Validation Metrics: {'Accuracy': 0.9701992273330688, 'Precision': 0.8546099066734314, 'Recall': 0.7422997951507568, 'F-Score': 0.7945054769515991, 'True Positives': 2892.0, 'True Negatives': 45812.0, 'False Positives': 492.0, 'False Negatives': 1004.0, 'Average-Loss': 0.16419460099056898}
+Epoch: 275, Average Loss: 0.0006855629035271704
+Validation Metrics: {'Accuracy': 0.9699601531028748, 'Precision': 0.8530455231666565, 'Recall': 0.7405030727386475, 'F-Score': 0.79280024766922, 'True Positives': 2885.0, 'True Negatives': 45807.0, 'False Positives': 497.0, 'False Negatives': 1011.0, 'Average-Loss': 0.16730884080864045}
+Epoch: 276, Average Loss: 0.00192457961384207
+Validation Metrics: {'Accuracy': 0.9687250852584839, 'Precision': 0.8388694524765015, 'Recall': 0.7389630675315857, 'F-Score': 0.7857532501220703, 'True Positives': 2879.0, 'True Negatives': 45751.0, 'False Positives': 553.0, 'False Negatives': 1017.0, 'Average-Loss': 0.16907957768535234}
+Epoch: 277, Average Loss: 0.0016466295346617699
+Validation Metrics: {'Accuracy': 0.969302773475647, 'Precision': 0.8507596254348755, 'Recall': 0.7330595254898071, 'F-Score': 0.7875362038612366, 'True Positives': 2856.0, 'True Negatives': 45803.0, 'False Positives': 501.0, 'False Negatives': 1040.0, 'Average-Loss': 0.17241562315192355}
+Epoch: 278, Average Loss: 0.0007680170820094645
+Validation Metrics: {'Accuracy': 0.9694223403930664, 'Precision': 0.8379616141319275, 'Recall': 0.7512833476066589, 'F-Score': 0.7922587394714355, 'True Positives': 2927.0, 'True Negatives': 45738.0, 'False Positives': 566.0, 'False Negatives': 969.0, 'Average-Loss': 0.17396763045474353}
+Epoch: 279, Average Loss: 0.0005343607626855373
+Validation Metrics: {'Accuracy': 0.9694621562957764, 'Precision': 0.8467860221862793, 'Recall': 0.7405030727386475, 'F-Score': 0.7900862693786621, 'True Positives': 2885.0, 'True Negatives': 45782.0, 'False Positives': 522.0, 'False Negatives': 1011.0, 'Average-Loss': 0.16876383625653635}
+Epoch: 280, Average Loss: 0.0004343929758761078
+Validation Metrics: {'Accuracy': 0.9694422483444214, 'Precision': 0.8397583365440369, 'Recall': 0.7492299675941467, 'F-Score': 0.7919153571128845, 'True Positives': 2919.0, 'True Negatives': 45747.0, 'False Positives': 557.0, 'False Negatives': 977.0, 'Average-Loss': 0.17365852751104954}
+Epoch: 281, Average Loss: 0.00024751038290560246
+Validation Metrics: {'Accuracy': 0.969561755657196, 'Precision': 0.8551290035247803, 'Recall': 0.7317761778831482, 'F-Score': 0.7886583805084229, 'True Positives': 2851.0, 'True Negatives': 45821.0, 'False Positives': 483.0, 'False Negatives': 1045.0, 'Average-Loss': 0.17121980826693228}
+Epoch: 282, Average Loss: 0.0009732067119330168
+Validation Metrics: {'Accuracy': 0.969900369644165, 'Precision': 0.8518736958503723, 'Recall': 0.7410164475440979, 'F-Score': 0.7925875186920166, 'True Positives': 2887.0, 'True Negatives': 45802.0, 'False Positives': 502.0, 'False Negatives': 1009.0, 'Average-Loss': 0.17161498050765686}
+Epoch: 283, Average Loss: 0.0007849608082324266
+Validation Metrics: {'Accuracy': 0.969581663608551, 'Precision': 0.8522152900695801, 'Recall': 0.7356262803077698, 'F-Score': 0.7896404266357422, 'True Positives': 2866.0, 'True Negatives': 45807.0, 'False Positives': 497.0, 'False Negatives': 1030.0, 'Average-Loss': 0.1724128267204619}
+Epoch: 284, Average Loss: 0.0013644975842908025
+Validation Metrics: {'Accuracy': 0.9697011709213257, 'Precision': 0.8569281697273254, 'Recall': 0.7317761778831482, 'F-Score': 0.7894226908683777, 'True Positives': 2851.0, 'True Negatives': 45828.0, 'False Positives': 476.0, 'False Negatives': 1045.0, 'Average-Loss': 0.17190274546345866}
+Epoch: 285, Average Loss: 0.0014727255329489708
+Validation Metrics: {'Accuracy': 0.9696613550186157, 'Precision': 0.840263843536377, 'Recall': 0.7520533800125122, 'F-Score': 0.7937152981758118, 'True Positives': 2930.0, 'True Negatives': 45747.0, 'False Positives': 557.0, 'False Negatives': 966.0, 'Average-Loss': 0.17323709313138072}
+Epoch: 286, Average Loss: 0.0006459656869992614
+Validation Metrics: {'Accuracy': 0.9701394438743591, 'Precision': 0.8499270081520081, 'Recall': 0.7471765875816345, 'F-Score': 0.7952465415000916, 'True Positives': 2911.0, 'True Negatives': 45790.0, 'False Positives': 514.0, 'False Negatives': 985.0, 'Average-Loss': 0.16878460279973856}
+Epoch: 287, Average Loss: 0.0005042749107815325
+Validation Metrics: {'Accuracy': 0.9702390432357788, 'Precision': 0.8477128148078918, 'Recall': 0.7515400648117065, 'F-Score': 0.7967346906661987, 'True Positives': 2928.0, 'True Negatives': 45778.0, 'False Positives': 526.0, 'False Negatives': 968.0, 'Average-Loss': 0.16956033288720118}
+Epoch: 288, Average Loss: 0.0005071684718132019
+Validation Metrics: {'Accuracy': 0.9703386425971985, 'Precision': 0.8526223301887512, 'Recall': 0.7469199299812317, 'F-Score': 0.7962785363197327, 'True Positives': 2910.0, 'True Negatives': 45801.0, 'False Positives': 503.0, 'False Negatives': 986.0, 'Average-Loss': 0.1670703295217567}
+Epoch: 289, Average Loss: 0.002407586434856057
+Validation Metrics: {'Accuracy': 0.9698804616928101, 'Precision': 0.8556085824966431, 'Recall': 0.7361396551132202, 'F-Score': 0.7913907170295715, 'True Positives': 2868.0, 'True Negatives': 45820.0, 'False Positives': 484.0, 'False Negatives': 1028.0, 'Average-Loss': 0.16592910584225598}
+Epoch: 290, Average Loss: 0.003720852080732584
+Validation Metrics: {'Accuracy': 0.9698207378387451, 'Precision': 0.8433804512023926, 'Recall': 0.7505133748054504, 'F-Score': 0.7942414879798889, 'True Positives': 2924.0, 'True Negatives': 45761.0, 'False Positives': 543.0, 'False Negatives': 972.0, 'Average-Loss': 0.16773464005306898}
+Epoch: 291, Average Loss: 0.0005527116591110826
+Validation Metrics: {'Accuracy': 0.9696613550186157, 'Precision': 0.8430182337760925, 'Recall': 0.7484599351882935, 'F-Score': 0.792930006980896, 'True Positives': 2916.0, 'True Negatives': 45761.0, 'False Positives': 543.0, 'False Negatives': 980.0, 'Average-Loss': 0.1642073673081113}
+Epoch: 292, Average Loss: 0.0012836363166570663
+Validation Metrics: {'Accuracy': 0.9700796604156494, 'Precision': 0.8431766033172607, 'Recall': 0.7548767924308777, 'F-Score': 0.7965872287750244, 'True Positives': 2941.0, 'True Negatives': 45757.0, 'False Positives': 547.0, 'False Negatives': 955.0, 'Average-Loss': 0.16491310150024902}
+Epoch: 293, Average Loss: 0.004342098720371723
+Validation Metrics: {'Accuracy': 0.9698007702827454, 'Precision': 0.8481568098068237, 'Recall': 0.7440965175628662, 'F-Score': 0.7927262783050537, 'True Positives': 2899.0, 'True Negatives': 45785.0, 'False Positives': 519.0, 'False Negatives': 997.0, 'Average-Loss': 0.16775447039965138}
+Epoch: 294, Average Loss: 0.0013422436313703656
+Validation Metrics: {'Accuracy': 0.9699203372001648, 'Precision': 0.836815357208252, 'Recall': 0.7607802748680115, 'F-Score': 0.7969884276390076, 'True Positives': 2964.0, 'True Negatives': 45726.0, 'False Positives': 578.0, 'False Negatives': 932.0, 'Average-Loss': 0.16519064124361926}
+Epoch: 295, Average Loss: 0.0011971115600317717
+Validation Metrics: {'Accuracy': 0.9702390432357788, 'Precision': 0.8524060845375061, 'Recall': 0.745636522769928, 'F-Score': 0.7954545617103577, 'True Positives': 2905.0, 'True Negatives': 45801.0, 'False Positives': 503.0, 'False Negatives': 991.0, 'Average-Loss': 0.1647221903402017}
+Epoch: 296, Average Loss: 0.000945205450989306
+Validation Metrics: {'Accuracy': 0.9697609543800354, 'Precision': 0.8482718467712402, 'Recall': 0.7433264851570129, 'F-Score': 0.7923392653465271, 'True Positives': 2896.0, 'True Negatives': 45786.0, 'False Positives': 518.0, 'False Negatives': 1000.0, 'Average-Loss': 0.16501103739339518}
+Epoch: 297, Average Loss: 0.0004784775956068188
+Validation Metrics: {'Accuracy': 0.9694223403930664, 'Precision': 0.8420747518539429, 'Recall': 0.7458932399749756, 'F-Score': 0.7910711765289307, 'True Positives': 2906.0, 'True Negatives': 45759.0, 'False Positives': 545.0, 'False Negatives': 990.0, 'Average-Loss': 0.1681643907767368}
+Epoch: 298, Average Loss: 0.00025014823768287897
+Validation Metrics: {'Accuracy': 0.9697011709213257, 'Precision': 0.8463108539581299, 'Recall': 0.7448665499687195, 'F-Score': 0.792354941368103, 'True Positives': 2902.0, 'True Negatives': 45777.0, 'False Positives': 527.0, 'False Negatives': 994.0, 'Average-Loss': 0.16640414659720493}
+Epoch: 299, Average Loss: 0.002043245593085885
+Validation Metrics: {'Accuracy': 0.9703187346458435, 'Precision': 0.8578227162361145, 'Recall': 0.7402464151382446, 'F-Score': 0.7947092652320862, 'True Positives': 2884.0, 'True Negatives': 45826.0, 'False Positives': 478.0, 'False Negatives': 1012.0, 'Average-Loss': 0.16827238166474726}
+Loading test dataset from datasets/VOC2007/processed
+Validation Metrics: {'Accuracy': 0.9716477990150452, 'Precision': 0.8703930974006653, 'Recall': 0.7426624894142151, 'F-Score': 0.8014705777168274, 'True Positives': 5668.0, 'True Negatives': 90564.0, 'False Positives': 844.0, 'False Negatives': 1964.0, 'Average-Loss': 0.15676234034228595}
+Validation Metrics: {'Accuracy': 0.9711934328079224, 'Precision': 0.8516556024551392, 'Recall': 0.7582547068595886, 'F-Score': 0.8022457957267761, 'True Positives': 5787.0, 'True Negatives': 90400.0, 'False Positives': 1008.0, 'False Negatives': 1845.0, 'Average-Loss': 0.08175180955926899}

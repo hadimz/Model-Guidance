@@ -12,6 +12,8 @@ class VOCDetectParsed(torch.utils.data.Dataset):
         self.data = data_dict["data"]
         self.labels = data_dict["labels"]
         self.bbs = data_dict["bbs"]
+        self.masks = data_dict['mask']
+        self.guiding_points = data_dict['guiding_points']
         assert len(self.data) == len(self.labels)
         assert len(self.data) == len(self.bbs)
         self.annotated_fraction = annotated_fraction
@@ -26,21 +28,27 @@ class VOCDetectParsed(torch.utils.data.Dataset):
 
     def __getitem__(self, idx):
         if self.transform is not None:
-            return self.transform(self.data[idx]), self.labels[idx], self.bbs[idx]
-        return self.data[idx], self.labels[idx], self.bbs[idx]
+            return self.transform(self.data[idx]), self.labels[idx], self.bbs[idx], self.masks[idx] if self.masks is not None else None, self.guiding_points[idx], idx
+        return self.data[idx], self.labels[idx], self.bbs[idx], self.masks[idx] if self.masks is not None else None, idx
 
     def load_data(self, idx, pred_class):
-        img, labels, bbs = self.__getitem__(idx)
+        img, labels, bbs, mask, guiding_points = self.__getitem__(idx)
         label = labels[pred_class]
         bb = utils.filter_bbs(bbs, pred_class)
-        return img, label, bb
+        mask = torch.where(mask == pred_class, 1, 0) if mask is not None else None
+        return img, label, bb, mask, guiding_points, idx
 
     def __len__(self):
         return len(self.data)
 
     @staticmethod
     def collate_fn(batch):
-        data = torch.stack([item[0] for item in batch])
+        data = torch.stack([item[0].type(torch.float32) for item in batch])
         labels = torch.stack([item[1] for item in batch])
         bbs = [item[2] for item in batch]
-        return data, labels, bbs
+        masks = [item[3] for item in batch]
+        guiding_points = [item[4] for item in batch]
+        indices = [item[5] for item in batch]
+        return data, labels, bbs, masks, guiding_points, indices
+
+

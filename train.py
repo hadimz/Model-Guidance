@@ -19,6 +19,91 @@ import bcos.modules
 import bcos.data
 import fixup_resnet
 
+import matplotlib.pyplot as plt
+import torchvision.transforms.functional as ff
+
+
+class_names = {0: '__background__',
+ 1: 'person',
+ 2: 'bicycle',
+ 3: 'car',
+ 4: 'motorcycle',
+ 5: 'airplane',
+ 6: 'bus',
+ 7: 'train',
+ 8: 'truck',
+ 9: 'boat',
+ 10: 'traffic light',
+ 11: 'fire hydrant',
+ 12: 'stop sign',
+ 13: 'parking meter',
+ 14: 'bench',
+ 15: 'bird',
+ 16: 'cat',
+ 17: 'dog',
+ 18: 'horse',
+ 19: 'sheep',
+ 20: 'cow',
+ 21: 'elephant',
+ 22: 'bear',
+ 23: 'zebra',
+ 24: 'giraffe',
+ 25: 'backpack',
+ 26: 'umbrella',
+ 27: 'handbag',
+ 28: 'tie',
+ 29: 'suitcase',
+ 30: 'frisbee',
+ 31: 'skis',
+ 32: 'snowboard',
+ 33: 'sports ball',
+ 34: 'kite',
+ 35: 'baseball bat',
+ 36: 'baseball glove',
+ 37: 'skateboard',
+ 38: 'surfboard',
+ 39: 'tennis racket',
+ 40: 'bottle',
+ 41: 'wine glass',
+ 42: 'cup',
+ 43: 'fork',
+ 44: 'knife',
+ 45: 'spoon',
+ 46: 'bowl',
+ 47: 'banana',
+ 48: 'apple',
+ 49: 'sandwich',
+ 50: 'orange',
+ 51: 'broccoli',
+ 52: 'carrot',
+ 53: 'hot dog',
+ 54: 'pizza',
+ 55: 'donut',
+ 56: 'cake',
+ 57: 'chair',
+ 58: 'couch',
+ 59: 'potted plant',
+ 60: 'bed',
+ 61: 'dining table',
+ 62: 'toilet',
+ 63: 'tv',
+ 64: 'laptop',
+ 65: 'mouse',
+ 66: 'remote',
+ 67: 'keyboard',
+ 68: 'cell phone',
+ 69: 'microwave',
+ 70: 'oven',
+ 71: 'toaster',
+ 72: 'sink',
+ 73: 'refrigerator',
+ 74: 'book',
+ 75: 'clock',
+ 76: 'vase',
+ 77: 'scissors',
+ 78: 'teddy bear',
+ 79: 'hair drier',
+ 80: 'toothbrush'}
 
 def eval_model(model, attributor, loader, num_batches, num_classes, loss_fn, writer=None, epoch=None):
     model.eval()
@@ -26,12 +111,13 @@ def eval_model(model, attributor, loader, num_batches, num_classes, loss_fn, wri
         num_classes=num_classes, threshold=0.0)
     bb_metric = metrics.BoundingBoxEnergyMultiple()
     iou_metric = metrics.BoundingBoxIoUMultiple()
+
     total_loss = 0
-    for batch_idx, (test_X, test_y, test_bbs) in enumerate(tqdm(loader)):
+    for batch_idx, (test_X, test_y, test_bbs, _, _, _) in enumerate(tqdm(loader, ncols=80)):
         test_X.requires_grad = True
         test_X = test_X.cuda()
         test_y = test_y.cuda()
-        logits, features = model(test_X)
+        logits, features, _ = model(test_X)
         loss = loss_fn(logits, test_y).detach()
         total_loss += loss
         f1_metric.update(logits, test_y)
@@ -79,6 +165,7 @@ def main(args):
         
 
     if is_bcos:
+        print('loading bcos resnet50 model')
         model = hubconf.resnet50(pretrained=True)
         model[0].fc = bcos.modules.bcosconv2d.BcosConv2d(
                     in_channels=model[0].fc.in_channels, out_channels=num_classes)
@@ -113,12 +200,14 @@ def main(args):
     model = model.cuda()
     model.train()
 
+
     orig_name = os.path.basename(
         args.model_path) if args.model_path else str(None)
 
     model_prefix = args.model_backbone
 
     optimize_explanation_str = "finetunedobjloc" if args.optimize_explanations else "standard"
+    optimize_explanation_str += args.feedback_type if args.feedback_type else ""
     optimize_explanation_str += "pareto" if args.pareto else ""
     optimize_explanation_str += "limited" if args.annotated_fraction < 1.0 else ""
     optimize_explanation_str += "dilated" if args.box_dilation_percentage > 0 else ""
@@ -146,12 +235,22 @@ def main(args):
             0.229, 0.224, 0.225])
 
     root = os.path.join(args.data_path, args.dataset, "processed")
-    train_data = datasets.VOCDetectParsed(
-        root=root, image_set="train", transform=transformer, annotated_fraction=args.annotated_fraction)
-    val_data = datasets.VOCDetectParsed(
-        root=root, image_set="val", transform=transformer)
-    test_data = datasets.VOCDetectParsed(
-        root=root, image_set="test", transform=transformer)
+    
+    if args.feedback_type == 'bbox':
+        print(f"Loading train dataset from {root}")
+        train_data = datasets.VOCDetectParsed(
+            root=root, image_set="train", transform=transformer, annotated_fraction=args.annotated_fraction)
+        print(f"Loading validation dataset from {root}")
+        val_data = datasets.VOCDetectParsed(
+            root=root, image_set="val", transform=transformer)
+    elif args.feedback_type == 'points':
+        print(f"Loading guiding points train dataset from {root}")
+        train_data = datasets.VOCDetectParsed(
+            root=root, image_set="train_GuidingPoints", transform=transformer, annotated_fraction=args.annotated_fraction)
+        print(f"Loading guiding points validation dataset from {root}")
+        val_data = datasets.VOCDetectParsed(
+            root=root, image_set="val_GuidingPoints", transform=transformer)
+    
 
     print(f"Train data size: {len(train_data)}")
     annotation_count = 0
@@ -163,15 +262,13 @@ def main(args):
     print(f"Annotated: {annotation_count}, Total: {total_count}")
 
     train_loader = torch.utils.data.DataLoader(
-        train_data, batch_size=args.train_batch_size, shuffle=True, num_workers=4, collate_fn=datasets.VOCDetectParsed.collate_fn)
+        train_data, batch_size=args.train_batch_size, shuffle=False, num_workers=0, collate_fn=datasets.VOCDetectParsed.collate_fn)
     val_loader = torch.utils.data.DataLoader(
-        val_data, batch_size=args.eval_batch_size, shuffle=False, num_workers=4, collate_fn=datasets.VOCDetectParsed.collate_fn)
-    test_loader = torch.utils.data.DataLoader(
-        test_data, batch_size=args.eval_batch_size, shuffle=False, num_workers=4, collate_fn=datasets.VOCDetectParsed.collate_fn)
-
+        val_data, batch_size=args.eval_batch_size, shuffle=False, num_workers=0, collate_fn=datasets.VOCDetectParsed.collate_fn)
+    
+    
     num_train_batches = len(train_data) / args.train_batch_size
     num_val_batches = len(val_data) / args.eval_batch_size
-    num_test_batches = len(test_data) / args.eval_batch_size
 
     loss_fn = torch.nn.BCEWithLogitsLoss()
     loss_loc = losses.get_localization_loss(
@@ -180,7 +277,6 @@ def main(args):
     optimizer = torch.optim.Adam(model.parameters(), lr=args.learning_rate)
 
     f1_tracker = utils.BestMetricTracker("F-Score")
-    
     model_activator = model_activators.ResNetModelActivator(
         model=model, layer=layer_idx, is_bcos=is_bcos)
     
@@ -196,46 +292,163 @@ def main(args):
 
     if args.pareto:
         pareto_front_tracker = utils.ParetoFrontModels()
-
-    for e in tqdm(range(args.total_epochs)):
+    flag = True
+    for e in tqdm(range(args.total_epochs), ncols=80):
         total_loss = 0
         total_class_loss = 0
         total_localization_loss = 0
 
-        for batch_idx, (train_X, train_y, train_bbs) in enumerate(tqdm(train_loader)):
+        for batch_idx, (train_X, train_y, train_bbs, train_masks, guiding_points, indices) in enumerate(tqdm(train_loader, ncols=80)):
+            # if batch_idx < 75:
+            #     continue
             batch_loss = 0
             localization_loss = 0
             optimizer.zero_grad()
             train_X.requires_grad = True
             train_X = train_X.cuda()
             train_y = train_y.cuda()
-            logits, features = model_activator(train_X)
+            logits, features, acts = model_activator(train_X)
             loss = loss_fn(logits, train_y)
             batch_loss += loss
             total_class_loss += loss.detach()
-
             if args.optimize_explanations:
                 gt_classes = utils.get_random_optimization_targets(train_y)
-                attributions = attributor(
-                    features, logits, classes=gt_classes).squeeze(1)
-                for img_idx in range(len(train_X)):
-                    if train_bbs[img_idx] is None:
-                        continue
-                    bb_list = utils.filter_bbs(
-                        train_bbs[img_idx], gt_classes[img_idx])
-                    if args.box_dilation_percentage > 0:
-                        bb_list = utils.enlarge_bb(
-                            bb_list, percentage=args.box_dilation_percentage)
-                    localization_loss += loss_loc(attributions[img_idx], bb_list)
-                batch_loss += args.localization_loss_lambda*localization_loss
-                if torch.is_tensor(localization_loss):
-                    total_localization_loss += localization_loss.detach()
+                attributions = attributor(features, logits, classes=gt_classes).squeeze(1)
+                if args.feedback_type == "bbox":
+                    for img_idx in range(len(train_X)):
+                        if train_bbs[img_idx] is None:
+                            continue
+                        bb_list = utils.filter_bbs(
+                            train_bbs[img_idx], gt_classes[img_idx])
+                        if args.box_dilation_percentage > 0:
+                            bb_list = utils.enlarge_bb(
+                                bb_list, percentage=args.box_dilation_percentage)
+                        localization_loss += loss_loc(attributions[img_idx], bb_list)
+                    batch_loss += args.localization_loss_lambda*localization_loss
+                    if torch.is_tensor(localization_loss):
+                        total_localization_loss += localization_loss.detach()
+                    else:
+                        total_localization_loss += localization_loss
+                elif args.feedback_type == "points":
+                    for img_idx in range(len(train_X)):
+                        if guiding_points[img_idx][gt_classes[img_idx]] is None:
+
+                            target_mask = torch.where(train_masks[img_idx].cuda()==gt_classes[img_idx]+1, 0., 1.).detach().reshape(-1)
+                            target_mask = target_mask*attributions[img_idx].detach().clamp(0,1).reshape(-1)
+
+                            if  target_mask.sum() < 1.e-6 or torch.isnan(target_mask.sum() or torch.isnan(attributions[img_idx].sum())):
+                                train_loader.dataset.guiding_points[indices[img_idx]][gt_classes[img_idx]] = guiding_points[img_idx][gt_classes[img_idx]] = []
+                                break
+
+                                # print(f'target mask sum is {target_mask.sum()}, min: {target_mask.min()}, max: {target_mask.max()}')
+                                # print(f'train mask sum is {train_masks[img_idx].sum()}, min: {train_masks[img_idx].min()}, max: {train_masks[img_idx].max()}')
+                                # print(f'attributions mask sum is {attributions[img_idx].sum()}, min: {attributions[img_idx].min()}, max: {attributions[img_idx].max()}')
+                                # print(f'using attributor: {attributor}!')
+                                # print(f'mask containing classes: {torch.unique(train_masks[img_idx])}')
+                                # print(f'gt class: {gt_classes[img_idx]}')
+                                # print(f'batch: {batch_idx}, img idx in batch: {img_idx}, actual idx in dataset: {indices[img_idx]}')
+                                # print(f'Number of guiding points for this image and class: {len(guiding_points[img_idx][gt_classes[img_idx]])}')
+                                # print(f'Excluding this image from training for this epoch.')
+                                # if flag:
+                                #     # Plot the images, masks, and attributions for the first image in the batch for diagnostic purposes
+                                #     plt.figure(figsize=(30,5))
+                                #     plt.subplot(1,7,1)
+                                #     plt.imshow(train_X[img_idx][:3].detach().cpu().moveaxis(0, -1), vmin=0, vmax=1)
+                                #     plt.axis('off')
+                                #     plt.subplot(1,7,2)
+                                #     plt.imshow(train_X[img_idx][3:].detach().cpu().moveaxis(0, -1), vmin=0, vmax=1)
+                                #     plt.axis('off')
+                                #     plt.subplot(1,7,3)
+                                #     plt.imshow(train_masks[img_idx], vmin=0, vmax=1)
+                                #     plt.axis('off')
+                                #     plt.subplot(1,7,4)
+                                #     train_masks[img_idx] = torch.where(train_masks[img_idx] == gt_classes[img_idx].cpu()+1, 1, 0)
+                                #     mx = attributions[img_idx].max().item()
+                                #     plt.imshow(train_masks[img_idx], vmin=0, vmax=1)
+                                #     plt.axis('off')
+                                #     plt.subplot(1,7,5)
+                                #     plt.imshow(attributions[img_idx].detach().cpu(), vmin=0, vmax=1)
+                                #     plt.suptitle(f'{gt_classes[img_idx].item()+1}:{class_names[gt_classes[img_idx].item()+1]} - {mx}, {gt_classes[img_idx]+1}')
+                                #     plt.axis('off')
+                                #     plt.subplot(1,7,6)
+                                #     plt.imshow(target_mask.cpu(), vmin=0, vmax=1)
+                                #     plt.axis('off')
+                                #     plt.savefig(f"figures/issue_{batch_idx}_{img_idx}.png")
+                                #     plt.close('all')
+                                #     flag = False
+                            else:
+                                # print(f'target mask shape before: {target_mask.size()}, target_mask sum: {target_mask.sum()}, target_mask: {target_mask}')
+                                # print(f'target mask shape after: {target_mask.size()}, target_mask sum: {target_mask.sum()}, target_mask: {target_mask}')
+                                rand_indices = torch.multinomial(target_mask, args.num_guiding_points, replacement=True).cpu()
+                                x_index = torch.div(rand_indices, 224, rounding_mode='floor') # Row index
+                                y_index = rand_indices % 224   # Column index
+                                points = [(x_index[i],y_index[i]) for i in range(len(rand_indices))]
+                                train_loader.dataset.guiding_points[indices[img_idx]][gt_classes[img_idx]] = guiding_points[img_idx][gt_classes[img_idx]] = points
+                        
+                        weak_mask = torch.zeros(7,7).cuda()
+                        for gpoint in guiding_points[img_idx][gt_classes[img_idx]]:
+                            sim = torch.nn.functional.cosine_similarity(acts[img_idx,:, torch.floor(gpoint[0]/32).int(), torch.floor(gpoint[1]/32).int()].unsqueeze(1).unsqueeze(1), acts[img_idx], dim=0)
+                            weak_mask = torch.max(weak_mask, sim)
+                        weak_mask = ff.resize(weak_mask.unsqueeze(0).unsqueeze(0), size=(224, 224), interpolation=torchvision.transforms.InterpolationMode.BICUBIC).squeeze()
+                        weak_mask = torch.where(weak_mask<args.similarity_threshold, 0, 1).detach()
+                        
+                        if args.adaptive_lambda:
+                            AdaptiveLambda = torch.numel(weak_mask)/torch.sum(weak_mask)
+                            if torch.isinf(AdaptiveLambda) or torch.isnan(AdaptiveLambda):
+                                AdaptiveLambda = torch.tensor(1.).cuda()
+                            localization_loss += AdaptiveLambda.detach()*args.localization_loss_lambda*loss_loc(attributions[img_idx], weak_mask)
+                        else:
+                            localization_loss += args.localization_loss_lambda*loss_loc(attributions[img_idx], weak_mask)
+                    batch_loss += localization_loss
+                    if torch.is_tensor(localization_loss):
+                        total_localization_loss += localization_loss.detach()
+                    else:
+                        total_localization_loss += localization_loss
+                    
+                    # if img_idx == 0 and batch_idx < 25:
+                    #     # Plot the images, masks, and attributions for the first image in the batch for diagnostic purposes
+                    #     plt.figure(figsize=(30,5))
+                    #     plt.subplot(1,7,1)
+                    #     plt.imshow(train_X[img_idx][:3].detach().cpu().moveaxis(0, -1))
+                    #     plt.axis('off')
+                    #     plt.subplot(1,7,2)
+                    #     plt.imshow(train_X[img_idx][3:].detach().cpu().moveaxis(0, -1))
+                    #     plt.axis('off')
+                    #     plt.subplot(1,7,3)
+                    #     plt.imshow(train_masks[img_idx])
+                    #     plt.axis('off')
+                    #     plt.subplot(1,7,4)
+                    #     train_masks[img_idx] = torch.where(train_masks[img_idx] == gt_classes[img_idx].cpu()+1, 1, 0)
+                    #     mx = attributions[img_idx].max().item()
+                    #     for point in guiding_points[img_idx][gt_classes[img_idx]]:
+                    #         attributions[img_idx][point] = mx*1.2
+                    #         train_masks[img_idx][point] = 10
+                        
+                    #     plt.imshow(train_masks[img_idx])
+                    #     plt.axis('off')
+                    #     plt.subplot(1,7,5)
+                    #     plt.imshow(attributions[img_idx].detach().cpu())
+                    #     plt.suptitle(f'{gt_classes[img_idx].item()+1}:{class_names[gt_classes[img_idx].item()+1]} - {mx}, {gt_classes[img_idx]+1}')
+                    #     plt.axis('off')
+                    #     plt.subplot(1,7,6)
+                    #     plt.imshow(features[img_idx][:3].detach().cpu().moveaxis(0, -1))
+                    #     plt.imshow(weak_mask[3:].detach().cpu(), alpha=0.5)
+                    #     plt.axis('off')
+                    #     plt.subplot(1,7,7)
+                    #     plt.imshow(weak_mask[3:].detach().cpu())
+                    #     plt.axis('off')
+                    #     plt.savefig(f"figures/mask_{e}_{batch_idx}_{gt_classes[img_idx]}.png")
+                    #     plt.close('all')
+                elif args.feedback_type == "mask":
+                    pass
                 else:
-                    total_localization_loss += localization_loss
+                    raise NotImplementedError
                
             batch_loss.backward()
             total_loss += batch_loss.detach()
             optimizer.step()
+        
+        del train_X, train_y, logits, features, weak_mask
 
         print(f"Epoch: {e}, Average Loss: {total_loss / num_train_batches}")
 
@@ -261,12 +474,24 @@ def main(args):
                     pareto_front_tracker.save_pareto_front(save_path)
                 return
             f1_tracker.update(metric_vals, model, e)
-
+    
     if args.pareto:
         pareto_front_tracker.save_pareto_front(save_path)
 
     final_metric_vals = metric_vals
     final_metric_vals = utils.update_val_metrics(final_metric_vals)
+
+    del train_data, val_data, train_loader, val_loader
+    print(f"Loading test dataset from {root}")
+    if args.feedback_type == 'bbox':
+        test_data = datasets.VOCDetectParsed(
+            root=root, image_set="test", transform=transformer)
+    elif args.feedback_type == 'points':
+        test_data = datasets.VOCDetectParsed(
+            root=root, image_set="test_GuidingPoints", transform=transformer)
+    num_test_batches = len(test_data) / args.eval_batch_size
+    test_loader = torch.utils.data.DataLoader(
+        test_data, batch_size=args.eval_batch_size, shuffle=False, num_workers=0, collate_fn=datasets.VOCDetectParsed.collate_fn)
     final_metrics = eval_model(
         model_activator, eval_attributor, test_loader, num_test_batches, num_classes, loss_fn)
     final_state_dict = copy.deepcopy(model.state_dict())
@@ -305,7 +530,7 @@ parser.add_argument("--localization_loss_lambda", type=float, default=1.0, help=
 parser.add_argument("--layer", type=str, default="Input",
                     choices=["Input", "Final", "Mid1", "Mid2", "Mid3"], help="Layer of the model to compute and optimize attributions on.")
 parser.add_argument("--localization_loss_fn", type=str, default=None,
-                    choices=["Energy", "L1", "RRR", "PPCE"], help="Localization loss function to use.")
+                    choices=["Energy", 'Energy_Points', "L1", "RRR", "PPCE"], help="Localization loss function to use.")
 parser.add_argument("--attribution_method", type=str, default=None,
                     choices=["BCos", "GradCam", "IxG"], help="Attribution method to use for optimization.")
 parser.add_argument("--optimize_explanations",
@@ -316,5 +541,9 @@ parser.add_argument("--annotated_fraction", type=float, default=1.0, help="Fract
 parser.add_argument("--evaluation_frequency", type=int, default=1, help="Frequency (number of epochs) at which to evaluate the current model.")
 parser.add_argument("--eval_batch_size", type=int, default=4, help="Batch size to use for evaluation.")
 parser.add_argument("--box_dilation_percentage", type=float, default=0, help="Fraction of dilation to use for bounding boxes when training.")
+parser.add_argument("--feedback_type", type=str, default=None, help="Type of feedback to be used for guiding explanations. Supported: mask, bbox, points.")
+parser.add_argument("--num_guiding_points", type=int, default=10, help="Number of random points to sample within the object mask when using 'points' feedback.")    
+parser.add_argument("--similarity_threshold", type=int, default=0.99, help="The threshold used for creating weakly supervised similarity masks from guiding points.")    
+parser.add_argument("--adaptive_lambda", type=bool, default=False, help="Lambda to use to weight localization loss.")
 args = parser.parse_args()
 main(args)

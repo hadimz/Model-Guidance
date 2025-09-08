@@ -4,6 +4,7 @@ import torch
 def get_localization_loss(loss_name):
     loss_map = {
         "Energy": EnergyPointingGameBBMultipleLoss,
+        "Energy_Points": EnergyPointingGameGPMultipleLoss,
         "L1": GradiaBBMultipleLoss,
         "RRR": RRRBBMultipleLoss,
         "PPCE": HAICSBBMultipleLoss
@@ -26,7 +27,6 @@ class BBMultipleLoss:
             bb_mask[ymin:ymax, xmin:xmax] = 1
         return bb_mask
 
-
 class EnergyPointingGameBBMultipleLoss:
 
     def __init__(self):
@@ -45,6 +45,22 @@ class EnergyPointingGameBBMultipleLoss:
         if den < 1e-7:
             return 1-num
         return 1-num/den
+
+class EnergyPointingGameGPMultipleLoss:
+
+    def __init__(self):
+        super().__init__()
+        self.only_positive = False
+        self.binarize = False
+
+    def __call__(self, attributions, mask):
+        pos_attributions = attributions.clamp(min=0)
+        num = pos_attributions[torch.where(mask == 1)].sum()
+        den = pos_attributions.sum()
+        if den < 1e-7:
+            return num
+        return num/den
+
 
 
 
