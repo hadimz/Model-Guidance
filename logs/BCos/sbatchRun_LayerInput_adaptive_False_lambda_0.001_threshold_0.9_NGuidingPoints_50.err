@@ -1,0 +1,28 @@
+Traceback (most recent call last):
+  File "/lustre06/project/6043437/hadimz/Model-Guidance/train.py", line 558, in <module>
+    main(args)
+  File "/lustre06/project/6043437/hadimz/Model-Guidance/train.py", line 203, in main
+    checkpoint = torch.load(args.model_path)
+  File "/lustre06/project/6043437/hadimz/venv/model_guidance/lib/python3.10/site-packages/torch/serialization.py", line 1462, in load
+    return _load(
+  File "/lustre06/project/6043437/hadimz/venv/model_guidance/lib/python3.10/site-packages/torch/serialization.py", line 1964, in _load
+    result = unpickler.load()
+  File "/lustre06/project/6043437/hadimz/venv/model_guidance/lib/python3.10/site-packages/torch/_weights_only_unpickler.py", line 512, in load
+    self.append(self.persistent_load(pid))
+  File "/lustre06/project/6043437/hadimz/venv/model_guidance/lib/python3.10/site-packages/torch/serialization.py", line 1928, in persistent_load
+    typed_storage = load_tensor(
+  File "/lustre06/project/6043437/hadimz/venv/model_guidance/lib/python3.10/site-packages/torch/serialization.py", line 1900, in load_tensor
+    wrap_storage=restore_location(storage, location),
+  File "/lustre06/project/6043437/hadimz/venv/model_guidance/lib/python3.10/site-packages/torch/serialization.py", line 693, in default_restore_location
+    result = fn(storage, location)
+  File "/lustre06/project/6043437/hadimz/venv/model_guidance/lib/python3.10/site-packages/torch/serialization.py", line 632, in _deserialize
+    return obj.to(device=device)
+  File "/lustre06/project/6043437/hadimz/venv/model_guidance/lib/python3.10/site-packages/torch/storage.py", line 292, in to
+    return _to(self, device, non_blocking)
+  File "/lustre06/project/6043437/hadimz/venv/model_guidance/lib/python3.10/site-packages/torch/_utils.py", line 99, in _to
+    untyped_storage = torch.UntypedStorage(self.size(), device=device)
+RuntimeError: CUDA error: CUDA-capable device(s) is/are busy or unavailable
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+

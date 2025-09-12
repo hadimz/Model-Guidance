@@ -1,0 +1,133 @@
+loading bcos resnet50 model
+Loading train dataset from datasets/COCO2014/processed
+Loading validation dataset from datasets/COCO2014/processed
+Train data size: 73872
+Annotated: 73872, Total: 73872
+  0%|                                                    | 0/60 [00:00<?, ?it/s]  2%|▋                                        | 1/60 [09:22<9:12:42, 562.08s/it]  3%|█▎                                       | 2/60 [18:08<8:42:47, 540.82s/it]  5%|██                                       | 3/60 [27:04<8:31:58, 538.92s/it]  7%|██▋                                      | 4/60 [36:06<8:24:12, 540.22s/it]  8%|███▍                                     | 5/60 [44:54<8:10:58, 535.61s/it] 10%|████                                     | 6/60 [53:43<8:00:12, 533.56s/it] 12%|████▌                                  | 7/60 [1:02:32<7:49:58, 532.04s/it] 13%|█████▏                                 | 8/60 [1:11:51<7:48:22, 540.42s/it] 15%|█████▊                                 | 9/60 [1:21:03<7:42:33, 544.20s/it] 17%|██████▎                               | 10/60 [1:29:56<7:30:34, 540.68s/it] 18%|██████▉                               | 11/60 [1:39:23<7:28:02, 548.62s/it] 20%|███████▌                              | 12/60 [1:48:12<7:14:09, 542.70s/it] 22%|████████▏                             | 13/60 [1:57:14<7:04:54, 542.44s/it] 23%|████████▊                             | 14/60 [2:06:19<6:56:30, 543.28s/it] 25%|█████████▌                            | 15/60 [2:15:21<6:47:13, 542.96s/it] 27%|██████████▏                           | 16/60 [2:24:16<6:36:25, 540.57s/it] 28%|██████████▊                           | 17/60 [2:32:25<6:16:16, 525.04s/it] 30%|███████████▍                          | 18/60 [2:41:10<6:07:27, 524.94s/it] 32%|████████████                          | 19/60 [2:50:09<6:01:40, 529.29s/it] 33%|████████████▋                         | 20/60 [2:59:10<5:55:10, 532.77s/it] 35%|█████████████▎                        | 21/60 [3:07:44<5:42:39, 527.18s/it] 37%|█████████████▉                        | 22/60 [3:16:44<5:36:16, 530.95s/it] 38%|██████████████▌                       | 23/60 [3:26:02<5:32:25, 539.07s/it] 40%|███████████████▏                      | 24/60 [3:35:21<5:27:01, 545.05s/it] 42%|███████████████▊                      | 25/60 [3:44:18<5:16:38, 542.81s/it] 43%|████████████████▍                     | 26/60 [3:53:30<5:09:08, 545.54s/it] 45%|█████████████████                     | 27/60 [4:02:40<5:00:43, 546.77s/it] 47%|█████████████████▋                    | 28/60 [4:11:54<4:52:49, 549.03s/it] 48%|██████████████████▎                   | 29/60 [4:20:44<4:40:39, 543.21s/it] 50%|███████████████████                   | 30/60 [4:29:52<4:32:20, 544.69s/it] 52%|███████████████████▋                  | 31/60 [4:38:41<4:20:58, 539.95s/it] 53%|████████████████████▎                 | 32/60 [4:47:45<4:12:35, 541.26s/it] 55%|████████████████████▉                 | 33/60 [4:56:42<4:03:00, 540.03s/it] 57%|█████████████████████▌                | 34/60 [5:05:45<3:54:23, 540.92s/it] 58%|██████████████████████▏               | 35/60 [5:14:34<3:43:53, 537.33s/it] 60%|██████████████████████▊               | 36/60 [5:23:43<3:36:20, 540.84s/it] 62%|███████████████████████▍              | 37/60 [5:32:52<3:28:13, 543.21s/it] 63%|████████████████████████              | 38/60 [5:41:36<3:17:01, 537.36s/it] 65%|████████████████████████▋             | 39/60 [5:50:50<3:09:52, 542.50s/it] 67%|█████████████████████████▎            | 40/60 [5:59:39<2:59:29, 538.47s/it] 68%|█████████████████████████▉            | 41/60 [6:08:39<2:50:34, 538.66s/it] 70%|██████████████████████████▌           | 42/60 [6:17:58<2:43:25, 544.76s/it] 72%|███████████████████████████▏          | 43/60 [6:26:44<2:32:46, 539.23s/it] 73%|███████████████████████████▊          | 44/60 [6:36:21<2:26:48, 550.52s/it] 75%|████████████████████████████▌         | 45/60 [6:44:58<2:15:07, 540.53s/it] 77%|█████████████████████████████▏        | 46/60 [6:53:18<2:03:15, 528.28s/it] 78%|█████████████████████████████▊        | 47/60 [7:02:09<1:54:37, 529.07s/it] 80%|██████████████████████████████▍       | 48/60 [7:10:59<1:45:53, 529.46s/it] 82%|███████████████████████████████       | 49/60 [7:20:15<1:38:30, 537.32s/it] 83%|███████████████████████████████▋      | 50/60 [7:29:31<1:30:29, 542.93s/it] 85%|████████████████████████████████▎     | 51/60 [7:38:14<1:20:34, 537.20s/it] 87%|████████████████████████████████▉     | 52/60 [7:46:01<1:08:48, 516.09s/it] 88%|█████████████████████████████████▌    | 53/60 [7:54:56<1:00:52, 521.78s/it] 90%|████████████████████████████████████    | 54/60 [8:03:22<51:41, 517.00s/it] 92%|████████████████████████████████████▋   | 55/60 [8:12:26<43:45, 525.05s/it] 93%|█████████████████████████████████████▎  | 56/60 [8:21:10<34:58, 524.73s/it] 95%|██████████████████████████████████████  | 57/60 [8:30:06<26:24, 528.12s/it] 97%|██████████████████████████████████████▋ | 58/60 [8:39:24<17:54, 537.21s/it] 98%|███████████████████████████████████████▎| 59/60 [8:48:28<08:59, 539.21s/it]100%|████████████████████████████████████████| 60/60 [8:57:40<00:00, 542.85s/it]100%|████████████████████████████████████████| 60/60 [8:57:40<00:00, 537.67s/it]
+Epoch: 0, Average Loss: 0.07348736375570297
+Validation Metrics: {'Accuracy': 0.9793016910552979, 'Precision': 0.8310487866401672, 'Recall': 0.5521262288093567, 'F-Score': 0.6634646058082581, 'True Positives': 13399.0, 'True Negatives': 629728.0, 'False Positives': 2724.0, 'False Negatives': 10869.0, 'Average-Loss': 0.06079212346252969}
+Epoch: 1, Average Loss: 0.05669340491294861
+Validation Metrics: {'Accuracy': 0.9801239371299744, 'Precision': 0.8313537836074829, 'Recall': 0.5797346234321594, 'F-Score': 0.6831104159355164, 'True Positives': 14069.0, 'True Negatives': 629598.0, 'False Positives': 2854.0, 'False Negatives': 10199.0, 'Average-Loss': 0.058188898581682455}
+Epoch: 2, Average Loss: 0.051936209201812744
+Validation Metrics: {'Accuracy': 0.980378270149231, 'Precision': 0.8280115127563477, 'Recall': 0.5919729471206665, 'F-Score': 0.6903743743896484, 'True Positives': 14366.0, 'True Negatives': 629468.0, 'False Positives': 2984.0, 'False Negatives': 9902.0, 'Average-Loss': 0.05745288181107436}
+Epoch: 3, Average Loss: 0.048202674835920334
+Validation Metrics: {'Accuracy': 0.9805198311805725, 'Precision': 0.8247212767601013, 'Recall': 0.6004615426063538, 'F-Score': 0.6949471831321716, 'True Positives': 14572.0, 'True Negatives': 629355.0, 'False Positives': 3097.0, 'False Negatives': 9696.0, 'Average-Loss': 0.0574806000547703}
+Epoch: 4, Average Loss: 0.04485708847641945
+Validation Metrics: {'Accuracy': 0.9804574251174927, 'Precision': 0.8178229928016663, 'Recall': 0.6061891913414001, 'F-Score': 0.6962798237800598, 'True Positives': 14711.0, 'True Negatives': 629175.0, 'False Positives': 3277.0, 'False Negatives': 9557.0, 'Average-Loss': 0.05808051638255268}
+Epoch: 5, Average Loss: 0.04169991984963417
+Validation Metrics: {'Accuracy': 0.9803478121757507, 'Precision': 0.8113558888435364, 'Recall': 0.6100214123725891, 'F-Score': 0.696429431438446, 'True Positives': 14804.0, 'True Negatives': 629010.0, 'False Positives': 3442.0, 'False Negatives': 9464.0, 'Average-Loss': 0.05903763967972462}
+Epoch: 6, Average Loss: 0.03864780440926552
+Validation Metrics: {'Accuracy': 0.9801757335662842, 'Precision': 0.8028972744941711, 'Recall': 0.6143481135368347, 'F-Score': 0.6960805058479309, 'True Positives': 14909.0, 'True Negatives': 628792.0, 'False Positives': 3660.0, 'False Negatives': 9359.0, 'Average-Loss': 0.060248089731211554}
+Epoch: 7, Average Loss: 0.03566444292664528
+Validation Metrics: {'Accuracy': 0.9798650741577148, 'Precision': 0.7932664155960083, 'Recall': 0.6155431270599365, 'F-Score': 0.6931947469711304, 'True Positives': 14938.0, 'True Negatives': 628559.0, 'False Positives': 3893.0, 'False Negatives': 9330.0, 'Average-Loss': 0.06173608282449141}
+Epoch: 8, Average Loss: 0.032728247344493866
+Validation Metrics: {'Accuracy': 0.9796580076217651, 'Precision': 0.7872452735900879, 'Recall': 0.6159963607788086, 'F-Score': 0.6911713480949402, 'True Positives': 14949.0, 'True Negatives': 628412.0, 'False Positives': 4040.0, 'False Negatives': 9319.0, 'Average-Loss': 0.06355292893803675}
+Epoch: 9, Average Loss: 0.029828554019331932
+Validation Metrics: {'Accuracy': 0.9793793559074402, 'Precision': 0.7811975479125977, 'Recall': 0.6139360666275024, 'F-Score': 0.6875403523445129, 'True Positives': 14899.0, 'True Negatives': 628279.0, 'False Positives': 4173.0, 'False Negatives': 9369.0, 'Average-Loss': 0.06571629027353743}
+Epoch: 10, Average Loss: 0.02696509286761284
+Validation Metrics: {'Accuracy': 0.9791844487190247, 'Precision': 0.7766813039779663, 'Recall': 0.6129471063613892, 'F-Score': 0.6851681470870972, 'True Positives': 14875.0, 'True Negatives': 628175.0, 'False Positives': 4277.0, 'False Negatives': 9393.0, 'Average-Loss': 0.06813960680065324}
+Epoch: 11, Average Loss: 0.024150729179382324
+Validation Metrics: {'Accuracy': 0.978987991809845, 'Precision': 0.7725024819374084, 'Recall': 0.6114636659622192, 'F-Score': 0.6826137900352478, 'True Positives': 14839.0, 'True Negatives': 628082.0, 'False Positives': 4370.0, 'False Negatives': 9429.0, 'Average-Loss': 0.07092589253934325}
+Epoch: 12, Average Loss: 0.02141990326344967
+Validation Metrics: {'Accuracy': 0.9787458777427673, 'Precision': 0.7681264877319336, 'Recall': 0.6085379719734192, 'F-Score': 0.6790821552276611, 'True Positives': 14768.0, 'True Negatives': 627994.0, 'False Positives': 4458.0, 'False Negatives': 9500.0, 'Average-Loss': 0.0740531245717353}
+Epoch: 13, Average Loss: 0.018842561170458794
+Validation Metrics: {'Accuracy': 0.9787047505378723, 'Precision': 0.7736441493034363, 'Recall': 0.5989781022071838, 'F-Score': 0.6751980185508728, 'True Positives': 14536.0, 'True Negatives': 628199.0, 'False Positives': 4253.0, 'False Negatives': 9732.0, 'Average-Loss': 0.07783860541069634}
+Epoch: 14, Average Loss: 0.016910530626773834
+Validation Metrics: {'Accuracy': 0.978517472743988, 'Precision': 0.7639783620834351, 'Recall': 0.6058183908462524, 'F-Score': 0.6757676005363464, 'True Positives': 14702.0, 'True Negatives': 627910.0, 'False Positives': 4542.0, 'False Negatives': 9566.0, 'Average-Loss': 0.07936425382725895}
+Epoch: 15, Average Loss: 0.015177048742771149
+Validation Metrics: {'Accuracy': 0.978022575378418, 'Precision': 0.742420494556427, 'Recall': 0.6205703020095825, 'F-Score': 0.676048755645752, 'True Positives': 15060.0, 'True Negatives': 627227.0, 'False Positives': 5225.0, 'False Negatives': 9208.0, 'Average-Loss': 0.08216697868526542}
+Epoch: 16, Average Loss: 0.012740358710289001
+Validation Metrics: {'Accuracy': 0.9776114821434021, 'Precision': 0.7299831509590149, 'Recall': 0.6255151033401489, 'F-Score': 0.6737234592437744, 'True Positives': 15180.0, 'True Negatives': 626837.0, 'False Positives': 5615.0, 'False Negatives': 9088.0, 'Average-Loss': 0.08670476299355129}
+Epoch: 17, Average Loss: 0.010622081346809864
+Validation Metrics: {'Accuracy': 0.9770845770835876, 'Precision': 0.7125270962715149, 'Recall': 0.6368056535720825, 'F-Score': 0.6725417375564575, 'True Positives': 15454.0, 'True Negatives': 626217.0, 'False Positives': 6235.0, 'False Negatives': 8814.0, 'Average-Loss': 0.09173296244023328}
+Epoch: 18, Average Loss: 0.008981267921626568
+Validation Metrics: {'Accuracy': 0.9763902425765991, 'Precision': 0.6961719393730164, 'Recall': 0.6407203078269958, 'F-Score': 0.6672961115837097, 'True Positives': 15549.0, 'True Negatives': 625666.0, 'False Positives': 6786.0, 'False Negatives': 8719.0, 'Average-Loss': 0.09794005715668397}
+Epoch: 19, Average Loss: 0.00816547591239214
+Validation Metrics: {'Accuracy': 0.9763293266296387, 'Precision': 0.6971656084060669, 'Recall': 0.6354870796203613, 'F-Score': 0.6648989915847778, 'True Positives': 15422.0, 'True Negatives': 625753.0, 'False Positives': 6699.0, 'False Negatives': 8846.0, 'Average-Loss': 0.10184406917617098}
+Epoch: 20, Average Loss: 0.0076877339743077755
+Validation Metrics: {'Accuracy': 0.9758801460266113, 'Precision': 0.6868736147880554, 'Recall': 0.6382479071617126, 'F-Score': 0.661668598651886, 'True Positives': 15489.0, 'True Negatives': 625391.0, 'False Positives': 7061.0, 'False Negatives': 8779.0, 'Average-Loss': 0.10531004669750807}
+Epoch: 21, Average Loss: 0.006497945170849562
+Validation Metrics: {'Accuracy': 0.9749223589897156, 'Precision': 0.6615034341812134, 'Recall': 0.6581506729125977, 'F-Score': 0.6598227620124817, 'True Positives': 15972.0, 'True Negatives': 624279.0, 'False Positives': 8173.0, 'False Negatives': 8296.0, 'Average-Loss': 0.11020271077285601}
+Epoch: 22, Average Loss: 0.005138782784342766
+Validation Metrics: {'Accuracy': 0.9750868082046509, 'Precision': 0.6704021096229553, 'Recall': 0.6409263014793396, 'F-Score': 0.6553329825401306, 'True Positives': 15554.0, 'True Negatives': 624805.0, 'False Positives': 7647.0, 'False Negatives': 8714.0, 'Average-Loss': 0.11469556446240407}
+Epoch: 23, Average Loss: 0.004098228644579649
+Validation Metrics: {'Accuracy': 0.9748188257217407, 'Precision': 0.6749807596206665, 'Recall': 0.6144305467605591, 'F-Score': 0.6432839632034302, 'True Positives': 14911.0, 'True Negatives': 625272.0, 'False Positives': 7180.0, 'False Negatives': 9357.0, 'Average-Loss': 0.12084557208789515}
+Epoch: 24, Average Loss: 0.0034985546953976154
+Validation Metrics: {'Accuracy': 0.9756593108177185, 'Precision': 0.6999083161354065, 'Recall': 0.5974946618080139, 'F-Score': 0.6446593403816223, 'True Positives': 14500.0, 'True Negatives': 626235.0, 'False Positives': 6217.0, 'False Negatives': 9768.0, 'Average-Loss': 0.12379191432659657}
+Epoch: 25, Average Loss: 0.0031343798618763685
+Validation Metrics: {'Accuracy': 0.9757369756698608, 'Precision': 0.6941028237342834, 'Recall': 0.614018440246582, 'F-Score': 0.6516092419624329, 'True Positives': 14901.0, 'True Negatives': 625885.0, 'False Positives': 6567.0, 'False Negatives': 9367.0, 'Average-Loss': 0.12545361857507767}
+Epoch: 26, Average Loss: 0.00285780499689281
+Validation Metrics: {'Accuracy': 0.9753745794296265, 'Precision': 0.684840202331543, 'Recall': 0.618015468120575, 'F-Score': 0.6497141122817993, 'True Positives': 14998.0, 'True Negatives': 625550.0, 'False Positives': 6902.0, 'False Negatives': 9270.0, 'Average-Loss': 0.130658908453184}
+Epoch: 27, Average Loss: 0.002470093546435237
+Validation Metrics: {'Accuracy': 0.975930392742157, 'Precision': 0.7070019841194153, 'Recall': 0.5953931212425232, 'F-Score': 0.6464154124259949, 'True Positives': 14449.0, 'True Negatives': 626464.0, 'False Positives': 5988.0, 'False Negatives': 9819.0, 'Average-Loss': 0.13147006857945548}
+Epoch: 28, Average Loss: 0.0021646791137754917
+Validation Metrics: {'Accuracy': 0.9758511781692505, 'Precision': 0.7015097141265869, 'Recall': 0.6031399369239807, 'F-Score': 0.6486163139343262, 'True Positives': 14637.0, 'True Negatives': 626224.0, 'False Positives': 6228.0, 'False Negatives': 9631.0, 'Average-Loss': 0.13540864661689914}
+Epoch: 29, Average Loss: 0.0019732548389583826
+Validation Metrics: {'Accuracy': 0.9762409925460815, 'Precision': 0.7137711644172668, 'Recall': 0.5960935950279236, 'F-Score': 0.6496463418006897, 'True Positives': 14466.0, 'True Negatives': 626651.0, 'False Positives': 5801.0, 'False Negatives': 9802.0, 'Average-Loss': 0.13553444937530454}
+Epoch: 30, Average Loss: 0.0017038314836099744
+Validation Metrics: {'Accuracy': 0.9751735925674438, 'Precision': 0.6831309795379639, 'Recall': 0.61208176612854, 'F-Score': 0.6456576585769653, 'True Positives': 14854.0, 'True Negatives': 625562.0, 'False Positives': 6890.0, 'False Negatives': 9414.0, 'Average-Loss': 0.14404735548921155}
+Epoch: 31, Average Loss: 0.0014011504827067256
+Validation Metrics: {'Accuracy': 0.976553201675415, 'Precision': 0.7228867411613464, 'Recall': 0.5927146673202515, 'F-Score': 0.6513607501983643, 'True Positives': 14384.0, 'True Negatives': 626938.0, 'False Positives': 5514.0, 'False Negatives': 9884.0, 'Average-Loss': 0.13993259410879066}
+Epoch: 32, Average Loss: 0.0011810851283371449
+Validation Metrics: {'Accuracy': 0.9765044450759888, 'Precision': 0.7318954467773438, 'Recall': 0.5747074484825134, 'F-Score': 0.6438463926315308, 'True Positives': 13947.0, 'True Negatives': 627343.0, 'False Positives': 5109.0, 'False Negatives': 10321.0, 'Average-Loss': 0.1488489910083445}
+Epoch: 33, Average Loss: 0.001127030118368566
+Validation Metrics: {'Accuracy': 0.9766902327537537, 'Precision': 0.7432138919830322, 'Recall': 0.5641173720359802, 'F-Score': 0.6413980722427368, 'True Positives': 13690.0, 'True Negatives': 627722.0, 'False Positives': 4730.0, 'False Negatives': 10578.0, 'Average-Loss': 0.151087060743163}
+Epoch: 34, Average Loss: 0.0011186967603862286
+Validation Metrics: {'Accuracy': 0.9764770269393921, 'Precision': 0.7229975461959839, 'Recall': 0.5891709327697754, 'F-Score': 0.6492598056793213, 'True Positives': 14298.0, 'True Negatives': 626974.0, 'False Positives': 5478.0, 'False Negatives': 9970.0, 'Average-Loss': 0.14947785609734743}
+Epoch: 35, Average Loss: 0.0011376820039004087
+Validation Metrics: {'Accuracy': 0.9759288430213928, 'Precision': 0.7285745143890381, 'Recall': 0.5555875897407532, 'F-Score': 0.6304296851158142, 'True Positives': 13483.0, 'True Negatives': 627429.0, 'False Positives': 5023.0, 'False Negatives': 10785.0, 'Average-Loss': 0.1615942974650536}
+Epoch: 36, Average Loss: 0.0010792239336296916
+Validation Metrics: {'Accuracy': 0.9767009019851685, 'Precision': 0.7294876575469971, 'Recall': 0.5872754454612732, 'F-Score': 0.6507019996643066, 'True Positives': 14252.0, 'True Negatives': 627167.0, 'False Positives': 5285.0, 'False Negatives': 10016.0, 'Average-Loss': 0.15241709033149592}
+Epoch: 37, Average Loss: 0.0008776933536864817
+Validation Metrics: {'Accuracy': 0.9758420586585999, 'Precision': 0.706899106502533, 'Recall': 0.5915197134017944, 'F-Score': 0.6440830230712891, 'True Positives': 14355.0, 'True Negatives': 626500.0, 'False Positives': 5952.0, 'False Negatives': 9913.0, 'Average-Loss': 0.15578681982047143}
+Epoch: 38, Average Loss: 0.0007592607289552689
+Validation Metrics: {'Accuracy': 0.9766978025436401, 'Precision': 0.7352895140647888, 'Recall': 0.5772210359573364, 'F-Score': 0.6467369794845581, 'True Positives': 14008.0, 'True Negatives': 627409.0, 'False Positives': 5043.0, 'False Negatives': 10260.0, 'Average-Loss': 0.15611027863853696}
+Epoch: 39, Average Loss: 0.0007738123531453311
+Validation Metrics: {'Accuracy': 0.9763750433921814, 'Precision': 0.7111089825630188, 'Recall': 0.6074666380882263, 'F-Score': 0.6552145481109619, 'True Positives': 14742.0, 'True Negatives': 626463.0, 'False Positives': 5989.0, 'False Negatives': 9526.0, 'Average-Loss': 0.15539683126941467}
+Epoch: 40, Average Loss: 0.0007618801901116967
+Validation Metrics: {'Accuracy': 0.975982129573822, 'Precision': 0.6969809532165527, 'Recall': 0.6192929148674011, 'F-Score': 0.6558442711830139, 'True Positives': 15029.0, 'True Negatives': 625918.0, 'False Positives': 6534.0, 'False Negatives': 9239.0, 'Average-Loss': 0.15660516230280788}
+Epoch: 41, Average Loss: 0.0007411843980662525
+Validation Metrics: {'Accuracy': 0.975325882434845, 'Precision': 0.6801447868347168, 'Recall': 0.627286970615387, 'F-Score': 0.6526473760604858, 'True Positives': 15223.0, 'True Negatives': 625293.0, 'False Positives': 7159.0, 'False Negatives': 9045.0, 'Average-Loss': 0.16237440839988884}
+Epoch: 42, Average Loss: 0.0007702749571762979
+Validation Metrics: {'Accuracy': 0.9763765335083008, 'Precision': 0.7098878026008606, 'Recall': 0.6100214123725891, 'F-Score': 0.6561765670776367, 'True Positives': 14804.0, 'True Negatives': 626402.0, 'False Positives': 6050.0, 'False Negatives': 9464.0, 'Average-Loss': 0.1557720238695715}
+Epoch: 43, Average Loss: 0.0006721175159327686
+Validation Metrics: {'Accuracy': 0.9760735034942627, 'Precision': 0.6945467591285706, 'Recall': 0.6292648911476135, 'F-Score': 0.6602962017059326, 'True Positives': 15271.0, 'True Negatives': 625736.0, 'False Positives': 6716.0, 'False Negatives': 8997.0, 'Average-Loss': 0.15968978348363838}
+Epoch: 44, Average Loss: 0.000534056918695569
+Validation Metrics: {'Accuracy': 0.9758846759796143, 'Precision': 0.7000616788864136, 'Recall': 0.6078374981880188, 'F-Score': 0.6506980657577515, 'True Positives': 14751.0, 'True Negatives': 626132.0, 'False Positives': 6320.0, 'False Negatives': 9517.0, 'Average-Loss': 0.16151658526464854}
+Epoch: 45, Average Loss: 0.0005377966444939375
+Validation Metrics: {'Accuracy': 0.9763232469558716, 'Precision': 0.7063082456588745, 'Recall': 0.6150074005126953, 'F-Score': 0.6575034856796265, 'True Positives': 14925.0, 'True Negatives': 626246.0, 'False Positives': 6206.0, 'False Negatives': 9343.0, 'Average-Loss': 0.15934409356346693}
+Epoch: 46, Average Loss: 0.0006799541297368705
+Validation Metrics: {'Accuracy': 0.9758268594741821, 'Precision': 0.6874860525131226, 'Recall': 0.634086012840271, 'F-Score': 0.6597071886062622, 'True Positives': 15388.0, 'True Negatives': 625457.0, 'False Positives': 6995.0, 'False Negatives': 8880.0, 'Average-Loss': 0.16068778895971647}
+Epoch: 47, Average Loss: 0.0006396550452336669
+Validation Metrics: {'Accuracy': 0.9763963222503662, 'Precision': 0.6996583938598633, 'Recall': 0.6329734921455383, 'F-Score': 0.6646474599838257, 'True Positives': 15361.0, 'True Negatives': 625858.0, 'False Positives': 6594.0, 'False Negatives': 8907.0, 'Average-Loss': 0.15824983261987605}
+Epoch: 48, Average Loss: 0.0005465915310196579
+Validation Metrics: {'Accuracy': 0.9762090444564819, 'Precision': 0.6982386708259583, 'Recall': 0.627286970615387, 'F-Score': 0.6608638763427734, 'True Positives': 15223.0, 'True Negatives': 625873.0, 'False Positives': 6579.0, 'False Negatives': 9045.0, 'Average-Loss': 0.16099054831682452}
+Epoch: 49, Average Loss: 0.000508189550600946
+Validation Metrics: {'Accuracy': 0.9756852388381958, 'Precision': 0.6881574392318726, 'Recall': 0.6254326701164246, 'F-Score': 0.6552974581718445, 'True Positives': 15178.0, 'True Negatives': 625574.0, 'False Positives': 6878.0, 'False Negatives': 9090.0, 'Average-Loss': 0.16336743232465892}
+Epoch: 50, Average Loss: 0.0005275756120681763
+Validation Metrics: {'Accuracy': 0.9748705625534058, 'Precision': 0.6632880568504333, 'Recall': 0.6498681306838989, 'F-Score': 0.656509518623352, 'True Positives': 15771.0, 'True Negatives': 624446.0, 'False Positives': 8006.0, 'False Negatives': 8497.0, 'Average-Loss': 0.16721678854763064}
+Epoch: 51, Average Loss: 0.0005341078503988683
+Validation Metrics: {'Accuracy': 0.9758755564689636, 'Precision': 0.6856954097747803, 'Recall': 0.6409675478935242, 'F-Score': 0.6625774502754211, 'True Positives': 15555.0, 'True Negatives': 625322.0, 'False Positives': 7130.0, 'False Negatives': 8713.0, 'Average-Loss': 0.16626195155945456}
+Epoch: 52, Average Loss: 0.0005461376858875155
+Validation Metrics: {'Accuracy': 0.9761176705360413, 'Precision': 0.6918298006057739, 'Recall': 0.6378358602523804, 'F-Score': 0.6637365221977234, 'True Positives': 15479.0, 'True Negatives': 625557.0, 'False Positives': 6895.0, 'False Negatives': 8789.0, 'Average-Loss': 0.16490478366921976}
+Epoch: 53, Average Loss: 0.0005504164728336036
+Validation Metrics: {'Accuracy': 0.9758192300796509, 'Precision': 0.6814327836036682, 'Recall': 0.6490852236747742, 'F-Score': 0.6648657917976379, 'True Positives': 15752.0, 'True Negatives': 625088.0, 'False Positives': 7364.0, 'False Negatives': 8516.0, 'Average-Loss': 0.16655281467463304}
+Epoch: 54, Average Loss: 0.0004561207315418869
+Validation Metrics: {'Accuracy': 0.9765714406967163, 'Precision': 0.7056589722633362, 'Recall': 0.6279050707817078, 'F-Score': 0.6645152568817139, 'True Positives': 15238.0, 'True Negatives': 626096.0, 'False Positives': 6356.0, 'False Negatives': 9030.0, 'Average-Loss': 0.16587752450149987}
+Epoch: 55, Average Loss: 0.00041752163087949157
+Validation Metrics: {'Accuracy': 0.9757171869277954, 'Precision': 0.6803659200668335, 'Recall': 0.6466952562332153, 'F-Score': 0.6631034016609192, 'True Positives': 15694.0, 'True Negatives': 625079.0, 'False Positives': 7373.0, 'False Negatives': 8574.0, 'Average-Loss': 0.1670792977315294}
+Epoch: 56, Average Loss: 0.0005033358465880156
+Validation Metrics: {'Accuracy': 0.976215124130249, 'Precision': 0.694145143032074, 'Recall': 0.6370528936386108, 'F-Score': 0.6643747091293335, 'True Positives': 15460.0, 'True Negatives': 625640.0, 'False Positives': 6812.0, 'False Negatives': 8808.0, 'Average-Loss': 0.16554303191904465}
+Epoch: 57, Average Loss: 0.00048687931848689914
+Validation Metrics: {'Accuracy': 0.9765973091125488, 'Precision': 0.7015811204910278, 'Recall': 0.6381242871284485, 'F-Score': 0.6683498620986938, 'True Positives': 15486.0, 'True Negatives': 625865.0, 'False Positives': 6587.0, 'False Negatives': 8782.0, 'Average-Loss': 0.16347985181089353}
+Epoch: 58, Average Loss: 0.0004273048834875226
+Validation Metrics: {'Accuracy': 0.9767084717750549, 'Precision': 0.7051024436950684, 'Recall': 0.6354870796203613, 'F-Score': 0.6684871912002563, 'True Positives': 15422.0, 'True Negatives': 626002.0, 'False Positives': 6450.0, 'False Negatives': 8846.0, 'Average-Loss': 0.16387767701132142}
+Epoch: 59, Average Loss: 0.00044693416566587985
+Validation Metrics: {'Accuracy': 0.9763978719711304, 'Precision': 0.7033395171165466, 'Recall': 0.6248557567596436, 'F-Score': 0.6617788076400757, 'True Positives': 15164.0, 'True Negatives': 626056.0, 'False Positives': 6396.0, 'False Negatives': 9104.0, 'Average-Loss': 0.1673777298306356}
+Loading test dataset from datasets/COCO2014/processed
+Validation Metrics: {'Accuracy': 0.9768137335777283, 'Precision': 0.6994487047195435, 'Recall': 0.6235419511795044, 'F-Score': 0.6593177318572998, 'True Positives': 72700.0, 'True Negatives': 3092489.0, 'False Positives': 31239.0, 'False Negatives': 43892.0, 'Average-Loss': 0.16541200020368357}
+Validation Metrics: {'Accuracy': 0.9804630279541016, 'Precision': 0.8015619516372681, 'Recall': 0.6074001789093018, 'F-Score': 0.6911028623580933, 'True Positives': 70818.0, 'True Negatives': 3106196.0, 'False Positives': 17532.0, 'False Negatives': 45774.0, 'Average-Loss': 0.05830226885384777}
+
+real	560m5.051s
+user	422m7.428s
+sys	207m25.000s

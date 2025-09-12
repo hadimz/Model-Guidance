@@ -1,8 +1,11 @@
+import sys
+sys.stdout.reconfigure(line_buffering=True)
+
 import torch
 import os
 import argparse
 import torchvision
-from tqdm import tqdm
+# from tqdm import tqdm
 import datasets
 import argparse
 import torch.utils.tensorboard
@@ -113,7 +116,9 @@ def eval_model(model, attributor, loader, num_batches, num_classes, loss_fn, wri
     iou_metric = metrics.BoundingBoxIoUMultiple()
 
     total_loss = 0
-    for batch_idx, (test_X, test_y, test_bbs, _, _, _) in enumerate(tqdm(loader, ncols=80)):
+    for batch_idx, (test_X, test_y, test_bbs, _, _, _) in enumerate(loader):
+        # if batch_idx % 100 != 0:
+        #     continue
         test_X.requires_grad = True
         test_X = test_X.cuda()
         test_y = test_y.cuda()
@@ -154,6 +159,7 @@ def eval_model(model, attributor, loader, num_batches, num_classes, loss_fn, wri
 
 
 def main(args):
+    print(f'Attribution_method: {args.attribution_method}, Layer: {args.layer}, AdaptiveLambda: {args.adaptive_lambda}, Lambda: {args.localization_loss_lambda}, SimilarityThreshold: {args.similarity_threshold}, NumGuidingPoints: {args.num_guiding_points}.')
     utils.set_seed(args.seed)
 
     num_classes_dict = {"VOC2007": 20, "COCO2014":  80}
@@ -293,13 +299,14 @@ def main(args):
     if args.pareto:
         pareto_front_tracker = utils.ParetoFrontModels()
     flag = True
-    for e in tqdm(range(args.total_epochs), ncols=80):
+    for e in range(args.total_epochs):
         total_loss = 0
         total_class_loss = 0
         total_localization_loss = 0
 
-        for batch_idx, (train_X, train_y, train_bbs, train_masks, guiding_points, indices) in enumerate(tqdm(train_loader, ncols=80)):
-            # if batch_idx < 75:
+        for batch_idx, (train_X, train_y, train_bbs, train_masks, guiding_points, indices) in enumerate(train_loader):
+            # print(f'Epoch {e}, Batch {batch_idx} ')
+            # if batch_idx % 100 != 0:
             #     continue
             batch_loss = 0
             localization_loss = 0
@@ -448,8 +455,9 @@ def main(args):
             total_loss += batch_loss.detach()
             optimizer.step()
         
-        del train_X, train_y, logits, features, weak_mask
+        del train_X, train_y, logits, features
 
+        print('')
         print(f"Epoch: {e}, Average Loss: {total_loss / num_train_batches}")
 
         if writer:
@@ -543,7 +551,8 @@ parser.add_argument("--eval_batch_size", type=int, default=4, help="Batch size t
 parser.add_argument("--box_dilation_percentage", type=float, default=0, help="Fraction of dilation to use for bounding boxes when training.")
 parser.add_argument("--feedback_type", type=str, default=None, help="Type of feedback to be used for guiding explanations. Supported: mask, bbox, points.")
 parser.add_argument("--num_guiding_points", type=int, default=10, help="Number of random points to sample within the object mask when using 'points' feedback.")    
-parser.add_argument("--similarity_threshold", type=int, default=0.99, help="The threshold used for creating weakly supervised similarity masks from guiding points.")    
+parser.add_argument("--similarity_threshold", type=float, default=0.99, help="The threshold used for creating weakly supervised similarity masks from guiding points.")    
 parser.add_argument("--adaptive_lambda", type=bool, default=False, help="Lambda to use to weight localization loss.")
+parser.add_argument("--disable_verbose", type=bool, default=True, help="Whether to disable verbose printing of training progress.")
 args = parser.parse_args()
 main(args)

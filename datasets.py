@@ -13,7 +13,10 @@ class VOCDetectParsed(torch.utils.data.Dataset):
         self.labels = data_dict["labels"]
         self.bbs = data_dict["bbs"]
         self.masks = data_dict['mask']
-        self.guiding_points = data_dict['guiding_points']
+        if 'guiding_points' in data_dict.keys():
+            self.guiding_points = data_dict['guiding_points']
+        else:
+            self.guiding_points = [None]*len(self.data)
         assert len(self.data) == len(self.labels)
         assert len(self.data) == len(self.bbs)
         self.annotated_fraction = annotated_fraction

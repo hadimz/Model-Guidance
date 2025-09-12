@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "/lustre06/project/6043437/hadimz/Model-Guidance/train.py", line 558, in <module>
+    main(args)
+  File "/lustre06/project/6043437/hadimz/Model-Guidance/train.py", line 389, in main
+    rand_indices = torch.multinomial(target_mask, args.num_guiding_points, replacement=True).cpu()
+RuntimeError: cannot sample n_sample <= 0 samples

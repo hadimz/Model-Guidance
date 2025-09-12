@@ -1,0 +1,18 @@
+Attribution_method: BCos, Layer: Input, AdaptiveLambda: True, Lambda: 0.001, SimilarityThreshold: 0.99, NumGuidingPoints: 100.
+loading bcos resnet50 model
+Loading guiding points train dataset from datasets/COCO2014/processed
+Loading guiding points validation dataset from datasets/COCO2014/processed
+Train data size: 73872
+Annotated: 73872, Total: 73872
+
+Epoch: 0, Average Loss: 0.07166171818971634
+Validation Metrics: {'Accuracy': 0.9797919988632202, 'Precision': 0.8280532360076904, 'Recall': 0.5719053745269775, 'F-Score': 0.6765458583831787, 'True Positives': 13879.0, 'True Negatives': 629570.0, 'False Positives': 2882.0, 'False Negatives': 10389.0, 'BB-Loc': 0.2885310861002101, 'BB-IoU': 0.011149469986873755, 'Average-Loss': 0.06107852176940895}
+Current Pareto Front Size: 1
+Pareto Costs: (0.6765,0.2885,0.0111,1)
+
+Epoch: 1, Average Loss: 0.06625895202159882
+Validation Metrics: {'Accuracy': 0.979400634765625, 'Precision': 0.8106200695037842, 'Recall': 0.5774682760238647, 'F-Score': 0.6744633913040161, 'True Positives': 14014.0, 'True Negatives': 629178.0, 'False Positives': 3274.0, 'False Negatives': 10254.0, 'BB-Loc': 0.2890350690791642, 'BB-IoU': 0.010922754059076912, 'Average-Loss': 0.06351693722983634}
+Current Pareto Front Size: 1
+Pareto Costs: (0.6765,0.2885,0.0111,1)
+
+Epoch: 2, Average Loss: 0.061668019741773605

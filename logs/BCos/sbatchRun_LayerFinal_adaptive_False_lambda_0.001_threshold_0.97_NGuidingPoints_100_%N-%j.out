@@ -1,0 +1,26 @@
+Attribution_method: BCos, Layer: Final, AdaptiveLambda: True, Lambda: 0.001, SimilarityThreshold: 0.97, NumGuidingPoints: 100.
+loading bcos resnet50 model
+Loading guiding points train dataset from datasets/COCO2014/processed
+Loading guiding points validation dataset from datasets/COCO2014/processed
+Train data size: 73872
+Annotated: 73872, Total: 73872
+
+Epoch: 0, Average Loss: 0.07373662292957306
+Validation Metrics: {'Accuracy': 0.9803919196128845, 'Precision': 0.8012376427650452, 'Recall': 0.6242376565933228, 'F-Score': 0.7017486691474915, 'True Positives': 15149.0, 'True Negatives': 628694.0, 'False Positives': 3758.0, 'False Negatives': 9119.0, 'BB-Loc': 0.28407996668287216, 'BB-IoU': 0.22797955616655843, 'Average-Loss': 0.058636358992773745}
+Current Pareto Front Size: 1
+Pareto Costs: (0.7017,0.2841,0.2280,1)
+
+Epoch: 1, Average Loss: 0.0680898055434227
+Validation Metrics: {'Accuracy': 0.9800280332565308, 'Precision': 0.791814923286438, 'Recall': 0.623454749584198, 'F-Score': 0.6976208090782166, 'True Positives': 15130.0, 'True Negatives': 628474.0, 'False Positives': 3978.0, 'False Negatives': 9138.0, 'BB-Loc': 0.2847323829636131, 'BB-IoU': 0.21229190713846335, 'Average-Loss': 0.06066793413193598}
+Current Pareto Front Size: 1
+Pareto Costs: (0.7017,0.2841,0.2280,1)
+
+Epoch: 2, Average Loss: 0.06340771168470383
+Validation Metrics: {'Accuracy': 0.9793275594711304, 'Precision': 0.774013340473175, 'Recall': 0.622259795665741, 'F-Score': 0.6898899078369141, 'True Positives': 15101.0, 'True Negatives': 628043.0, 'False Positives': 4409.0, 'False Negatives': 9167.0, 'BB-Loc': 0.2848342047631297, 'BB-IoU': 0.19461238290963237, 'Average-Loss': 0.06354225391969275}
+Current Pareto Front Size: 1
+Pareto Costs: (0.7017,0.2841,0.2280,1)
+
+Epoch: 3, Average Loss: 0.058958299458026886
+Validation Metrics: {'Accuracy': 0.9785844683647156, 'Precision': 0.7526993751525879, 'Recall': 0.6262155771255493, 'F-Score': 0.6836565136909485, 'True Positives': 15197.0, 'True Negatives': 627459.0, 'False Positives': 4993.0, 'False Negatives': 9071.0, 'BB-Loc': 0.28471961180795463, 'BB-IoU': 0.17917496072534936, 'Average-Loss': 0.06684797790951147}
+Current Pareto Front Size: 1
+Pareto Costs: (0.7017,0.2841,0.2280,1)

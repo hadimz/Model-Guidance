@@ -1,0 +1,2 @@
+Attribution_method: BCos, Layer: Final, AdaptiveLambda: True, Lambda: 0.0001, SimilarityThreshold: 0.99, NumGuidingPoints: 50.
+loading bcos resnet50 model

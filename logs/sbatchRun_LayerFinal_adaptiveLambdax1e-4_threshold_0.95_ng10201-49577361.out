@@ -1,0 +1,62 @@
+loading bcos resnet50 model
+Loading guiding points train dataset from datasets/COCO2014/processed
+Loading guiding points validation dataset from datasets/COCO2014/processed
+Train data size: 73872
+Annotated: 73872, Total: 73872
+
+Epoch: 0, Average Loss: 0.04609633609652519
+Validation Metrics: {'Accuracy': 0.980384349822998, 'Precision': 0.7995054721832275, 'Recall': 0.6262155771255493, 'F-Score': 0.7023292183876038, 'True Positives': 15197.0, 'True Negatives': 628641.0, 'False Positives': 3811.0, 'False Negatives': 9071.0, 'BB-Loc': 0.28929662525005634, 'BB-IoU': 0.2299560476925142, 'Average-Loss': 0.058701150759170574}
+Current Pareto Front Size: 1
+Pareto Costs: (0.7023,0.2893,0.2300,1)
+
+Epoch: 1, Average Loss: 0.04119594022631645
+Validation Metrics: {'Accuracy': 0.9798864126205444, 'Precision': 0.7841031551361084, 'Recall': 0.6288527846336365, 'F-Score': 0.6979488134384155, 'True Positives': 15261.0, 'True Negatives': 628250.0, 'False Positives': 4202.0, 'False Negatives': 9007.0, 'BB-Loc': 0.29028698250164126, 'BB-IoU': 0.22481057385545372, 'Average-Loss': 0.06112403604751644}
+Current Pareto Front Size: 1
+Pareto Costs: (0.7023,0.2893,0.2300,1)
+
+Epoch: 2, Average Loss: 0.036934901028871536
+Validation Metrics: {'Accuracy': 0.9792910218238831, 'Precision': 0.7676635980606079, 'Recall': 0.630377471446991, 'F-Score': 0.6922798156738281, 'True Positives': 15298.0, 'True Negatives': 627822.0, 'False Positives': 4630.0, 'False Negatives': 8970.0, 'BB-Loc': 0.2913249278199526, 'BB-IoU': 0.2195174755382349, 'Average-Loss': 0.06420744158112475}
+Current Pareto Front Size: 1
+Pareto Costs: (0.7023,0.2893,0.2300,1)
+
+Epoch: 3, Average Loss: 0.03277518227696419
+Validation Metrics: {'Accuracy': 0.9785479307174683, 'Precision': 0.7468956112861633, 'Recall': 0.634498119354248, 'F-Score': 0.6861242055892944, 'True Positives': 15398.0, 'True Negatives': 627234.0, 'False Positives': 5218.0, 'False Negatives': 8870.0, 'BB-Loc': 0.29201835193420955, 'BB-IoU': 0.21388974854568318, 'Average-Loss': 0.06821055673103643}
+Current Pareto Front Size: 1
+Pareto Costs: (0.7023,0.2893,0.2300,1)
+
+Epoch: 4, Average Loss: 0.028745952993631363
+Validation Metrics: {'Accuracy': 0.9779449105262756, 'Precision': 0.7303418517112732, 'Recall': 0.6391544342041016, 'F-Score': 0.6817123293876648, 'True Positives': 15511.0, 'True Negatives': 626725.0, 'False Positives': 5727.0, 'False Negatives': 8757.0, 'BB-Loc': 0.29240250586791344, 'BB-IoU': 0.20826148122767987, 'Average-Loss': 0.07279803015483197}
+Current Pareto Front Size: 1
+Pareto Costs: (0.7023,0.2893,0.2300,1)
+
+Epoch: 5, Average Loss: 0.024893127381801605
+Validation Metrics: {'Accuracy': 0.9772155284881592, 'Precision': 0.7129387855529785, 'Recall': 0.6418740749359131, 'F-Score': 0.6755426526069641, 'True Positives': 15577.0, 'True Negatives': 626180.0, 'False Positives': 6272.0, 'False Negatives': 8691.0, 'BB-Loc': 0.2931762684605377, 'BB-IoU': 0.203304747340337, 'Average-Loss': 0.07811180260660935}
+Current Pareto Front Size: 2
+Pareto Costs: (0.7023,0.2893,0.2300,1)(0.6755,0.2932,0.2033,6)
+
+Epoch: 6, Average Loss: 0.02142379805445671
+Validation Metrics: {'Accuracy': 0.9769216775894165, 'Precision': 0.7097992300987244, 'Recall': 0.6351574063301086, 'F-Score': 0.6704071164131165, 'True Positives': 15414.0, 'True Negatives': 626150.0, 'False Positives': 6302.0, 'False Negatives': 8854.0, 'BB-Loc': 0.29346141868064995, 'BB-IoU': 0.19729033445819247, 'Average-Loss': 0.08269265688704375}
+Current Pareto Front Size: 2
+Pareto Costs: (0.7023,0.2893,0.2300,1)(0.6755,0.2932,0.2033,6)
+
+Epoch: 7, Average Loss: 0.018857674673199654
+Validation Metrics: {'Accuracy': 0.9766369462013245, 'Precision': 0.7067407965660095, 'Recall': 0.6286055445671082, 'F-Score': 0.6653872132301331, 'True Positives': 15255.0, 'True Negatives': 626122.0, 'False Positives': 6330.0, 'False Negatives': 9013.0, 'BB-Loc': 0.2955178558674266, 'BB-IoU': 0.19531429925712387, 'Average-Loss': 0.08702176066521881}
+Current Pareto Front Size: 2
+Pareto Costs: (0.7023,0.2893,0.2300,1)(0.6755,0.2932,0.2033,6)
+
+Epoch: 8, Average Loss: 0.01701810583472252
+Validation Metrics: {'Accuracy': 0.9778870940208435, 'Precision': 0.7556394934654236, 'Recall': 0.5935388207435608, 'F-Score': 0.6648511290550232, 'True Positives': 14404.0, 'True Negatives': 627794.0, 'False Positives': 4658.0, 'False Negatives': 9864.0, 'BB-Loc': 0.2986094846715076, 'BB-IoU': 0.19341522869929192, 'Average-Loss': 0.08859548291069158}
+Current Pareto Front Size: 3
+Pareto Costs: (0.7023,0.2893,0.2300,1)(0.6755,0.2932,0.2033,6)(0.6649,0.2986,0.1934,9)
+
+Epoch: 9, Average Loss: 0.014690062962472439
+Validation Metrics: {'Accuracy': 0.9783149361610413, 'Precision': 0.7772493362426758, 'Recall': 0.5791577100753784, 'F-Score': 0.6637387275695801, 'True Positives': 14055.0, 'True Negatives': 628424.0, 'False Positives': 4028.0, 'False Negatives': 10213.0, 'BB-Loc': 0.2986449647510116, 'BB-IoU': 0.19017489394343037, 'Average-Loss': 0.09374097744401153}
+Current Pareto Front Size: 3
+Pareto Costs: (0.7023,0.2893,0.2300,1)(0.6755,0.2932,0.2033,6)(0.6649,0.2986,0.1934,9)
+Loading test dataset from datasets/COCO2014/processed
+Validation Metrics: {'Accuracy': 0.9782910346984863, 'Precision': 0.7654330730438232, 'Recall': 0.5719345808029175, 'F-Score': 0.6546855568885803, 'True Positives': 66683.0, 'True Negatives': 3103293.0, 'False Positives': 20435.0, 'False Negatives': 49909.0, 'BB-Loc': 0.304382286075224, 'BB-IoU': 0.18968505923619589, 'Average-Loss': 0.09318592810663762}
+Validation Metrics: {'Accuracy': 0.980463981628418, 'Precision': 0.789604663848877, 'Recall': 0.6230787634849548, 'F-Score': 0.6965267658233643, 'True Positives': 72646.0, 'True Negatives': 3104371.0, 'False Positives': 19357.0, 'False Negatives': 43946.0, 'BB-Loc': 0.29487455835377147, 'BB-IoU': 0.2310046188222898, 'Average-Loss': 0.058240111063008436}
+
+real	135m40.362s
+user	140m51.505s
+sys	28m13.414s
