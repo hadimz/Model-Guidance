@@ -171,3 +171,6 @@ VOCdevkit/
 *.out
 *.err
 *.txt
+
+# Remove scripts used for running experiments on DRAC
+*.sh
