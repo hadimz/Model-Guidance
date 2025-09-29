@@ -1,11 +1,12 @@
 import sys
 sys.stdout.reconfigure(line_buffering=True)
 
+import numpy as np
 import torch
 import os
 import argparse
 import torchvision
-# from tqdm import tqdm
+from tqdm import tqdm
 import datasets
 import argparse
 import torch.utils.tensorboard
@@ -242,21 +243,21 @@ def main(args):
 
     root = os.path.join(args.data_path, args.dataset, "processed")
     
-    if args.feedback_type == 'bbox':
-        print(f"Loading train dataset from {root}")
-        train_data = datasets.VOCDetectParsed(
-            root=root, image_set="train", transform=transformer, annotated_fraction=args.annotated_fraction)
-        print(f"Loading validation dataset from {root}")
-        val_data = datasets.VOCDetectParsed(
-            root=root, image_set="val", transform=transformer)
-    elif args.feedback_type == 'points':
+    
+    if args.feedback_type == 'points':
         print(f"Loading guiding points train dataset from {root}")
         train_data = datasets.VOCDetectParsed(
             root=root, image_set="train_GuidingPoints", transform=transformer, annotated_fraction=args.annotated_fraction)
         print(f"Loading guiding points validation dataset from {root}")
         val_data = datasets.VOCDetectParsed(
             root=root, image_set="val_GuidingPoints", transform=transformer)
-    
+    else: # for cases where args.feedback_type == 'bbox', 'mask', or None
+        print(f"Loading train dataset from {root}")
+        train_data = datasets.VOCDetectParsed(
+            root=root, image_set="train", transform=transformer, annotated_fraction=args.annotated_fraction)
+        print(f"Loading validation dataset from {root}")
+        val_data = datasets.VOCDetectParsed(
+            root=root, image_set="val", transform=transformer)
 
     print(f"Train data size: {len(train_data)}")
     annotation_count = 0
@@ -268,9 +269,9 @@ def main(args):
     print(f"Annotated: {annotation_count}, Total: {total_count}")
 
     train_loader = torch.utils.data.DataLoader(
-        train_data, batch_size=args.train_batch_size, shuffle=False, num_workers=0, collate_fn=datasets.VOCDetectParsed.collate_fn)
+        train_data, batch_size=args.train_batch_size, shuffle=False, num_workers=8, collate_fn=datasets.VOCDetectParsed.collate_fn)
     val_loader = torch.utils.data.DataLoader(
-        val_data, batch_size=args.eval_batch_size, shuffle=False, num_workers=0, collate_fn=datasets.VOCDetectParsed.collate_fn)
+        val_data, batch_size=args.eval_batch_size, shuffle=False, num_workers=8, collate_fn=datasets.VOCDetectParsed.collate_fn)
     
     
     num_train_batches = len(train_data) / args.train_batch_size
@@ -303,11 +304,9 @@ def main(args):
         total_loss = 0
         total_class_loss = 0
         total_localization_loss = 0
-
+        print(f'epoch {e} with training set length {len(train_loader)}')
+        print(f'epoch {e} with guiding point set size {sys.getsizeof(train_loader.dataset.guiding_points)}')
         for batch_idx, (train_X, train_y, train_bbs, train_masks, guiding_points, indices) in enumerate(train_loader):
-            # print(f'Epoch {e}, Batch {batch_idx} ')
-            # if batch_idx % 100 != 0:
-            #     continue
             batch_loss = 0
             localization_loss = 0
             optimizer.zero_grad()
@@ -339,114 +338,97 @@ def main(args):
                 elif args.feedback_type == "points":
                     for img_idx in range(len(train_X)):
                         if guiding_points[img_idx][gt_classes[img_idx]] is None:
-
+                            
                             target_mask = torch.where(train_masks[img_idx].cuda()==gt_classes[img_idx]+1, 0., 1.).detach().reshape(-1)
-                            target_mask = target_mask*attributions[img_idx].detach().clamp(0,1).reshape(-1)
 
                             if  target_mask.sum() < 1.e-6 or torch.isnan(target_mask.sum() or torch.isnan(attributions[img_idx].sum())):
+                                # 
                                 train_loader.dataset.guiding_points[indices[img_idx]][gt_classes[img_idx]] = guiding_points[img_idx][gt_classes[img_idx]] = []
+                                # print(f'Warning: target mask for image {img_idx} in batch {batch_idx} (actual index in dataset: {indices[img_idx]}) and class {gt_classes[img_idx]} has sum {target_mask.sum()}. Skipping this image for this epoch.')
                                 break
-
-                                # print(f'target mask sum is {target_mask.sum()}, min: {target_mask.min()}, max: {target_mask.max()}')
-                                # print(f'train mask sum is {train_masks[img_idx].sum()}, min: {train_masks[img_idx].min()}, max: {train_masks[img_idx].max()}')
-                                # print(f'attributions mask sum is {attributions[img_idx].sum()}, min: {attributions[img_idx].min()}, max: {attributions[img_idx].max()}')
-                                # print(f'using attributor: {attributor}!')
-                                # print(f'mask containing classes: {torch.unique(train_masks[img_idx])}')
-                                # print(f'gt class: {gt_classes[img_idx]}')
-                                # print(f'batch: {batch_idx}, img idx in batch: {img_idx}, actual idx in dataset: {indices[img_idx]}')
-                                # print(f'Number of guiding points for this image and class: {len(guiding_points[img_idx][gt_classes[img_idx]])}')
-                                # print(f'Excluding this image from training for this epoch.')
-                                # if flag:
-                                #     # Plot the images, masks, and attributions for the first image in the batch for diagnostic purposes
-                                #     plt.figure(figsize=(30,5))
-                                #     plt.subplot(1,7,1)
-                                #     plt.imshow(train_X[img_idx][:3].detach().cpu().moveaxis(0, -1), vmin=0, vmax=1)
-                                #     plt.axis('off')
-                                #     plt.subplot(1,7,2)
-                                #     plt.imshow(train_X[img_idx][3:].detach().cpu().moveaxis(0, -1), vmin=0, vmax=1)
-                                #     plt.axis('off')
-                                #     plt.subplot(1,7,3)
-                                #     plt.imshow(train_masks[img_idx], vmin=0, vmax=1)
-                                #     plt.axis('off')
-                                #     plt.subplot(1,7,4)
-                                #     train_masks[img_idx] = torch.where(train_masks[img_idx] == gt_classes[img_idx].cpu()+1, 1, 0)
-                                #     mx = attributions[img_idx].max().item()
-                                #     plt.imshow(train_masks[img_idx], vmin=0, vmax=1)
-                                #     plt.axis('off')
-                                #     plt.subplot(1,7,5)
-                                #     plt.imshow(attributions[img_idx].detach().cpu(), vmin=0, vmax=1)
-                                #     plt.suptitle(f'{gt_classes[img_idx].item()+1}:{class_names[gt_classes[img_idx].item()+1]} - {mx}, {gt_classes[img_idx]+1}')
-                                #     plt.axis('off')
-                                #     plt.subplot(1,7,6)
-                                #     plt.imshow(target_mask.cpu(), vmin=0, vmax=1)
-                                #     plt.axis('off')
-                                #     plt.savefig(f"figures/issue_{batch_idx}_{img_idx}.png")
-                                #     plt.close('all')
-                                #     flag = False
                             else:
-                                # print(f'target mask shape before: {target_mask.size()}, target_mask sum: {target_mask.sum()}, target_mask: {target_mask}')
-                                # print(f'target mask shape after: {target_mask.size()}, target_mask sum: {target_mask.sum()}, target_mask: {target_mask}')
-                                rand_indices = torch.multinomial(target_mask, args.num_guiding_points, replacement=True).cpu()
-                                x_index = torch.div(rand_indices, 224, rounding_mode='floor') # Row index
-                                y_index = rand_indices % 224   # Column index
-                                points = [(x_index[i],y_index[i]) for i in range(len(rand_indices))]
-                                train_loader.dataset.guiding_points[indices[img_idx]][gt_classes[img_idx]] = guiding_points[img_idx][gt_classes[img_idx]] = points
+                                if np.min([args.num_guiding_points, torch.sum(target_mask != 0).item()]) < 1:
+                                    rand_indices = []
+                                    points = []
+                                else:
+                                    rand_indices = torch.multinomial(target_mask, np.min([args.num_guiding_points, torch.sum(target_mask != 0).item()]), replacement=False).cpu()
+                                    # rand_indices = (target_mask).nonzero(as_tuple=False)
+                                    x_index = torch.div(rand_indices, 224, rounding_mode='floor') # Row index
+                                    y_index = rand_indices % 224   # Column index
+                                    points = list(set([(torch.floor(x_index[i]/32).int().item(),torch.floor(y_index[i]/32).int().item()) for i in range(len(rand_indices))]))
+                                
+                                
+                                guiding_points[img_idx][gt_classes[img_idx]] = train_loader.dataset.guiding_points[indices[img_idx]][gt_classes[img_idx]] = points
                         
                         weak_mask = torch.zeros(7,7).cuda()
+                        # weak_mask[guiding_points[img_idx][gt_classes[img_idx]]] = 1.
                         for gpoint in guiding_points[img_idx][gt_classes[img_idx]]:
-                            sim = torch.nn.functional.cosine_similarity(acts[img_idx,:, torch.floor(gpoint[0]/32).int(), torch.floor(gpoint[1]/32).int()].unsqueeze(1).unsqueeze(1), acts[img_idx], dim=0)
+                            sim = torch.nn.functional.cosine_similarity(acts[img_idx, :, gpoint[0], gpoint[1]].unsqueeze(1).unsqueeze(1), acts[img_idx], dim=0)
                             weak_mask = torch.max(weak_mask, sim)
-                        weak_mask = ff.resize(weak_mask.unsqueeze(0).unsqueeze(0), size=(224, 224), interpolation=torchvision.transforms.InterpolationMode.BICUBIC).squeeze()
-                        weak_mask = torch.where(weak_mask<args.similarity_threshold, 0, 1).detach()
+                            # weak_mask[gpoint] = 1.
                         
+
+                        weak_mask = ff.resize(weak_mask.unsqueeze(0).unsqueeze(0), size=(224, 224), interpolation=torchvision.transforms.InterpolationMode.BICUBIC).squeeze()
+                        weak_mask = torch.where(weak_mask>args.similarity_threshold, 0, 1).detach()
+                        
+                        # if True: # img_idx == 0 and batch_idx < 25:
+                        #     # Plot the images, masks, and attributions for the first image in the batch for diagnostic purposes
+                        #     plt.figure(figsize=(30,5))
+                        #     plt.subplot(1,7,1)
+                        #     plt.imshow(train_X[img_idx][:3].detach().cpu().moveaxis(0, -1))
+                        #     plt.title('input')
+                        #     plt.axis('off')
+                        #     plt.subplot(1,7,2)
+                        #     plt.imshow(train_X[img_idx][-3:].detach().cpu().moveaxis(0, -1))
+                        #     plt.title('input - last 3 channels for BCos')
+                        #     plt.axis('off')
+                        #     plt.subplot(1,7,3)
+                        #     plt.imshow(train_masks[img_idx])
+                        #     plt.title('train masks')
+                        #     plt.axis('off')
+                        #     plt.subplot(1,7,4)
+                        #     train_masks[img_idx] = torch.where(train_masks[img_idx] == gt_classes[img_idx].cpu()+1, 1, 0)
+                        #     mx = attributions[img_idx].max().item()
+                        #     # for point in guiding_points[img_idx][gt_classes[img_idx]]:
+                        #         # attributions[img_idx][point] = mx*1.2
+                        #         # train_masks[img_idx][point] = 10
+                            
+                        #     plt.imshow(train_masks[img_idx])
+                        #     plt.title('filtered target masks')
+                        #     plt.axis('off')
+                        #     plt.subplot(1,7,5)
+                        #     plt.imshow(attributions[img_idx].detach().cpu())
+                        #     plt.suptitle(f'{gt_classes[img_idx].item()+1}:{class_names[gt_classes[img_idx].item()+1]} - max value {mx:1.4f}, of class {gt_classes[img_idx]+1}')
+                        #     plt.title('attributions')
+                        #     plt.axis('off')
+                        #     plt.subplot(1,7,6)
+                        #     plt.imshow(acts[img_idx].sum(dim=0).detach().cpu().moveaxis(0, -1))
+                        #     # plt.imshow(weak_mask[3:].detach().cpu(), alpha=0.5)
+                        #     plt.title('features with weak mask overlay')
+                        #     plt.axis('off')
+                        #     plt.subplot(1,7,7)
+                        #     plt.imshow(weak_mask[3:].detach().cpu())
+                        #     plt.title(f'weak mask: {weak_mask.max().item()}')
+                        #     plt.axis('off')
+                        #     plt.savefig(f"figures/mask_{e}_{batch_idx}_{img_idx}_{gt_classes[img_idx]}.png")
+                        #     plt.close('all')
+
+                        # weak_mask = torch.where(train_masks[img_idx].cuda()==gt_classes[img_idx]+1, 1., 0.).detach()
                         if args.adaptive_lambda:
-                            AdaptiveLambda = torch.numel(weak_mask)/torch.sum(weak_mask)
+                            AdaptiveLambda = torch.numel(weak_mask)/torch.sum(1.-weak_mask)
                             if torch.isinf(AdaptiveLambda) or torch.isnan(AdaptiveLambda):
                                 AdaptiveLambda = torch.tensor(1.).cuda()
                             localization_loss += AdaptiveLambda.detach()*args.localization_loss_lambda*loss_loc(attributions[img_idx], weak_mask)
                         else:
                             localization_loss += args.localization_loss_lambda*loss_loc(attributions[img_idx], weak_mask)
+                            # print(f'localization loss for image {img_idx} in batch {batch_idx} is {loss_loc(attributions[img_idx], weak_mask).item()}')
                     batch_loss += localization_loss
                     if torch.is_tensor(localization_loss):
                         total_localization_loss += localization_loss.detach()
                     else:
                         total_localization_loss += localization_loss
-                    
-                    # if img_idx == 0 and batch_idx < 25:
-                    #     # Plot the images, masks, and attributions for the first image in the batch for diagnostic purposes
-                    #     plt.figure(figsize=(30,5))
-                    #     plt.subplot(1,7,1)
-                    #     plt.imshow(train_X[img_idx][:3].detach().cpu().moveaxis(0, -1))
-                    #     plt.axis('off')
-                    #     plt.subplot(1,7,2)
-                    #     plt.imshow(train_X[img_idx][3:].detach().cpu().moveaxis(0, -1))
-                    #     plt.axis('off')
-                    #     plt.subplot(1,7,3)
-                    #     plt.imshow(train_masks[img_idx])
-                    #     plt.axis('off')
-                    #     plt.subplot(1,7,4)
-                    #     train_masks[img_idx] = torch.where(train_masks[img_idx] == gt_classes[img_idx].cpu()+1, 1, 0)
-                    #     mx = attributions[img_idx].max().item()
-                    #     for point in guiding_points[img_idx][gt_classes[img_idx]]:
-                    #         attributions[img_idx][point] = mx*1.2
-                    #         train_masks[img_idx][point] = 10
-                        
-                    #     plt.imshow(train_masks[img_idx])
-                    #     plt.axis('off')
-                    #     plt.subplot(1,7,5)
-                    #     plt.imshow(attributions[img_idx].detach().cpu())
-                    #     plt.suptitle(f'{gt_classes[img_idx].item()+1}:{class_names[gt_classes[img_idx].item()+1]} - {mx}, {gt_classes[img_idx]+1}')
-                    #     plt.axis('off')
-                    #     plt.subplot(1,7,6)
-                    #     plt.imshow(features[img_idx][:3].detach().cpu().moveaxis(0, -1))
-                    #     plt.imshow(weak_mask[3:].detach().cpu(), alpha=0.5)
-                    #     plt.axis('off')
-                    #     plt.subplot(1,7,7)
-                    #     plt.imshow(weak_mask[3:].detach().cpu())
-                    #     plt.axis('off')
-                    #     plt.savefig(f"figures/mask_{e}_{batch_idx}_{gt_classes[img_idx]}.png")
-                    #     plt.close('all')
                 elif args.feedback_type == "mask":
+                    # TODO implement training with full segmentation masks
                     pass
                 else:
                     raise NotImplementedError
@@ -491,12 +473,13 @@ def main(args):
 
     del train_data, val_data, train_loader, val_loader
     print(f"Loading test dataset from {root}")
-    if args.feedback_type == 'bbox':
-        test_data = datasets.VOCDetectParsed(
-            root=root, image_set="test", transform=transformer)
-    elif args.feedback_type == 'points':
+    
+    if args.feedback_type == 'points':
         test_data = datasets.VOCDetectParsed(
             root=root, image_set="test_GuidingPoints", transform=transformer)
+    else: # for cases where args.feedback_type == 'bbox', mask', or None
+        test_data = datasets.VOCDetectParsed(
+            root=root, image_set="test", transform=transformer)
     num_test_batches = len(test_data) / args.eval_batch_size
     test_loader = torch.utils.data.DataLoader(
         test_data, batch_size=args.eval_batch_size, shuffle=False, num_workers=0, collate_fn=datasets.VOCDetectParsed.collate_fn)

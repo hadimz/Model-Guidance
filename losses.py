@@ -58,9 +58,8 @@ class EnergyPointingGameGPMultipleLoss:
         num = pos_attributions[torch.where(mask == 1)].sum()
         den = pos_attributions.sum()
         if den < 1e-7:
-            return num
-        return num/den
-
+            return 1-num
+        return 1-num/den
 
 
 

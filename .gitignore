@@ -167,3 +167,7 @@ datasets/*
 datasets/*.*
 VOCdevkit/
 
+# All log files, including .out, .err, and .txt
+*.out
+*.err
+*.txt

@@ -1,6 +1,0 @@
-Attribution_method: BCos, Layer: Final, AdaptiveLambda: True, Lambda: 0.0001, SimilarityThreshold: 0.99, NumGuidingPoints: 0.
-loading bcos resnet50 model
-Loading guiding points train dataset from datasets/COCO2014/processed
-Loading guiding points validation dataset from datasets/COCO2014/processed
-Train data size: 73872
-Annotated: 73872, Total: 73872
