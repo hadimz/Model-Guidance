@@ -4,7 +4,7 @@ import torch
 def get_localization_loss(loss_name):
     loss_map = {
         "Energy": EnergyPointingGameBBMultipleLoss,
-        "Energy_Points": EnergyPointingGameGPMultipleLoss,
+        "Energy_Points": EnergyPointingGameBBMultipleLoss,
         "L1": GradiaBBMultipleLoss,
         "RRR": RRRBBMultipleLoss,
         "PPCE": HAICSBBMultipleLoss
@@ -20,7 +20,7 @@ class BBMultipleLoss:
     def __call__(self, attributions, bb_coordinates):
         raise NotImplementedError
 
-    def get_bb_mask(self, bb_coordinates, mask_shape):
+    def get_bb_mask(self, bb_coordinates=None, mask_shape=(224, 224)):
         bb_mask = torch.zeros(mask_shape, dtype=torch.long)
         for coords in bb_coordinates:
             xmin, ymin, xmax, ymax = coords
@@ -34,32 +34,35 @@ class EnergyPointingGameBBMultipleLoss:
         self.only_positive = False
         self.binarize = False
 
-    def __call__(self, attributions, bb_coordinates):
+    def __call__(self, attributions, bb_coordinates=None, mask=None):
         pos_attributions = attributions.clamp(min=0)
-        bb_mask = torch.zeros_like(pos_attributions, dtype=torch.long)
-        for coords in bb_coordinates:
-            xmin, ymin, xmax, ymax = coords
-            bb_mask[ymin:ymax, xmin:xmax] = 1
+        if bb_coordinates:
+            bb_mask = torch.zeros_like(pos_attributions, dtype=torch.long)
+            for coords in bb_coordinates:
+                xmin, ymin, xmax, ymax = coords
+                bb_mask[ymin:ymax, xmin:xmax] = 1
+        else:
+            bb_mask = mask
         num = pos_attributions[torch.where(bb_mask == 1)].sum()
         den = pos_attributions.sum()
         if den < 1e-7:
             return 1-num
         return 1-num/den
 
-class EnergyPointingGameGPMultipleLoss:
+# class EnergyPointingGameGPMultipleLoss:
 
-    def __init__(self):
-        super().__init__()
-        self.only_positive = False
-        self.binarize = False
+#     def __init__(self):
+#         super().__init__()
+#         self.only_positive = False
+#         self.binarize = False
 
-    def __call__(self, attributions, mask):
-        pos_attributions = attributions.clamp(min=0)
-        num = pos_attributions[torch.where(mask == 1)].sum()
-        den = pos_attributions.sum()
-        if den < 1e-7:
-            return 1-num
-        return 1-num/den
+#     def __call__(self, attributions, mask):
+#         pos_attributions = attributions.clamp(min=0)
+#         num = pos_attributions[torch.where(mask == 1)].sum()
+#         den = pos_attributions.sum()
+#         if den < 1e-7:
+#             return 1-num
+#         return 1-num/den
 
 
 
@@ -70,8 +73,11 @@ class RRRBBMultipleLoss(BBMultipleLoss):
         self.only_positive = False
         self.binarize = True
 
-    def __call__(self, attributions, bb_coordinates):
-        bb_mask = self.get_bb_mask(bb_coordinates, attributions.shape)
+    def __call__(self, attributions, bb_coordinates=None, mask=None):
+        if bb_coordinates:
+            bb_mask = self.get_bb_mask(bb_coordinates, attributions.shape)
+        else:
+            bb_mask = mask
         irrelevant_attrs = attributions[torch.where(bb_mask == 0)]
         return torch.square(irrelevant_attrs).sum()
 
@@ -84,8 +90,11 @@ class GradiaBBMultipleLoss(BBMultipleLoss):
         self.only_positive = True
         self.binarize = True
 
-    def __call__(self, attributions, bb_coordinates):
-        bb_mask = self.get_bb_mask(bb_coordinates, attributions.shape).cuda()
+    def __call__(self, attributions, bb_coordinates=None, mask=None):
+        if bb_coordinates:
+            bb_mask = self.get_bb_mask(bb_coordinates, attributions.shape).cuda()
+        else:
+            bb_mask = mask
         return self.l1_loss(attributions, bb_mask)
 
 
@@ -97,7 +106,11 @@ class HAICSBBMultipleLoss(BBMultipleLoss):
         self.only_positive = True
         self.binarize = True
 
-    def __call__(self, attributions, bb_coordinates):
-        bb_mask = self.get_bb_mask(bb_coordinates, attributions.shape)
+    def __call__(self, attributions, bb_coordinates=None, mask=None):
+        if bb_coordinates:
+            bb_mask = self.get_bb_mask(bb_coordinates, attributions.shape)
+        else:
+            bb_mask = mask
         attributions_in_box = attributions[torch.where(bb_mask == 1)]
         return self.bce_loss(attributions_in_box, torch.ones_like(attributions_in_box))
+

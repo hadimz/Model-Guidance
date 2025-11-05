@@ -4,6 +4,7 @@ import argparse
 import os
 from tqdm import tqdm
 
+
 """
 Source: https://github.com/stevenstalder/NN-Explainer
 """
@@ -25,14 +26,14 @@ def main(args):
     transform = torchvision.transforms.Compose([torchvision.transforms.Resize(
         size=(224, 224)), torchvision.transforms.ToTensor()])
     idata = torchvision.datasets.VOCDetection(
-            root=args.data_root, year="2007", download=True, image_set=split, transform=transform)
+            root=args.data_root, year="2007", download=False, image_set=split, transform=transform)
     
     save_data = torch.zeros((len(idata),)+idata[0][0].shape)
     save_labels = torch.zeros((len(idata), 20))
     save_bbs = [[] for _ in range(len(idata))]
 
     for idx in tqdm(range(len(idata))):
-        img, annotations = idata[idx]
+        img, annotations = idata[idx]        
         save_data[idx] = img
         target_dict = get_target_dictionary(False)
         objects = annotations['annotation']['object']
@@ -67,7 +68,7 @@ def main(args):
 
 
 parser = argparse.ArgumentParser()
-parser.add_argument("--data_root", type=str, default=".")
+parser.add_argument("--data_root", type=str, default="/scratch/hadimz/VOC2007/VOCtrainval_06-Nov-2007")
 parser.add_argument("--split", type=str,
                     choices=["train", "val", "test", "trainval"], required=True)
 parser.add_argument("--save_path", type=str, default="processed/")

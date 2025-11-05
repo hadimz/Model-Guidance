@@ -3,12 +3,13 @@
 #SBATCH --mail-type=ALL
 #SBATCH --nodes 1
 #SBATCH --tasks-per-node=1 
-#SBATCH --cpus-per-task=16 # change this parameter to 2,4,6,... to see the effect on performance
-#SBATCH --gpus=h100:1 
-#SBATCH --mem=128G
-#SBATCH --time=02:00:00
-#SBATCH --array=0-863
+#SBATCH --cpus-per-task=4
+#SBATCH --gpus=h100_2.20
+#SBATCH --mem=64G
+#SBATCH --time=03:00:00
+#SBATCH --array=0-59
 #SBATCH --account=rrg-adurand
+#SBATCH --output=logs/out/%x-%j.out
 
 
 module load python/3.10

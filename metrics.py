@@ -54,6 +54,24 @@ class BoundingBoxEnergyMultiple(EnergyPointingGameBase):
             self.fractions.append(energy_inside/energy_total)
 
 
+class BinaryMaskEnergyMultiple(EnergyPointingGameBase):
+    def __init__(self, include_undefined=True):
+        super().__init__(include_undefined=include_undefined)
+
+    def update(self, attributions, binary_mask):
+        positive_attributions = attributions.clamp(min=0)
+        bb_mask = torch.zeros_like(positive_attributions, dtype=torch.long)
+        
+        energy_inside = positive_attributions[torch.where(binary_mask == 1)].sum()
+        energy_total = positive_attributions.sum()
+        assert energy_inside >= 0, energy_inside
+        assert energy_total >= 0, energy_total
+        if energy_total < 1e-7:
+            self.fractions.append(torch.tensor(0.0))
+        else:
+            self.defined_idxs.append(len(self.fractions))
+            self.fractions.append(energy_inside/energy_total)
+
 
 class BoundingBoxIoUMultiple(EnergyPointingGameBase):
 
@@ -88,6 +106,36 @@ class BoundingBoxIoUMultiple(EnergyPointingGameBase):
             (binarized_attributions > self.iou_threshold) & (bb_mask == 1))[0])
         union_area = len(torch.where(binarized_attributions > self.iou_threshold)[
                          0]) + len(torch.where(bb_mask == 1)[0]) - intersection_area
+        assert intersection_area >= 0
+        assert union_area >= 0
+        if union_area == 0:
+            self.fractions.append(torch.tensor(0.0))
+        else:
+            self.defined_idxs.append(len(self.fractions))
+            self.fractions.append(torch.tensor(intersection_area/union_area))
+
+class BinaryMaskIoUMultiple(EnergyPointingGameBase):
+
+    def __init__(self, include_undefined=True, iou_threshold=0.5):
+        super().__init__(include_undefined=include_undefined)
+        self.iou_threshold = iou_threshold
+
+    def binarize(self, attributions):
+        attr_max = attributions.max()
+        attr_min = attributions.min()
+        if attr_max == 0:
+            return attributions
+        if torch.abs(attr_max-attr_min) < 1e-7:
+            return attributions/attr_max
+        return (attributions-attr_min)/(attr_max-attr_min)
+
+    def update(self, attributions, binary_mask):
+        positive_attributions = attributions.clamp(min=0)
+        binarized_attributions = self.binarize(positive_attributions)
+        intersection_area = len(torch.where(
+            (binarized_attributions > self.iou_threshold) & (binary_mask == 1))[0])
+        union_area = len(torch.where(binarized_attributions > self.iou_threshold)[
+                         0]) + len(torch.where(binary_mask == 1)[0]) - intersection_area
         assert intersection_area >= 0
         assert union_area >= 0
         if union_area == 0:
