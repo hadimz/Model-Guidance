@@ -137,9 +137,10 @@ def eval_model_binary_mask(model, attributor, loader, num_batches, num_classes, 
                     attributions = attributor(
                         features, logits, pred, img_idx).detach().squeeze(0).squeeze(0)
                     # bb_list = utils.filter_bbs(test_bbs[img_idx], pred)
-                    import matplotlib.pyplot as plt
+                    # import matplotlib.pyplot as plt
                     bb_metric.update(attributions, test_masks[img_idx].cuda() == pred+1)
                     iou_metric.update(attributions, test_masks[img_idx].cuda() == pred+1)
+        del test_X, test_y, logits, features
 
     metric_vals = f1_metric.compute()
     if attributor:
@@ -331,10 +332,11 @@ def main(args):
         test_data, batch_size=args.eval_batch_size, shuffle=False, num_workers=0, collate_fn=datasets.VOCDetectParsed.collate_fn)
     final_metrics = eval_model_binary_mask(
         model_activator, eval_attributor, test_loader, num_test_batches, num_classes, loss_fn)
-    final_state_dict = copy.deepcopy(model.state_dict())
-    final_metrics.update(final_metric_vals)
-    final_metrics.update(
-        {"model": final_state_dict, "epochs": e+1} | vars(args))
+    print(f"Final Test Metrics: {final_metrics}")
+    # final_state_dict = copy.deepcopy(model.state_dict())
+    # final_metrics.update(final_metric_vals)
+    # final_metrics.update(
+    #     {"model": final_state_dict, "epochs": e+1} | vars(args))
 
     # f1_best_score, f1_best_model_dict, f1_best_epoch, f1_best_metric_vals = f1_tracker.get_best()
     # f1_best_metric_vals = utils.update_val_metrics(f1_best_metric_vals)
