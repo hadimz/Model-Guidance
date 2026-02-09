@@ -4,11 +4,11 @@
 #SBATCH --nodes 1
 #SBATCH --tasks-per-node=1 
 #SBATCH --cpus-per-task=4
-#SBATCH --gpus=h100_2.20
+#SBATCH --gpus=h100:1
 #SBATCH --mem=64G
-#SBATCH --time=03:00:00
-#SBATCH --array=0-59
-#SBATCH --account=rrg-adurand
+#SBATCH --time=04:00:00
+#SBATCH --array=11-299
+#SBATCH --account=def-adurand
 #SBATCH --output=logs/out/%x-%j.out
 
 
